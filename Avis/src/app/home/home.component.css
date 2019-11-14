@@ -1,0 +1,44 @@
+.carousel-inner {
+    opacity: 1;
+    background: black;
+    }
+    
+.carousel-inner .item {
+    opacity: 0.4;
+    display: table-cell;
+    -webkit-transition: opacity 3s ease;
+    -moz-transition: opacity 3s ease;
+    -o-transition: opacity 3s ease;
+    transition: opacity 3s ease;
+}
+    
+.carousel-inner .active {
+    opacity: 1;
+    width: 100%;
+    -webkit-transition: opacity 3s ease;
+    -moz-transition: opacity 3s ease;
+    -o-transition: opacity 3s ease;
+    transition: opacity 3s ease;
+}
+
+
+.Close_space{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+}
+
+
+
+img{
+    width:800px;
+    height: 500px;
+}
+
+.table-container{
+    overflow-x: scroll;
+}
+
+.content{
+    margin-bottom: 0px;
+}
