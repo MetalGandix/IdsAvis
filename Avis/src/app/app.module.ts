@@ -17,6 +17,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RegisterComponent } from './register/register.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
+import { InfoDonazioneComponent } from './info-donazione/info-donazione.component';
+import { SangueComponent } from './sangue/sangue.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { RegisterComponent } from './register/register.component';
     AdminComponent,
     AvisComponent,
     DottoreComponent,
-    RegisterComponent
+    RegisterComponent,
+    FormDonatoreComponent,
+    InfoDonazioneComponent,
+    SangueComponent
   ],
   imports: [
     BrowserModule,
@@ -43,11 +51,16 @@ import { RegisterComponent } from './register/register.component';
       { path: 'avis', component: AvisComponent },
       { path: 'login', component: LoginComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'dottore', component: AdminComponent },
-      { path: 'register', component: RegisterComponent}
+      { path: 'dottore', component: DottoreComponent },
+      { path: 'register', component: RegisterComponent},
+      { path: 'form-donatore', component: FormDonatoreComponent},
+      { path: 'info-donazione', component: InfoDonazioneComponent},
+      { path: 'sangue', component: SangueComponent}
     ]),
     CarouselModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CollapseModule.forRoot(),
+    AccordionModule.forRoot()
 
   ],
   providers: [],
