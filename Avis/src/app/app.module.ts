@@ -55,7 +55,8 @@ import { SangueComponent } from './sangue/sangue.component';
       { path: 'register', component: RegisterComponent},
       { path: 'form-donatore', component: FormDonatoreComponent},
       { path: 'info-donazione', component: InfoDonazioneComponent},
-      { path: 'sangue', component: SangueComponent}
+      { path: 'sangue', component: SangueComponent},
+      { path: 'register', component: RegisterComponent}
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
