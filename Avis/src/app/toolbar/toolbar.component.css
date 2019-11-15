@@ -1,4 +1,7 @@
-.active{color:#EA6904!important;}
+.active{
+    color:rgb(0, 60, 255)!important;
+
+}
 p{
     width: 150px
 }
@@ -8,8 +11,19 @@ p{
 }
 
 .navbar{
-    height: 90px;
+    height: 90px;    
 }
+
+.btn-outline-success {
+    background: rgb(4, 0, 255);
+    border-style: solid ;
+    border-color: #ff0000;
+    color: #fff;
+}
+
+.btn-outline-success:active { background: rgb(212, 4, 4); }
+.btn-outline-success:hover { background: rgb(212, 4, 4); } /* cambio dello sfondo al passagio del mouse */
+
 
 .fa-1x {
     font-size: 1.5rem;

@@ -22,6 +22,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
 import { InfoDonazioneComponent } from './info-donazione/info-donazione.component';
 import { SangueComponent } from './sangue/sangue.component';
+import { DonareComponent } from './donare/donare.component';
+import { SedeComponent } from './sede/sede.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { SangueComponent } from './sangue/sangue.component';
     RegisterComponent,
     FormDonatoreComponent,
     InfoDonazioneComponent,
-    SangueComponent
+    SangueComponent,
+    DonareComponent,
+    SedeComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,11 @@ import { SangueComponent } from './sangue/sangue.component';
       { path: 'register', component: RegisterComponent},
       { path: 'form-donatore', component: FormDonatoreComponent},
       { path: 'info-donazione', component: InfoDonazioneComponent},
-      { path: 'sangue', component: SangueComponent}
+      { path: 'sangue', component: SangueComponent},
+      { path: 'donare', component: DonareComponent},
+      { path: 'sede', component: SedeComponent}
+     
+      
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
