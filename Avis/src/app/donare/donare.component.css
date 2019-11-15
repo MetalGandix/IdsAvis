@@ -1,0 +1,25 @@
+
+h1{
+    color : rgb(255, 89, 89);
+}
+
+.btn{
+    font-size: 30px;
+    color: rgb(11, 101, 245);
+}
+
+.btn:hover { background: rgb(138, 189, 255); }
+accordion-group
+{
+    font-size: 23px;
+}
+
+.heading{
+    font-size: 23px;
+}
+
+body{
+    background-color: #e9ecef;
+}
+
+

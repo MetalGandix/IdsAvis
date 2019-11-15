@@ -29,6 +29,7 @@ p{
     border-style: solid ;
     border-color: #ff0000;
     color: #fff;
+ 
 }
 
 .btn-outline-success:active { background: rgb(212, 4, 4); }
