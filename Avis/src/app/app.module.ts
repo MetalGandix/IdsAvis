@@ -63,9 +63,10 @@ import { SedeComponent } from './sede/sede.component';
       { path: 'info-donazione', component: InfoDonazioneComponent},
       { path: 'sangue', component: SangueComponent},
       { path: 'donare', component: DonareComponent},
-      { path: 'sede', component: SedeComponent}
+      { path: 'sede', component: SedeComponent},
      
       
+      { path: 'register', component: RegisterComponent}
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
