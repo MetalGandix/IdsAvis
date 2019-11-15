@@ -1,7 +1,17 @@
 .active{
-    color:rgb(0, 60, 255)!important;
+    color:rgb(200, 213, 255)!important;
 
 }
+
+.navbar-toggler.toggler-example {
+    cursor: pointer;
+    }
+
+.endFlex{
+    display: flex;
+    justify-content: flex-end;
+}
+
 p{
     width: 150px
 }

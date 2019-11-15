@@ -1,7 +1,7 @@
 <!-- QUESTA è LA PAGINA CHE GESTISCE LA TOOLBAR, COL ROUTERLINK MI CI SPOSTO NEL SITO -->
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff0000;">
-  <a class="navbar-brand" routerLink="/home" routerLinkActive="active" style="font-size: 24px;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="active" style="font-size: 24px; color: white;">
     <img src="assets/icons/avis.jpg" width="190" height="90">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -12,33 +12,38 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/prenotazione" routerLinkActive="active" style="font-size: 24px;">Prenotazione
+        <a class="nav-link" routerLink="/prenotazione" routerLinkActive="active" style="font-size: 24px; color: white; ">Prenotazione
           <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/donare" routerLinkActive="active" style="font-size: 24px ;">Perchè Donare?
+        <a class="nav-link" routerLink="/donare" routerLinkActive="active" style="font-size: 24px ; color: white; ">Perchè Donare?
           <span class="sr-only">(current)</span></a>
       </li>
       
-
+      <li>
       <div class="btn-group" dropdown>
-        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" style="font-size: 24px;">
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" style="font-size: 24px; color: white; ">
           Login <span class="caret"></span>
         </button>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
           <li role="menuitem"><a class="dropdown-item" routerLink="/login" routerLinkActive="active"
-              style="font-size: 24px;">Login Utente</a></li>
+              style="font-size: 24px; ">Login Utente</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/dottore" routerLinkActive="active"
-              style="font-size: 24px;">Login Dottore</a></li>
+              style="font-size: 24px; ">Login Dottore</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/avis" routerLinkActive="active"
-              style="font-size: 24px;">Login Avis</a></li>
+              style="font-size: 24px; ">Login Avis</a></li>
         </ul>
       </div>
+    </li>
 
-      <a class="nav-link" routerLink="/sede" routerLinkActive="active" style="font-size: 24px;">
-      <button class="btn btn-outline-success" type="button" >Cerca la tua sede</button>
+      <li>
+      <div class="endFlex">
+      <a class="nav-link" routerLink="/sede" routerLinkActive="active">
+      <button class="btn btn-red" type="button" style="font-size: 24px; color: white;" >Cerca la tua sede</button>
       <span class="sr-only">(current)</span></a>
+    </div>
+  </li>
 
     </ul>
   </div>
