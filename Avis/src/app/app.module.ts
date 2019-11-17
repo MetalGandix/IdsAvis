@@ -23,8 +23,7 @@ import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
 import { InfoDonazioneComponent } from './info-donazione/info-donazione.component';
 import { SangueComponent } from './sangue/sangue.component';
 import { DonareComponent } from './donare/donare.component';
-import { SedeComponent } from './sede/sede.component';
-import { FooterComponent } from './footer/footer.component'
+import { SedeComponent } from './sede/sede.component'
 
 
 
@@ -43,8 +42,7 @@ import { FooterComponent } from './footer/footer.component'
     InfoDonazioneComponent,
     SangueComponent,
     DonareComponent,
-    SedeComponent,
-    FooterComponent
+    SedeComponent
     
   
   ],
