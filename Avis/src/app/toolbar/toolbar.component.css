@@ -54,3 +54,10 @@ p{
     .dark-teal-text {
     color: #004d40;
     }
+
+
+    img{
+        width: "200";
+        height: auto;
+        max-width: 100%;
+    }

@@ -23,7 +23,8 @@ import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
 import { InfoDonazioneComponent } from './info-donazione/info-donazione.component';
 import { SangueComponent } from './sangue/sangue.component';
 import { DonareComponent } from './donare/donare.component';
-import { SedeComponent } from './sede/sede.component';
+import { SedeComponent } from './sede/sede.component'
+
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SedeComponent } from './sede/sede.component';
     SangueComponent,
     DonareComponent,
     SedeComponent
+    
   
   ],
   imports: [
