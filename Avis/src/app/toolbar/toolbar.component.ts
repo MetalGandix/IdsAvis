@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
-
+  isCollapsed: boolean;
+  constructor() {
+    this.isCollapsed = true;
+   }
   ngOnInit() {
   }
 
