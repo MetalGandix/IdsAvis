@@ -24,7 +24,8 @@ import { InfoDonazioneComponent } from './info-donazione/info-donazione.componen
 import { SangueComponent } from './sangue/sangue.component';
 import { DonareComponent } from './donare/donare.component';
 import { SedeComponent } from './sede/sede.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { AvisPageComponent } from './avis-page/avis-page.component'
 
 
 
@@ -44,7 +45,8 @@ import { FooterComponent } from './footer/footer.component'
     SangueComponent,
     DonareComponent,
     SedeComponent,
-    FooterComponent
+    FooterComponent,
+    AvisPageComponent
     
   
   ],
