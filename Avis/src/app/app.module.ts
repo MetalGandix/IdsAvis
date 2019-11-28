@@ -25,8 +25,12 @@ import { SangueComponent } from './sangue/sangue.component';
 import { DonareComponent } from './donare/donare.component';
 import { SedeComponent } from './sede/sede.component';
 import { FooterComponent } from './footer/footer.component';
-import { AvisPageComponent } from './avis-page/avis-page.component'
-
+import { AvisPageComponent } from './avis-page/avis-page.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user-service.service';
 
 
 @NgModule({
@@ -46,13 +50,17 @@ import { AvisPageComponent } from './avis-page/avis-page.component'
     DonareComponent,
     SedeComponent,
     FooterComponent,
-    AvisPageComponent
+    AvisPageComponent,
+    UserListComponent,
+    UserFormComponent,
     
   
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
@@ -70,7 +78,9 @@ import { AvisPageComponent } from './avis-page/avis-page.component'
       { path: 'sangue', component: SangueComponent},
       { path: 'donare', component: DonareComponent},
       { path: 'sede', component: SedeComponent},
-      { path: 'register', component: RegisterComponent}
+      { path: 'register', component: RegisterComponent},
+      { path: 'user-form', component: UserFormComponent},
+
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
@@ -78,7 +88,7 @@ import { AvisPageComponent } from './avis-page/avis-page.component'
     AccordionModule.forRoot()
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
