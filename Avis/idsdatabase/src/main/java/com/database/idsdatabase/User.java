@@ -1,5 +1,7 @@
 package com.database.idsdatabase;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,6 +50,11 @@ public class User {
 	public void setEmailUtente(String emailUtente) {
 		this.emailUtente = emailUtente;
 	}
+
+	public List<User> getAllUsers() {
+		return null;
+	}
+
 
 
 }

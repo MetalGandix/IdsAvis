@@ -1,5 +1,7 @@
 package com.database.idsdatabase;
 
+import com.database.idsdatabase.User;
+
 import java.util.stream.Stream;
 
 import org.springframework.boot.CommandLineRunner;
