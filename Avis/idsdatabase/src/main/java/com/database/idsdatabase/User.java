@@ -11,28 +11,48 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private long id;
 	
 	private String name;
 
     private String password;
 
-    private String emailUtente;
+    private String email;
 
-	public Integer getId() {
+	public User(long id, String name, String email) {
+
+		getid();
+		setid(id);
+
+		getname();
+		setname(name);
+
+		getemail();
+		setemail(email);
+
+		toString();
+
+	}
+
+	public long getid() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setid(Long id) {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getname() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setname(String name) {
         this.name = name;
+	}
+
+	@Override
+	public String toString(){
+		return "" + id + "" + name + "" + email;
 	}
 
 	public String getpassword() {
@@ -43,13 +63,15 @@ public class User {
         this.password = password;
 	}
 
-	public String getEmailUtente() {
-		return emailUtente;
+	public String getemail() {
+		return email;
 	}
 
-	public void setEmailUtente(String emailUtente) {
-		this.emailUtente = emailUtente;
+	public void setemail(String email) {
+		this.email = email;
 	}
+
+
 
 	public List<User> getAllUsers() {
 		return null;

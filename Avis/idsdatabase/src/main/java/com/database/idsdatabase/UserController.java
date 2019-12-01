@@ -22,12 +22,6 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping("/")
-    @ResponseBody
-    public String welcome() {
-        return "Welcome to RestTemplate Example.";
-    }
-
     @RequestMapping(value="/users", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody   
     public List<User> getAllUsers() {
