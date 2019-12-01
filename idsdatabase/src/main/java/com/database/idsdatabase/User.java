@@ -13,7 +13,7 @@ public class User {
 	
 	private String name;
 
-	private String lastName;
+	private String lastname;
 
 	private String email;
 	
@@ -25,10 +25,10 @@ public class User {
 
 	}
 
-	public User(final long id, final String name, final String lastName, final String email, final String stato, final String password) {
+	public User(final long id, final String name, final String lastname, final String email, final String stato, final String password) {
 		this.id = id;
 		this.name = name;
-		this.lastName = lastName;
+		this.lastname = lastname;
 		this.email = email;
 		this.stato = stato;
 		this.password = password;
@@ -52,7 +52,7 @@ public class User {
 
 	@Override
 	public String toString(){
-		return "" + id + "" + name + "" + lastName + "" + stato + "" + email + "" + password;
+		return "" + id + "" + name + "" + lastname + "" + stato + "" + email + "" + password;
 	}
 
 	public String getemail() {
@@ -79,12 +79,12 @@ public class User {
         this.stato = stato;
 	}
 
-	public String getlastNamw() {
-		return lastName;
+	public String getlastname() {
+		return lastname;
 	}
 
-	public void setlastName(final String lastName) {
-		this.lastName = lastName;
+	public void setlastname(final String lastname) {
+		this.lastname = lastname;
 	}
 
 
