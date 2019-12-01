@@ -18,8 +18,8 @@ public class IdsdatabaseApplication {
 	@Bean
     CommandLineRunner init(UserRepository userRepository) {
         return args -> {
-            Stream.of("Leonardo", "Lorenzo", "Brian").forEach(name -> {
-                User user = new User(0, name, name.toLowerCase() + "@domain.com");
+            Stream.of("Utente").forEach(name -> {
+                User user = new User(0, name, name.toLowerCase() + "@domain.com", name, name, name);
                 
                 userRepository.save(user);
             });
