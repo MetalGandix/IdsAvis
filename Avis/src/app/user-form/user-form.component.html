@@ -39,19 +39,10 @@
             id="lastName"
             name="lastName"
             placeholder="Enter your last name"
-            required #email="ngModel">
+            required #lastName="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">last name required</div>
         </div>
-        <div class="form-group">
-          <label for="stato">Stato</label>
-          <input type="text" [(ngModel)]="user.stato" 
-            class="form-control"
-            id="stato"
-            name="stato"
-            placeholder="Enter your State"
-            required #email="ngModel">
-          <div [hidden]="!email.pristine" class="alert alert-danger">Inserisci il tuo stato di provenienza</div>
-        </div>
+    
         <div class="form-group">
           <label for="email">Email</label>
           <input type="text" [(ngModel)]="user.email" 
@@ -62,6 +53,18 @@
             required #email="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
         </div>
+
+        <div class="form-group">
+          <label for="stato">Stato</label>
+          <input type="text" [(ngModel)]="user.stato" 
+            class="form-control"
+            id="stato"
+            name="stato"
+            placeholder="Enter your State"
+            required #Stato="ngModel">
+          <div [hidden]="!email.pristine" class="alert alert-danger">Inserisci il tuo stato di provenienza</div>
+        </div>
+
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" [(ngModel)]="user.password" 
@@ -69,7 +72,7 @@
             id="password"
             name="password"
             placeholder="Enter your password"
-            required #email="ngModel">
+            required #password="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">Inserisci la tua nuova password</div>
         </div>
         <button type="submit" [disabled]="!userForm.form.valid" 
