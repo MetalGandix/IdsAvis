@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-IdsdatabaseApplication<idsdatabase>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.database.idsdatabase.IdsdatabaseApplication",
+            "projectName": "idsdatabase",
+            "args": ""
+        }
+    ]
+}
