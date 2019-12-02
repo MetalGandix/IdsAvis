@@ -32,7 +32,9 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user-service.service';
 import { NgxLoadingModule } from 'ngx-loading';
-
+import { ChiPuoDonareComponent } from './chi-puo-donare/chi-puo-donare.component';
+import { ComeDonareComponent } from './come-donare/come-donare.component';
+import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   declarations: [
@@ -54,10 +56,14 @@ import { NgxLoadingModule } from 'ngx-loading';
     AvisPageComponent,
     UserListComponent,
     UserFormComponent,
+    ChiPuoDonareComponent,
+    ComeDonareComponent,
+    
     
   
   ],
   imports: [
+    HttpClientModule, EmbedVideo.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -82,7 +88,8 @@ import { NgxLoadingModule } from 'ngx-loading';
       { path: 'sede', component: SedeComponent},
       { path: 'register', component: RegisterComponent},
       { path: 'user-form', component: UserFormComponent},
-
+      { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
+      { path: 'come-donare', component: ComeDonareComponent},
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
@@ -93,4 +100,9 @@ import { NgxLoadingModule } from 'ngx-loading';
   providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule 
+{ 
+  youtubeUrl = 'https://www.youtube.com/embed/ZWL3UZAKnMM?feature=oembed';
+  youtubeId = 'iHhcHTlGtRs';
+}
