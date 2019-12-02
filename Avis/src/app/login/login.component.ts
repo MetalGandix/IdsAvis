@@ -36,7 +36,11 @@ export class LoginComponent implements OnInit {
 				this.error = true
 			}
 		}, this.user)
-	}*/
+  }*/
+  
+  /*loginUser(){
+
+  }*/
 
   constructor(/*private admin: UserService, private router: Router*/) { }
 
