@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UserService {
  
-  private usersUrl: string;
+  private usersUrl: string
  
   constructor(private http: HttpClient) {
     this.usersUrl = 'http://localhost:8080/users';
   }
+
+  /*login(callback, user) {
+		let obs = this.http.post(('user-form'), user)
+		obs.subscribe((data: Response) => {
+			this.usersUrl = data.user
+			callback(data)
+		})
+	}*/
  
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
