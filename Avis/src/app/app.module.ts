@@ -31,6 +31,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user-service.service';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { UserService } from './user-service.service';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
+    NgxLoadingModule.forRoot({}),
     BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
