@@ -9,7 +9,9 @@ import { UserService } from '../user-service.service'
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
- 
+  
+  isCollapsed = false;
+
   users: User[];
  
   constructor(private userService: UserService) {

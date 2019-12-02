@@ -43,7 +43,13 @@
         <div [hidden]="!password.pristine" class="alert alert-danger">Inserisci la tua nuova password</div>
       </div>
 
-      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+      
+      <button type="submit" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" 
+      [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+      <div id="collapseBasic" [collapse]="isCollapsed" style="margin-top: 20px;">
+        <div class="well well-lg card card-block card-header">Ti sei registrato correttamente</div>
+      </div>
     </form>
   </div>
 </body>
