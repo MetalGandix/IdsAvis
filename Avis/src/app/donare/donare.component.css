@@ -21,5 +21,13 @@ accordion-group
 body{
     background-color: #e9ecef;
 }
+ol{
+    color: rgb(255, 89, 89);
+    font-size: 25px;
+}
+h3{
+    color: black;
+    font-size: 25px;
+}
 
 

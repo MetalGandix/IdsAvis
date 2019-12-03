@@ -3,8 +3,12 @@
 html,
 body {
   height: 100%;
+  
 }
-
+footer{
+  background: #0b6dec;
+  background: linear-gradient(to right, rgb(89, 157, 245), rgb(76, 178, 246));
+}
 #page-content {
   flex: 1 0 auto;
 }

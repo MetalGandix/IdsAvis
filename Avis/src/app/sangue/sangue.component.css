@@ -1,6 +1,7 @@
 h4
 {
-    color:gray;
+    color:black;
+    
 }
 h1
 {
@@ -8,7 +9,14 @@ h1
 }
 
 img{
-    width: 2000000;
-    background: url("/assets/images/mygif.gif");
+    width: 1400px;
 }
 
+h3{
+    color : rgb(255, 89, 89);
+    font-size: 25px;
+}
+h2{
+    font: bold;
+    font-weight: 750;
+}

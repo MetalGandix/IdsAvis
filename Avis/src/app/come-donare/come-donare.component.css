@@ -18,4 +18,14 @@ h1{
     position:absolute;
 }
  }
-
+ h3{
+    color : rgb(255, 89, 89);
+    font-size: 25px;
+}
+h2{
+    font: bold;
+    font-weight: 750;
+}
+h4{
+    color: black;
+}
