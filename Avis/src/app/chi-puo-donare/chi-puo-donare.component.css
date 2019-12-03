@@ -1,6 +1,10 @@
 
-h1{
+h3{
     color : rgb(255, 89, 89);
+}
+h2{
+    font: bold;
+    font-weight: 750;
 }
 
 .btn{
@@ -16,10 +20,6 @@ accordion-group
 
 .heading{
     font-size: 23px;
-}
-
-body{
-    background-color: #e9ecef;
 }
 
 @media (max-width: 950px)

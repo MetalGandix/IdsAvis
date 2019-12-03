@@ -59,9 +59,9 @@ import { EmbedVideo } from 'ngx-embed-video';
     ChiPuoDonareComponent,
     ComeDonareComponent,
     
-    
   
   ],
+  
   imports: [
     HttpClientModule, EmbedVideo.forRoot(),
     BrowserModule,
