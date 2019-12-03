@@ -103,6 +103,6 @@ import { EmbedVideo } from 'ngx-embed-video';
 
 export class AppModule 
 { 
-  youtubeUrl = 'https://www.youtube.com/embed/ZWL3UZAKnMM?feature=oembed';
+  youtubeUrl = 'https://www.youtube.com/embed/ZWL3UZAKnMM?feature=oembed'; 'https://www.youtube.com/embed/OcGFBGY9_NA?feature=oembed'
   youtubeId = 'iHhcHTlGtRs';
 }

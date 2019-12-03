@@ -1,10 +1,14 @@
 
 h3{
     color : rgb(255, 89, 89);
+    font-size: 25px;
 }
 h2{
     font: bold;
     font-weight: 750;
+}
+h4{
+    color: black;
 }
 
 .btn{
@@ -38,3 +42,13 @@ accordion-group
     position:absolute;
 }
             }
+
+img{
+    width: 1400px;
+
+}
+
+ol{
+    color : rgb(255, 89, 89);
+    font-size: 25px;
+}
