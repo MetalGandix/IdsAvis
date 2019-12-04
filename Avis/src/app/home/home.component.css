@@ -5,40 +5,43 @@
     
 .carousel-inner .item {
     opacity: 0.4;
-    display: table-cell;
+   
     -webkit-transition: opacity 3s ease;
     -moz-transition: opacity 3s ease;
     -o-transition: opacity 3s ease;
     transition: opacity 3s ease;
 }
-    
+
+
 .carousel-inner .active {
     opacity: 1;
-    width: 100%;
+    
     -webkit-transition: opacity 3s ease;
     -moz-transition: opacity 3s ease;
     -o-transition: opacity 3s ease;
     transition: opacity 3s ease;
 }
 
-
-.Close_space{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1000px;
-}
-
-
-
 img{
-    width:800px;
-    height: 500px;
+    opacity: 0.9;
+    filter: alpha(opacity=40);
 }
+
+
+#tuodiv {
+    width: 100%; 
+    max-height: none;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+
+
 
 .table-container{
     overflow-x: scroll;
 }
 
-.content{
-    margin-bottom: 0px;
-}
