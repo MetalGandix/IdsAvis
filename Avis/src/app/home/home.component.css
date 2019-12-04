@@ -12,6 +12,33 @@
     transition: opacity 3s ease;
 }
 
+.list-group-item{
+    padding-top: 15px;
+    margin-bottom: 15px;
+    border-color: black;
+}
+
+.list-group{
+    margin-bottom: 20px;
+}
+
+.immagine{
+    display: block; 
+    width: 1250px; 
+    height: 500px;
+}
+
+@media (max-width: 310px){
+    .immagine{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.display-4{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
 
 .carousel-inner .active {
     opacity: 1;
