@@ -18,27 +18,37 @@
     border-color: black;
 }
 
-.list-group{
-    margin-bottom: 20px;
-}
-
-.immagine{
-    display: block; 
-    width: 1250px; 
-    height: 500px;
-}
-
 @media (max-width: 310px){
-    .immagine{
-        width: 300px;
-        height: 300px;
+    .container{
+        max-height: 300px;
     }
 }
 
-.display-4{
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+
+.immagine-uno{
+    display: block; 
+    width: 100%; 
+    height: 100%;
+    max-width: 100%;
+    max-height: auto;
 }
+
+.immagine-due{
+    display: block; 
+    width: 100%; 
+    height: 100%;
+    max-width: 100%;
+    max-height: auto;
+}
+
+@media (max-width: 310px){
+    .immagine-uno,.immagine-due{
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+
 
 .carousel-inner .active {
     opacity: 1;
