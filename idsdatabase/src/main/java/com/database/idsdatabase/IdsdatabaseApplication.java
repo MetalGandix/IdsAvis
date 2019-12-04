@@ -1,8 +1,7 @@
 package com.database.idsdatabase;
 
 import java.util.stream.Stream;
-
-// import com.database.idsdatabase.Dottore;
+import com.database.idsdatabase.Dottore;
 import com.database.idsdatabase.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,16 +24,16 @@ public class IdsdatabaseApplication {
                 userRepository.save(user);
             });
 
-            /*Stream.of("Dottore").forEach(email -> {
-                Dottore dottore = new Dottore(email.toLowerCase() + "@domain.com", email, 0);
+            Stream.of("Dottore").forEach(email -> {
+                Dottore dottore = new Dottore(0, email.toLowerCase() + "@domain.com", email);
 
                 dottoreRepository.save(dottore);
-            });*/
+            });
                 
                 
             
             userRepository.findAll().forEach(System.out::println);
-          //  dottoreRepository.findAll().forEach(System.out::println);
+            dottoreRepository.findAll().forEach(System.out::println);
         };
 
     }

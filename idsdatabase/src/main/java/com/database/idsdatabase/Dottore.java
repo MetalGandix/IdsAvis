@@ -8,21 +8,21 @@ import javax.persistence.Id;
 @Entity // This tells Hibernate to make a table out of this class
 public class Dottore {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	
+	private long id;
+
 	private String email;
 
     private String password;
     
-    private long id;
-
-	public Dottore(){
-
+	public Dottore(){		
 	}
 
-	public Dottore(final String password,final String email,long id) {
+	public Dottore(final long id, final String email, final String password) {
+		this.id = id;
 		this.email = email;
-        this.password = password;
-        this.id = id;
+       	this.password = password;
 	}
 
 	@Override
