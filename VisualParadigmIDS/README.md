@@ -1,2 +1,0 @@
-# IdsAvis
-Progetto Avis IDS
