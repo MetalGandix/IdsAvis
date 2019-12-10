@@ -35,6 +35,14 @@ import { NgxLoadingModule } from 'ngx-loading';
 import { ChiPuoDonareComponent } from './chi-puo-donare/chi-puo-donare.component';
 import { ComeDonareComponent } from './come-donare/come-donare.component';
 import { EmbedVideo } from 'ngx-embed-video';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { SortableModule } from 'ngx-bootstrap/sortable';
 
 @NgModule({
   declarations: [
@@ -94,7 +102,15 @@ import { EmbedVideo } from 'ngx-embed-video';
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    AlertModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
+    PopoverModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    RatingModule.forRoot(),
+    SortableModule.forRoot()
 
   ],
   providers: [UserService],
