@@ -1,7 +1,6 @@
 package com.hellokoding.auth.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "dottore")
@@ -17,8 +16,7 @@ public class Dottore {
     @Transient
     private String passwordConfirm;
 
-    @ManyToMany
-    private Set<Role> roles;
+  
 
     public Long getId() {
         return id;
@@ -52,11 +50,6 @@ public class Dottore {
         this.passwordConfirm = passwordConfirm;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
+
 }
