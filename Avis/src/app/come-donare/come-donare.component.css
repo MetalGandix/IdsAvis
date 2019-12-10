@@ -1,0 +1,31 @@
+h1{
+    color : rgb(255, 89, 89);
+}
+
+@media (max-width: 950px)
+        { 
+    .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+ }
+ h3{
+    color : rgb(255, 89, 89);
+    font-size: 25px;
+}
+h2{
+    font: bold;
+    font-weight: 750;
+}
+h4{
+    color: black;
+}

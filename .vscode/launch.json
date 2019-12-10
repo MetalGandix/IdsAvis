@@ -9,16 +9,6 @@
             "mainClass": "com.database.idsdatabase.IdsdatabaseApplication",
             "projectName": "idsdatabase",
             "args": ""
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-WebApplication<springboot-registration-login>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "mainClass": "com.hellokoding.auth.WebApplication",
-            "projectName": "springboot-registration-login",
-            "args": ""
         }
     ]
 }
