@@ -1,8 +1,4 @@
 package com.database.idsdatabase;
-
-import java.util.stream.Stream;
-import com.database.idsdatabase.Dottore;
-import com.database.idsdatabase.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,17 +14,8 @@ public class IdsdatabaseApplication {
     @Bean
     CommandLineRunner init(UserRepository userRepository, DottoreRepository dottoreRepository) {
         return args -> {
-            Stream.of("Utente").forEach(name -> {
-                User user = new User(0, name, name.toLowerCase() + "@domain.com", name, name, name);
 
-                userRepository.save(user);
-            });
 
-            Stream.of("Dottore").forEach(email -> {
-                Dottore dottore = new Dottore(0, email.toLowerCase() + "@domain.com", email);
-
-                dottoreRepository.save(dottore);
-            });
                 
                 
             
