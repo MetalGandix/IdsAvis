@@ -1,18 +1,14 @@
-package com.database.idsdatabase;
+package com.database.controller;
 
 import java.security.Principal;
 import java.util.Base64;
 import java.util.List;
-<<<<<<< HEAD:idsdatabase/src/main/java/com/database/controller/UserController.java
 
 import javax.servlet.http.HttpServletRequest;
 
 import com.database.entity.User;
 import com.database.repository.UserRepository;
 
-=======
-import com.database.idsdatabase.User;
->>>>>>> 91de31a2e581f2d05b9f2f85ea68d9c88e94e10d:idsdatabase/src/main/java/com/database/idsdatabase/UserController.java
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
