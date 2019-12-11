@@ -1,9 +1,7 @@
-package com.database.controller;
+package com.database.idsdatabase;
 
 import java.util.List;
-import com.database.entity.Dottore;
-import com.database.repository.DottoreRepository;
-
+import com.database.idsdatabase.Dottore;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

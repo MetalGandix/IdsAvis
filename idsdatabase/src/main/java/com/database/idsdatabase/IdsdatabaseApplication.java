@@ -1,23 +1,14 @@
 package com.database.idsdatabase;
 
 import java.util.stream.Stream;
-import com.database.entity.Dottore;
-import com.database.entity.User;
-import com.database.repository.DottoreRepository;
-import com.database.repository.UserRepository;
-
+import com.database.idsdatabase.Dottore;
+import com.database.idsdatabase.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"com.database.controller"})
-@EntityScan("com.database.entity")
-@EnableJpaRepositories("com.database.repository")
 public class IdsdatabaseApplication {
 
     public static void main(String[] args) {

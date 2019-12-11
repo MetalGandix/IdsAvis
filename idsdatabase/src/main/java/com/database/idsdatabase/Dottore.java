@@ -1,4 +1,4 @@
-package com.database.entity;
+package com.database.idsdatabase;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
