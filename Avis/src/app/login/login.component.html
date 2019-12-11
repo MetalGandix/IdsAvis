@@ -1,33 +1,19 @@
-<!--<form>
-    <div>
-        <div class="card"
-            style="width: 18rem; margin-top:20px; margin-bottom: 20px; margin-left: 30px; margin-right: auto;">
-            <div class="card-body">
-                <h5 class="card-title">Fai il login se sei un utente già registrato</h5>
-                <p class="card-text">Se non sei registrato premi il pulsante qua sotto</p>
-                <a routerLink="/register" class="btn btn-primary">Registrati</a>
-            </div>
-        </div>
-    </div>
-    <div style="margin-right: 30px; margin-left: 30px;">
-        <div class="form-group" >
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Non parlare a nessuno della tua e-mail.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-        </div>
-        <button type="submit" class="btn btn-primary">Entra</button>
-    </div>
+<div class="alert alert-danger" [hidden]="!error">
+	There was a problem logging in. Please try again.
+</div>
+<form role="form" (submit)="login()">
+	<div class="form-group">
+		<label for="email">Email:</label> <input type="text"
+			class="form-control" id="email" name="email" [(ngModel)]="credentials.email"/>
+	</div>
+	<div class="form-group">
+		<label for="password">Password:</label> <input type="password"
+			class="form-control" id="password" name="password" [(ngModel)]="credentials.password"/>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
--->
 
-<body>    
+<!--<body>    
     <div class="container" style=" height: 780px;">
         <div class="row" >
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -67,4 +53,4 @@
             </div>
         </div>
     </div>
-</body>
+</body>-->
