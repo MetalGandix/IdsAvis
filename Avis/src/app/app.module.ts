@@ -16,7 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegisterComponent } from './register/register.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
@@ -54,7 +53,6 @@ import { SortableModule } from 'ngx-bootstrap/sortable';
     AdminComponent,
     AvisComponent,
     DottoreComponent,
-    RegisterComponent,
     FormDonatoreComponent,
     InfoDonazioneComponent,
     SangueComponent,
@@ -88,13 +86,11 @@ import { SortableModule } from 'ngx-bootstrap/sortable';
       { path: 'login', component: LoginComponent },
       { path: 'admin', component: AdminComponent },
       { path: 'dottore', component: DottoreComponent },
-      { path: 'register', component: RegisterComponent},
       { path: 'form-donatore', component: FormDonatoreComponent},
       { path: 'info-donazione', component: InfoDonazioneComponent},
       { path: 'sangue', component: SangueComponent},
       { path: 'donare', component: DonareComponent},
       { path: 'sede', component: SedeComponent},
-      { path: 'register', component: RegisterComponent},
       { path: 'user-form', component: UserFormComponent},
       { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
       { path: 'come-donare', component: ComeDonareComponent},
