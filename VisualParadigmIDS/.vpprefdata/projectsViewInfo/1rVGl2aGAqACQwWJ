@@ -2,11 +2,19 @@
 <ProjectsViewInfo>
 	<DiagramOpenInfos activeDiagramId="ZgEDd2aGAqBwARJd">
 		<Info bounds="Re:0.0,0.0,0.0,0.0" diagramId="OvtGl2aGAqACQwkJ" maximized="true" offsetX="0" offsetY="0"/>
-		<Info bounds="Re:0.0,0.0,1340.0,574.0" diagramId="ZgEDd2aGAqBwARJd" maximized="true" offsetX="371" offsetY="485"/>
+		<Info bounds="Re:0.0,0.0,1340.0,574.0" diagramId="ZgEDd2aGAqBwARJd" maximized="true" offsetX="0" offsetY="450"/>
+		<Info bounds="Re:0.0,0.0,0.0,0.0" diagramId="PuFrjOaGAqAAEA6F" maximized="true" offsetX="0" offsetY="0"/>
+		<Info bounds="Re:0.0,0.0,0.0,0.0" diagramId="heVDtZ8GAqACQwmm" maximized="true" offsetX="0" offsetY="0"/>
+		<Info bounds="Re:0.0,0.0,0.0,0.0" diagramId="RPTPjOaGAqAAEBOB" maximized="true" offsetX="0" offsetY="0"/>
+		<Info bounds="Re:0.0,0.0,0.0,0.0" diagramId="T8AlBuaGAqFkfg3G" maximized="true" offsetX="0" offsetY="0"/>
 	</DiagramOpenInfos>
 	<DiagramLastActivated>
-		<Diagram id="ZgEDd2aGAqBwARJd" time="1575388694199"/>
-		<Diagram id="OvtGl2aGAqACQwkJ" time="1575385740029"/>
+		<Diagram id="ZgEDd2aGAqBwARJd" time="1576059791090"/>
+		<Diagram id="T8AlBuaGAqFkfg3G" time="1576059749614"/>
+		<Diagram id="RPTPjOaGAqAAEBOB" time="1576059629731"/>
+		<Diagram id="PuFrjOaGAqAAEA6F" time="1576057964399"/>
+		<Diagram id="heVDtZ8GAqACQwmm" time="1576056121066"/>
+		<Diagram id="OvtGl2aGAqACQwkJ" time="1576056108408"/>
 		<Diagram id="Use Case Statement" time="0"/>
 		<Diagram id="UeXceler Use Case" time="0"/>
 		<Diagram id="User Story" time="0"/>
