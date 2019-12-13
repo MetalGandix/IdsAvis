@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UserService {
  
-  private usersUrl: string
+  private userUrl: string
  
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/users';
+    this.userUrl = 'http://localhost:8080/user';
   }
 
   /*login(callback, user) {
@@ -21,10 +21,10 @@ export class UserService {
 	}*/
  
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+    return this.http.get<User[]>(this.userUrl);
   }
  
   public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>(this.userUrl, user);
   }
 }
