@@ -42,6 +42,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { SortableModule } from 'ngx-bootstrap/sortable';
+import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SortableModule } from 'ngx-bootstrap/sortable';
     UserFormComponent,
     ChiPuoDonareComponent,
     ComeDonareComponent,
+    PaginaAccessoComponent,
     
   
   ],
@@ -83,7 +85,6 @@ import { SortableModule } from 'ngx-bootstrap/sortable';
       { path: 'home', component: HomeComponent },
       { path: 'prenotazione', component: PrenotazioneComponent },
       { path: 'avis', component: AvisComponent },
-      { path: 'login', component: LoginComponent },
       { path: 'admin', component: AdminComponent },
       { path: 'dottore', component: DottoreComponent },
       { path: 'form-donatore', component: FormDonatoreComponent},
