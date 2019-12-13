@@ -1,21 +1,33 @@
-
-<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-    <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-        <label for="username">Username</label>
-        <input type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-        <div *ngIf="f.submitted && !username.valid">Username is required</div>
-    </div>
-    <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-        <label for="password">Password</label>
-        <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-        <div *ngIf="f.submitted && !password.valid">Password is required</div>
-    </div>
+<!--<form>
     <div>
-        <button [disabled]="loading">Login</button>
+        <div class="card"
+            style="width: 18rem; margin-top:20px; margin-bottom: 20px; margin-left: 30px; margin-right: auto;">
+            <div class="card-body">
+                <h5 class="card-title">Fai il login se sei un utente già registrato</h5>
+                <p class="card-text">Se non sei registrato premi il pulsante qua sotto</p>
+                <a routerLink="/register" class="btn btn-primary">Registrati</a>
+            </div>
+        </div>
+    </div>
+    <div style="margin-right: 30px; margin-left: 30px;">
+        <div class="form-group" >
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Non parlare a nessuno della tua e-mail.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+        </div>
+        <button type="submit" class="btn btn-primary">Entra</button>
     </div>
 </form>
+-->
 
-<!--<body>    
+<body>    
     <div class="container" style=" height: 780px;">
         <div class="row" >
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -56,4 +68,3 @@
         </div>
     </div>
 </body>
--->

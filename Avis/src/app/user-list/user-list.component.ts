@@ -12,14 +12,14 @@ export class UserListComponent implements OnInit {
   
   isCollapsed = false;
 
-  user: User[];
+  users: User[];
  
   constructor(private userService: UserService) {
   }
  
   ngOnInit() {
     this.userService.findAll().subscribe(data => {
-      this.user = data;
+      this.users = data;
     });
   }
 }
