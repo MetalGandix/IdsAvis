@@ -1,4 +1,4 @@
-package com.database.controller;
+package com.database.idsdatabase;
 
 import java.security.Principal;
 import java.util.Base64;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.database.entity.User;
+import com.database.idsdatabase.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

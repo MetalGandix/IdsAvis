@@ -1,4 +1,4 @@
-package com.database.entity;
+package com.database.idsdatabase;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +21,8 @@ public class User {
 	private String stato;
 
 	private String password;
+
+	private boolean donazioneEmergenza;
 
 	public User(){
 
