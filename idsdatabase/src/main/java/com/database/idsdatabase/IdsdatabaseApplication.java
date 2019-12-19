@@ -1,10 +1,8 @@
 package com.database.idsdatabase;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 public class IdsdatabaseApplication {
@@ -13,17 +11,7 @@ public class IdsdatabaseApplication {
         SpringApplication.run(IdsdatabaseApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner init(UserRepository userRepository, DottoreRepository dottoreRepository) {
-        return args -> {
-
-
-                
-                
-            
-            userRepository.findAll().forEach(System.out::println);
-            dottoreRepository.findAll().forEach(System.out::println);
-        };
-
-    }
 }
+
+
+    

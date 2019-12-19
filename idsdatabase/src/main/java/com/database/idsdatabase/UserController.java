@@ -24,10 +24,15 @@ public class UserController {
      
     private UserRepository userRepository;
  
-    @GetMapping("/user")
+    @GetMapping("/users")
     public List<User> getUser() {
-        return (List<User>) userRepository.findAll();
+        List<User>listaUtenti = (List<User>) userRepository.findAll();
+        return listaUtenti;
     }
+
+    
+
+    
  
     @PostMapping("/user")
     void addUser(@RequestBody User user) {
