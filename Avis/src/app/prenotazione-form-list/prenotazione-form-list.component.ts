@@ -9,6 +9,8 @@ import { PrenotazioneFormService } from '../prenotazione-form.service';
 })
 export class PrenotazioneFormListComponent implements OnInit {
 
+  isCollapsed = false;
+
   prenotazioni: PrenotazioneForm[];
 
   constructor(private prenotazioneFormService: PrenotazioneFormService) {

@@ -8,18 +8,18 @@ import { PrenotazioneForm } from './prenotazione-form';
 })
 export class PrenotazioneFormService {
 
-  private prenotazioniUrl : string;
+  private prenotazioneFormUrl : string;
 
   constructor(private http: HttpClient) { 
-    this.prenotazioniUrl = 'http://localhost:8080/prenotazioni';
+    this.prenotazioneFormUrl = 'http://localhost:8080/prenotazioni';
   }
 
   public findAll(): Observable<PrenotazioneForm[]> {
-    return this.http.get<PrenotazioneForm[]>(this.prenotazioniUrl);
+    return this.http.get<PrenotazioneForm[]>(this.prenotazioneFormUrl);
   }
 
   public save(prenotazioneForm: PrenotazioneForm){
-    return this.http.post<PrenotazioneForm>(this.prenotazioniUrl, prenotazioneForm);
+    return this.http.post<PrenotazioneForm>(this.prenotazioneFormUrl, prenotazioneForm);
   }
 
 }
