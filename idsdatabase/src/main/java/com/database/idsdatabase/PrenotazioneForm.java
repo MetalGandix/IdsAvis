@@ -19,6 +19,8 @@ public class PrenotazioneForm{
 
     private String telefono;
 
+    private String statosalute;
+
     private String note;
 
     public String getcentro() {
@@ -53,6 +55,15 @@ public class PrenotazioneForm{
         this.note = note;
     }
 
+    
+    public String getstatosalute() {
+        return statosalute;
+    }
+    
+    public void setstatosalute(final String statosalute) {
+        this.statosalute = statosalute;
+    }
+
     @ManyToOne
     private Donazione data;
 
@@ -73,6 +84,12 @@ public class PrenotazioneForm{
 
 	public void setora(Donazione ora){
 		this.ora = ora;
+    }
+
+    @Override
+	public String toString(){
+        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        
     }
 
     
