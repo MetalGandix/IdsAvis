@@ -22,8 +22,6 @@ public class User {
 
 	private String password;
 
-	private boolean donazioneEmergenza;
-
 	public User(){
 
 	}
