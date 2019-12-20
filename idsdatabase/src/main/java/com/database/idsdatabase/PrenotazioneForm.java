@@ -7,11 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-
 public class PrenotazioneForm{
-
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
 
     private String centro;
 
@@ -23,7 +22,29 @@ public class PrenotazioneForm{
 
     private String note;
 
-	private String donazioneEmergenza;
+    private String donazioneEmergenza;
+    
+    public PrenotazioneForm(){
+
+    }
+
+    public PrenotazioneForm(final long id, final String centro, final String compleanno, final String telefono, final String statosalute, final String note, final String donazioneEmergenza){
+        this.id = id;
+        this.centro = centro;
+        this.compleanno = compleanno;
+        this.telefono = telefono;
+        this.statosalute = statosalute;
+        this.note = note;
+        this.donazioneEmergenza = donazioneEmergenza;
+    }
+
+    public long getid() {
+		return id;
+	}
+
+	public void setid(final Long id) {
+		this.id = id;
+	}
 
     public String getcentro() {
         return centro;
@@ -98,7 +119,7 @@ public class PrenotazioneForm{
 
     @Override
 	public String toString(){
-        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
         
     }
 
