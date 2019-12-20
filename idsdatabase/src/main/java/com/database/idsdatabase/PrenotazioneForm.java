@@ -23,6 +23,8 @@ public class PrenotazioneForm{
 
     private String note;
 
+	private String donazioneEmergenza;
+
     public String getcentro() {
         return centro;
     }
@@ -64,6 +66,14 @@ public class PrenotazioneForm{
         this.statosalute = statosalute;
     }
 
+    public String getdonazioneEmergenza() {
+		return donazioneEmergenza;
+	}
+
+	public void setdonazioneEmergenza(final String donazioneEmergenza) {
+		this.donazioneEmergenza = donazioneEmergenza;
+	}
+
     @ManyToOne
     private Donazione data;
 
@@ -88,7 +98,7 @@ public class PrenotazioneForm{
 
     @Override
 	public String toString(){
-        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
         
     }
 
