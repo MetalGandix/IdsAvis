@@ -43,6 +43,9 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { SortableModule } from 'ngx-bootstrap/sortable';
 import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.component';
+import { PrenotazioneFormListComponent } from './prenotazione-form-list/prenotazione-form-list.component';
+import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenotazione-form-vista.component';
+import { PrenotazioneFormService } from './prenotazione-form.service';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,8 @@ import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.componen
     ChiPuoDonareComponent,
     ComeDonareComponent,
     PaginaAccessoComponent,
+    PrenotazioneFormListComponent,
+    PrenotazioneFormVistaComponent,
     
   
   ],
@@ -110,7 +115,7 @@ import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.componen
     SortableModule.forRoot()
 
   ],
-  providers: [UserService],
+  providers: [UserService,PrenotazioneFormService],
   bootstrap: [AppComponent]
 })
 

@@ -5,56 +5,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity // This tells Hibernate to make a table out of this class
-public class Dottore {
-    @Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	
-	private long id;
+@Entity
+public class Dottore{
 
-	private String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String username;
 
     private String password;
-    
-	public Dottore(){		
-	}
 
-	public Dottore(final long id, final String email, final String password) {
-		this.id = id;
-		this.email = email;
-       	this.password = password;
-	}
-
-	@Override
-	public String toString(){
-		return "" + id + "" + email + "" + password;
+    public String getusername(){
+        return username;
     }
-    
-    public long getid() {
-		return id;
-	}
 
-	public void setid(final Long id) {
-		this.id = id;
-	}
+    public void setusername(final String username){
+        this.username = username;
+    }
 
-	public String getemail() {
-		return email;
-	}
+    public String getpassword(){
+        return password;
+    }
 
-	public void setemail(final String email) {
-		this.email = email;
-	}
-
-	public String getpassword() {
-		return password;
-	}
-
-	public void setpassword(final String password) {
+    public void setpassword(final String password){
         this.password = password;
-	}
-
-
+    }
 
 
 }
