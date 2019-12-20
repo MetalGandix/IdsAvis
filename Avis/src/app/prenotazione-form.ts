@@ -5,4 +5,5 @@ export class PrenotazioneForm {
     telefono: string;
     statosalute: string;
     note: string;
+    donazioneEmergenza: string;
 }
