@@ -20,20 +20,11 @@ export class PrenotazioneFormVistaComponent{
           }
 
   onSubmit(){
-<<<<<<< HEAD
     this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(result => this.gotoPrenotazioneFormList());
   }
   
   gotoPrenotazioneFormList(){
     this.router.navigate(['/prenotazioni']);  
   }
-=======
-    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(/*result => this.gotoPrenotazioneFormList()*/);
-  }
-  
-  /*gotoPrenotazioneFormList(){
-    this.router.navigate(['/prenotazioni']);  
-  }*/
->>>>>>> parent of 0e04424... Capito alcune cose riguardanti i controller, però mi manda tutti NULL
 
 }

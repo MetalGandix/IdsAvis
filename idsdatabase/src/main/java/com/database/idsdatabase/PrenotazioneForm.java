@@ -23,11 +23,6 @@ public class PrenotazioneForm{
 
     private String note;
 
-<<<<<<< HEAD
-=======
-	private String donazioneEmergenza;
-
->>>>>>> parent of 0e04424... Capito alcune cose riguardanti i controller, però mi manda tutti NULL
     public String getcentro() {
         return centro;
     }
@@ -93,11 +88,7 @@ public class PrenotazioneForm{
 
     @Override
 	public String toString(){
-<<<<<<< HEAD
         return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
-=======
-        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
->>>>>>> parent of 0e04424... Capito alcune cose riguardanti i controller, però mi manda tutti NULL
         
     }
 
