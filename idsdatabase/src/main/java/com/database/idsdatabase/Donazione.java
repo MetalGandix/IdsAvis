@@ -18,7 +18,7 @@ public class Donazione{
 		return id;
 	}
 
-	public void setid(final Long id) {
+	public void setid(final long id) {
 		this.id = id;
 	}
 
