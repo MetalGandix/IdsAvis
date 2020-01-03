@@ -11,21 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class AnalisiSangueController {
-
-    public AnalisiSangueController(AnalisiSangueRepository AnalisiSangueRepository) {
-        this.AnalisiSangueRepository = AnalisiSangueRepository;
+    public AnalisiSangueController(AnalisiSangueRepository analisisangueRepository) {
+        this.analisisangueRepository = analisisangueRepository;
     }
 
-    private AnalisiSangueRepository AnalisiSangueRepository;
+    private AnalisiSangueRepository analisisangueRepository;
 
     @GetMapping("/analisi")
-    public List<AnalisiSangue> getAnalisiSangue(){
-        List<AnalisiSangue>listaAnalisiSangue = (List<AnalisiSangue>) AnalisiSangueRepository.findAll();
-        return listaAnalisiSangue;
+    public List<AnalisiSangue> getAnalisi(){
+        return (List<AnalisiSangue>) analisisangueRepository.findAll();
+      
     }
 
     @PostMapping("/analisi")
-    void addAnalisiSangue(@RequestBody AnalisiSangue AnalisiSangue){
-        AnalisiSangueRepository.save(AnalisiSangue);
+    void addAnalisiSangue(@RequestBody AnalisiSangue analisisangue){
+        analisisangueRepository.save(analisisangue);
     }
 }

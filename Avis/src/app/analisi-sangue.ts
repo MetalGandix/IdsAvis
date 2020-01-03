@@ -1,3 +1,4 @@
 export class AnalisiSangue {
-    id: number;
+    id: String;
+    name: String;
 }
