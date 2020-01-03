@@ -12,14 +12,6 @@ export class UserService {
     this.userUrl = 'http://localhost:8080/user';
   }
 
-  /*login(callback, user) {
-		let obs = this.http.post(('user-form'), user)
-		obs.subscribe((data: Response) => {
-			this.usersUrl = data.user
-			callback(data)
-		})
-	}*/
- 
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.userUrl);
   }
