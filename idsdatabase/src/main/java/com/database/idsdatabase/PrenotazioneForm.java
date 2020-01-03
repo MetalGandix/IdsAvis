@@ -7,10 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
+
 public class PrenotazioneForm{
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
 
     private String centro;
 
@@ -21,30 +22,6 @@ public class PrenotazioneForm{
     private String statosalute;
 
     private String note;
-
-    private String donazioneEmergenza;
-    
-    public PrenotazioneForm(){
-
-    }
-
-    public PrenotazioneForm(final long id, final String centro, final String compleanno, final String telefono, final String statosalute, final String note, final String donazioneEmergenza){
-        this.id = id;
-        this.centro = centro;
-        this.compleanno = compleanno;
-        this.telefono = telefono;
-        this.statosalute = statosalute;
-        this.note = note;
-        this.donazioneEmergenza = donazioneEmergenza;
-    }
-
-    public long getid() {
-		return id;
-	}
-
-	public void setid(final Long id) {
-		this.id = id;
-	}
 
     public String getcentro() {
         return centro;
@@ -87,14 +64,6 @@ public class PrenotazioneForm{
         this.statosalute = statosalute;
     }
 
-    public String getdonazioneEmergenza() {
-		return donazioneEmergenza;
-	}
-
-	public void setdonazioneEmergenza(final String donazioneEmergenza) {
-		this.donazioneEmergenza = donazioneEmergenza;
-	}
-
     @ManyToOne
     private Donazione data;
 
@@ -119,7 +88,7 @@ public class PrenotazioneForm{
 
     @Override
 	public String toString(){
-        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
         
     }
 

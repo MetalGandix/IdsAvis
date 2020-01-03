@@ -1,9 +1,8 @@
 export class PrenotazioneForm {
-    id: number;
+    id: number
     centro: string;
     compleanno: string;
     telefono: string;
     statosalute: string;
     note: string;
-    donazioneEmergenza: string;
 }
