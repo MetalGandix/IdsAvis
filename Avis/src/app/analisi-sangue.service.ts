@@ -7,7 +7,7 @@ import { AnalisiSangue } from './analisi-sangue';
 })
 export class AnalisiSangueService {
   private AnalisiSangueUrl : string;
-  constructor(private http: HttpClient) {this.AnalisiSangueUrl = 'http://localhost:8080/analisiSangues'; }
+  constructor(private http: HttpClient) {this.AnalisiSangueUrl = 'http://localhost:8080/analisi'; }
 
   public findAll(): Observable<AnalisiSangue[]> {
     return this.http.get<AnalisiSangue[]>(this.AnalisiSangueUrl);

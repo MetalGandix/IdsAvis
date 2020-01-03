@@ -3,16 +3,14 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Id</th>
             <th scope="col">name</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let analisi of analisi">
-            <td>{{ analisisangue.id}}</td>
-            <td>{{ analisisangue.name}}</td>
-
+          <tr *ngFor="let AnalisiSangue of analisi">
+            <td>{{ AnalisiSangue.id}}</td>
+            <td>{{ AnalisiSangue.name}}</td>
           </tr>
         </tbody>
       </table>
