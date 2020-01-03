@@ -6,15 +6,14 @@ import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.componen
 import { LoginComponent } from './login/login.component';
 import { PrenotazioneFormListComponent } from './prenotazione-form-list/prenotazione-form-list.component';
 import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenotazione-form-vista.component';
-import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
+ 
 const routes: Routes = [
   { path: 'user', component: UserListComponent },
   { path: 'adduser', component: UserFormComponent },
   { path: 'login', component: LoginComponent },
   { path: 'pagina-accesso', component: PaginaAccessoComponent},
   { path: 'prenotazione-form-list', component: PrenotazioneFormListComponent},
-  { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent},
-  { path: 'analisi-sangue-list', component: AnalisiSangueListComponent}
+  { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent}
 ];
  
 @NgModule({
