@@ -12,6 +12,7 @@ export class PrenotazioneFormListComponent implements OnInit {
   isCollapsed = false;
 
   prenotazioni: PrenotazioneForm[];
+
   constructor(private prenotazioneFormService: PrenotazioneFormService) {
 
    }
@@ -21,4 +22,5 @@ export class PrenotazioneFormListComponent implements OnInit {
       this.prenotazioni = data;
     });
   }
+
 }
