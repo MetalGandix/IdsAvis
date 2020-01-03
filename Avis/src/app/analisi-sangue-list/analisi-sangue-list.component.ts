@@ -9,6 +9,7 @@ import { AnalisiSangueService } from '../analisi-sangue.service';
 })
 export class AnalisiSangueListComponent implements OnInit {
   
+  isCollapsed = false;
 
   analisi: AnalisiSangue[];
   constructor(private AnalisiSangueService: AnalisiSangueService) { }

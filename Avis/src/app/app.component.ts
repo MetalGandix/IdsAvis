@@ -11,6 +11,6 @@ export class AppComponent {
   title: string;
  
   constructor() {
-    this.title = 'Avis';
+    this.title = 'Spring Boot - Angular Application';
   }
 }
