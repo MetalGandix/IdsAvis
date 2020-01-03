@@ -24,7 +24,7 @@ public class PrenotazioneFormController {
         return listaPrenotazioneForm;
     }
 
-    @PostMapping("/prenotazioneForms")
+    @PostMapping("/prenotazioni")
     void addPrenotazioneForm(@RequestBody PrenotazioneForm prenotazioneForm){
         prenotazioneFormRepository.save(prenotazioneForm);
     }

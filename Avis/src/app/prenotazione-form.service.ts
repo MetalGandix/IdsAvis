@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PrenotazioneForm } from './prenotazione-form';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PrenotazioneFormService {
 
   private prenotazioneFormUrl : string;
 
   constructor(private http: HttpClient) { 
-    this.prenotazioneFormUrl = 'http://localhost:8080/prenotazioneForms';
+    this.prenotazioneFormUrl = 'http://localhost:8080/prenotazioni';
   }
 
   public findAll(): Observable<PrenotazioneForm[]> {
