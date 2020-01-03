@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { PrenotazioneForm } from '../prenotazione-form';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PrenotazioneFormService } from '../prenotazione-form.service';
@@ -8,23 +8,23 @@ import { PrenotazioneFormService } from '../prenotazione-form.service';
   templateUrl: './prenotazione-form-vista.component.html',
   styleUrls: ['./prenotazione-form-vista.component.css']
 })
-export class PrenotazioneFormVistaComponent{
+export class PrenotazioneFormVistaComponent {
 
   prenotazioneForm: PrenotazioneForm;
 
   constructor(
     private route: ActivatedRoute,
-      private router: Router,
-        private prenotazioneFormService: PrenotazioneFormService){
-           this.prenotazioneForm = new PrenotazioneForm();
-          }
+    private router: Router,
+    private prenotazioneFormService: PrenotazioneFormService) {
+    this.prenotazioneForm = new PrenotazioneForm();
+  }
 
-  onSubmit(){
+  onSubmit() {
     this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(/*result => this.gotoPrenotazioneFormList()*/);
   }
-  
-  /*gotoPrenotazioneFormList(){
-    this.router.navigate(['/prenotazioni']);  
+
+  /*gotoPrenotazioneFormList() {
+    this.router.navigate(['/prenotazioni']);
   }*/
 
 }
