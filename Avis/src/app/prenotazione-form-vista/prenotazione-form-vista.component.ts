@@ -20,11 +20,11 @@ export class PrenotazioneFormVistaComponent{
           }
 
   onSubmit(){
-    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(/*result => this.gotoPrenotazioneFormList()*/);
+    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(result => this.gotoPrenotazioneFormList());
   }
   
-  /*gotoPrenotazioneFormList(){
+  gotoPrenotazioneFormList(){
     this.router.navigate(['/prenotazioni']);  
-  }*/
+  }
 
 }
