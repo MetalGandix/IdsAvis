@@ -13,12 +13,21 @@ export class UserService {
   }
 
   /*login(callback, user) {
+<<<<<<< HEAD
   let obs = this.http.post(('user-form'), user)
   obs.subscribe((data: Response) => {
    this.usersUrl = data.user
    callback(data)
   })
  }*/
+=======
+		let obs = this.http.post(('user-form'), user)
+		obs.subscribe((data: Response) => {
+			this.usersUrl = data.user
+			callback(data)
+		})
+	}*/
+>>>>>>> parent of 057c195... analisiSangue
  
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.userUrl);

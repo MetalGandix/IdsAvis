@@ -11,7 +11,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AvisComponent } from './avis/avis.component';
-import { DottoreComponent } from './dottore-login/dottore.component';
+import { DottoreComponent } from './dottore/dottore.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -46,8 +46,6 @@ import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.componen
 import { PrenotazioneFormListComponent } from './prenotazione-form-list/prenotazione-form-list.component';
 import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenotazione-form-vista.component';
 import { PrenotazioneFormService } from './prenotazione-form.service';
-import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
-import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
 
 @NgModule({
   declarations: [
@@ -73,8 +71,6 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
     PaginaAccessoComponent,
     PrenotazioneFormListComponent,
     PrenotazioneFormVistaComponent,
-    PaginaDottoreComponent,
-    AnalisiSangueListComponent,
     
   
   ],
@@ -95,7 +91,7 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
       { path: 'prenotazione', component: PrenotazioneComponent },
       { path: 'avis', component: AvisComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'dottore-login', component: DottoreComponent },
+      { path: 'dottore', component: DottoreComponent },
       { path: 'form-donatore', component: FormDonatoreComponent},
       { path: 'info-donazione', component: InfoDonazioneComponent},
       { path: 'sangue', component: SangueComponent},
@@ -104,9 +100,6 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
       { path: 'user-form', component: UserFormComponent},
       { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
       { path: 'come-donare', component: ComeDonareComponent},
-      { path: 'dottore', component: PaginaDottoreComponent},
-      { path: 'analisi-sangue-list', component: AnalisiSangueListComponent}
-      
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
