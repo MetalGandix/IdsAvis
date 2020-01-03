@@ -1,4 +1,3 @@
-
 <div class ="container">
   <div class="titolo" style="text-align: center;margin-top: 30px; font-size: 30px;">
 <p><b>FORM PER LA DONAZIONE DEL SANGUE</b></p>
@@ -6,19 +5,30 @@
 <div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #prenotazioneForm="ngForm">
+
+          <div class="form-group">
+              <label for="centro">Centro</label>
+              <input type="text" [(ngModel)]="prenotazioneForm.centro" 
+                class="form-control"
+                id="centro"
+                name="centro"
+                placeholder="Inserisci il centro dove effettuare la donazione"
+                required #centro="ngModel">
+              <div [hidden]="!centro.pristine" class="alert alert-danger">Devi inserire il tuo numero di telefono</div>
+            </div>
         
-        <div class="form-group">
+        <!--<div class="form-group">
          <label for="centro">Centro</label>
         <select [(ngModel)]="prenotazioneForm.centro" class="form-control" id="centro" name="centro"
-        placeholder="Inserisci il tuo centro" required #centro="ngModel" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-          <option selected value="Italia">Avis Ancona</option>
+         required #centro="ngModel">
+          <option value="Italia">Avis Ancona</option>
           <option value="Romania">Avis Civitanova Marche</option>
           <option value="Spagna">Avis Comunale di Fermo</option>
           <option value="Germania">Avis Senigallia</option>
           <option value="Austria">Avis Fabriano</option>
         </select>
         <div [hidden]="!centro.pristine" class="alert alert-danger">Devi inserire un centro</div>
-      </div>
+      </div>-->
        
       <div class="form-group">
           <label for="centro">Data</label>
@@ -34,18 +44,6 @@
           bsDatepicker [(bsValue)]="myDateValue">
         <div [hidden]="!compleanno.pristine" class="alert alert-danger">Inserisci la data per la donazione</div>  
     </div>
-
-        <!--<div class="form-group">
-          <label for="compleanno">Data di Nascita</label>
-          <input type="text" [(ngModel)]="prenotazioneForm.compleanno" 
-            class="form-control"
-            id="compleanno"
-            name="compleanno"
-            placeholder="Inserisci la tua data di nascita"
-            required #compleanno="ngModel">
-          <div [hidden]="!compleanno.pristine" class="alert alert-danger">Devi inserire la tua data di nascita</div> 
-        </div>
-      -->
 
         <div class="form-group">
             <label for="telefono">Numero di telefono</label>
@@ -80,7 +78,15 @@
             <div [hidden]="!note.pristine" class="alert alert-danger">Devi inserire una nota</div>
           </div>
 
-
+          <div class="form-group">
+            <label for="donazioneEmergenza">Donazione d'emergenza</label>
+           <select [(ngModel)]="prenotazioneForm.donazioneEmergenza" class="form-control" id="donazioneEmergenza" name="donazioneEmergenza"
+           placeholder="Inserisci la risposta alla donazione d'emergenza" required #donazioneEmergenza="ngModel">
+             <option value="SI">SI</option>
+             <option value="NO">NO</option>
+           </select>
+           <div [hidden]="!donazioneEmergenza.pristine" class="alert alert-danger">Devi inserire una risposta</div>
+         </div>
 
         <button type="submit" [disabled]="!userForm.form.valid" 
           class="btn btn-info">Submit</button>

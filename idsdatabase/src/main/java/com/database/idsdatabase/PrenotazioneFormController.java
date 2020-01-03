@@ -18,13 +18,13 @@ public class PrenotazioneFormController {
 
     private PrenotazioneFormRepository prenotazioneFormRepository;
 
-    @GetMapping("/prenotazioni")
+    @GetMapping("/prenotazioneForms")
     public List<PrenotazioneForm> getPrenotazioneForm(){
         List<PrenotazioneForm>listaPrenotazioneForm = (List<PrenotazioneForm>) prenotazioneFormRepository.findAll();
         return listaPrenotazioneForm;
     }
 
-    @PostMapping("/prenotazioni")
+    @PostMapping("/prenotazioneForms")
     void addPrenotazioneForm(@RequestBody PrenotazioneForm prenotazioneForm){
         prenotazioneFormRepository.save(prenotazioneForm);
     }
