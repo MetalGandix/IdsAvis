@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'login',
@@ -6,13 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
-    
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
+
+    model: any = {};
+
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private http: HttpClient
+    ) { }
+
+    ngOnInit() {
+        sessionStorage.setItem('token', '');
     }
 
-    constructor(){
-
+    login() {
+        let url = 'http://localhost:8080/login';
+        this.http.post<Observable<boolean>>(url, {
+            name: this.model.name,
+            password: this.model.password
+        }).subscribe(isValid => {
+            if (isValid) {
+                sessionStorage.setItem('token', btoa(this.model.name + ':' + this.model.password));
+                this.router.navigate(['']);
+            } else {
+                alert("Authentication failed.")
+            }
+        });
     }
-
 }
