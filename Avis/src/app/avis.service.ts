@@ -19,4 +19,8 @@ export class AvisService {
    public save(orarioDonazione: OrarioDonazione){
      return this.http.post<OrarioDonazione>(this.avisUrl, orarioDonazione);
    }
+
+   public delete(orarioDonazioneDel){
+     return this.http.delete<OrarioDonazione>(this.avisUrl, orarioDonazioneDel);
+   }
 }
