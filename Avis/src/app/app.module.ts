@@ -46,8 +46,9 @@ import { PaginaAccessoComponent } from './pagina-accesso/pagina-accesso.componen
 import { PrenotazioneFormListComponent } from './prenotazione-form-list/prenotazione-form-list.component';
 import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenotazione-form-vista.component';
 import { PrenotazioneFormService } from './prenotazione-form.service';
-import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
 import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
+import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
+
 
 @NgModule({
   declarations: [
@@ -73,8 +74,10 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
     PaginaAccessoComponent,
     PrenotazioneFormListComponent,
     PrenotazioneFormVistaComponent,
-    PaginaDottoreComponent,
     AnalisiSangueListComponent,
+    DottoreComponent,
+    PaginaDottoreComponent,
+    
     
   
   ],
@@ -104,8 +107,9 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
       { path: 'user-form', component: UserFormComponent},
       { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
       { path: 'come-donare', component: ComeDonareComponent},
-      { path: 'dottore', component: PaginaDottoreComponent},
-      { path: 'analisi-sangue-list', component: AnalisiSangueListComponent}
+      { path: 'dottore', component: DottoreComponent},
+      { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
+      { path: 'pagina-dottore', component: PaginaDottoreComponent}
       
     ]),
     CarouselModule.forRoot(),
