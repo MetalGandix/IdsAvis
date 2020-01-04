@@ -1,1 +1,23 @@
-<p>avis-orari works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Giorno</th>
+            <th scope="col">Ora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orarioDonazione of orari">
+            <td>{{ orarioDonazione.id}}</td>
+            <td>{{ orarioDonazione.data }}</td>
+            <td>{{ orarioDonazione.ora }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container" style="margin-bottom: 30px;">
+    <a routerLink="/avis-page" class="btn btn-info">Torna alla pagina principale Avis</a>
+  </div>

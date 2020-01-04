@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrarioDonazione } from '../orario-donazione';
+import { AvisService } from '../avis.service';
 
 @Component({
   selector: 'app-avis-orari',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvisOrariComponent implements OnInit {
 
-  constructor() { }
+  isCollapsed = false;
+
+  orari: OrarioDonazione[];
+  constructor(private orarioDonazioneService: AvisService) { }
 
   ngOnInit() {
+    this.orarioDonazioneService.findAll().subscribe(data =>{
+      this.orari = data;
+    })
   }
 
 }

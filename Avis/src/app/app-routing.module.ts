@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { PrenotazioneFormListComponent } from './prenotazione-form-list/prenotazione-form-list.component';
 import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenotazione-form-vista.component';
 import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
+import { AvisOrariComponent } from './avis-orari/avis-orari.component';
+import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
 const routes: Routes = [
   { path: 'user', component: UserListComponent },
   { path: 'adduser', component: UserFormComponent },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'pagina-accesso', component: PaginaAccessoComponent},
   { path: 'prenotazione-form-list', component: PrenotazioneFormListComponent},
   { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent},
-  { path: 'analisi-sangue-list', component: AnalisiSangueListComponent}
+  { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
+  { path: 'avis-orari', component: AvisOrariComponent},
+  { path: 'avis-mettiorari', component: AvisMettiorariComponent}
 ];
  
 @NgModule({

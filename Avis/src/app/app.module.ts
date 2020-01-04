@@ -50,6 +50,7 @@ import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.componen
 import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
 import { AvisOrariComponent } from './avis-orari/avis-orari.component';
 import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
+import { AvisService } from './avis.service';
 
 @NgModule({
   declarations: [
@@ -109,8 +110,8 @@ import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.compo
       { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
       { path: 'come-donare', component: ComeDonareComponent},
       { path: 'dottore', component: PaginaDottoreComponent},
-      { path: 'analisi-sangue-list', component: AnalisiSangueListComponent}
-      
+      { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
+      { path: 'avis-page', component: AvisPageComponent}
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
@@ -126,7 +127,7 @@ import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.compo
     SortableModule.forRoot()
 
   ],
-  providers: [UserService,PrenotazioneFormService],
+  providers: [UserService,PrenotazioneFormService,AvisService],
   bootstrap: [AppComponent]
 })
 
