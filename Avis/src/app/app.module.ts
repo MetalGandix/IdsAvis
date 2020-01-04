@@ -48,6 +48,8 @@ import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenot
 import { PrenotazioneFormService } from './prenotazione-form.service';
 import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
 import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
+import { AvisOrariComponent } from './avis-orari/avis-orari.component';
+import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
     PrenotazioneFormVistaComponent,
     PaginaDottoreComponent,
     AnalisiSangueListComponent,
+    AvisOrariComponent,
+    AvisMettiorariComponent,
     
   
   ],
