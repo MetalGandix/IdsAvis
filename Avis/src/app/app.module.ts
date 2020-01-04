@@ -10,7 +10,7 @@ import { PrenotazioneComponent } from './prenotazione/prenotazione.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
-import { AvisComponent } from './avis/avis.component';
+import { AvisComponent } from './avis-login/avis.component';
 import { DottoreComponent } from './dottore-login/dottore.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
