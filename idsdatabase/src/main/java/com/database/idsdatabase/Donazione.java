@@ -1,6 +1,8 @@
 package com.database.idsdatabase;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -8,6 +10,7 @@ import javax.persistence.ManyToOne;
 public class Donazione{
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 
     private String data;

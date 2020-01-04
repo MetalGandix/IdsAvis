@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OrarioDonazione } from '../orario-donazione';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AvisService } from '../avis.service';
 
 @Component({
   selector: 'app-avis-mettiorari',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./avis-mettiorari.component.css']
 })
 export class AvisMettiorariComponent implements OnInit {
-
-  constructor() { }
-
+  
   ngOnInit() {
+  }
+
+
+  donazione: OrarioDonazione;
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private avisService: AvisService) {
+    this.donazione = new OrarioDonazione();
+  }
+
+
+  onSubmit() {
+    this.avisService.save(this.donazione).subscribe()
   }
 
 }
