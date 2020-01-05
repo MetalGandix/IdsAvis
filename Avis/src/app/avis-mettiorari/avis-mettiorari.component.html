@@ -5,6 +5,16 @@
 </div>
 <div class="card-body">
     <form (ngSubmit)="onSubmit()" #donazioneForm="ngForm">
+        <div class="row"  *ngIf="showMsg">
+            <div class="col-xs-12">
+              <div class="alert alert-success">
+              <p>
+                  <strong>Orario aggiunto con successo!</strong>
+              </p>
+              <a routerLink="/avis-orari" routerLinkActive="active">Clicca qua per vedere la lista degli orari.</a>
+            </div>
+            </div>
+          </div>
         <div class="form-group">
             <label for="data">Data</label>
             <input type="text" [(ngModel)]="donazione.data" class="form-control" id="data" name="data"

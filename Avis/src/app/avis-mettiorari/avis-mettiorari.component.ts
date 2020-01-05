@@ -15,6 +15,7 @@ export class AvisMettiorariComponent implements OnInit {
 
 
   donazione: OrarioDonazione;
+  showMsg: boolean = false;
 
 
   constructor(
@@ -26,7 +27,8 @@ export class AvisMettiorariComponent implements OnInit {
 
 
   onSubmit() {
-    this.avisService.save(this.donazione).subscribe()
+    this.avisService.save(this.donazione).subscribe(data =>{this.showMsg= true;
+    })
   }
 
 }
