@@ -6,14 +6,15 @@
           <th scope="col">Id</th>
           <th scope="col">Giorno</th>
           <th scope="col">Ora</th>
+          <th scope="col">Operazione</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let orarioDonazione of orari">
           <td>{{ orarioDonazione.id}}</td>
           <td>{{ orarioDonazione.data }}</td>
-          <td>{{ orarioDonazione.ora }}<button class="del" value="delete" id="delete" (click)="cancellaOrario()">Elimina orario</button>
-          </td>
+          <td>{{ orarioDonazione.ora }}
+          </td><button class="btn btn-danger" (click)="cancellaOrario()">Elimina orario</button>
         </tr>
       </tbody>
     </table>

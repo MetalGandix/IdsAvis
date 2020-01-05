@@ -11,25 +11,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AvisOrariComponent implements OnInit {
 
+
+
   isCollapsed = false;
 
   orari: OrarioDonazione[];
   donazione: OrarioDonazione;
-  
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private orarioDonazioneService: AvisService) {
-    this.donazione = new OrarioDonazione();
-   }
+    private orarioDonazioneService: AvisService) { }
 
-  cancellaOrario(){
-    this.orarioDonazioneService.delete(this.donazione).subscribe()
+  cancellaOrario(orari: OrarioDonazione): void {
+    this.orarioDonazioneService.delete(orari)
+      .subscribe(data => {
+        this.orari = this.orari.filter(data => data !== orari);
+      });
   }
 
   ngOnInit() {
-    this.orarioDonazioneService.findAll().subscribe(data =>{
+    this.orarioDonazioneService.findAll().subscribe(data => {
       this.orari = data;
     })
   }
