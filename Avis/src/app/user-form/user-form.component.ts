@@ -12,6 +12,8 @@ import { User } from '../user';
 export class UserFormComponent {
 
   user: User;
+  showMsg: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +23,8 @@ export class UserFormComponent {
   }
 
   onSubmit() {
-    this.userService.save(this.user).subscribe(/*result => this.gotoUserList()*/);
+    this.userService.save(this.user).subscribe(data =>{this.showMsg= true;
+    })
   }
 
   /*gotoUserList() {

@@ -11,6 +11,8 @@ import { PrenotazioneFormService } from '../prenotazione-form.service';
 export class PrenotazioneFormVistaComponent {
 
   prenotazioneForm: PrenotazioneForm;
+  showMsg: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +22,8 @@ export class PrenotazioneFormVistaComponent {
   }
 
   onSubmit() {
-    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(/*result => this.gotoPrenotazioneFormList()*/);
+    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(data =>{this.showMsg= true;
+    })
   }
 
   /*gotoPrenotazioneFormList() {

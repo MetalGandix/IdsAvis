@@ -48,32 +48,20 @@
       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" 
       [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
       <div id="collapseBasic" [collapse]="isCollapsed" style="margin-top: 20px;">
-        <div class="well well-lg card card-block card-header">Ti sei registrato correttamente</div>
       </div>
+
+      <div class="row" style="margin-top: 30px; width: 350px; height: 350px;" *ngIf="showMsg">
+          <div class="col-xs-12">
+            <div class="alert alert-success">
+            <p>
+                <strong>La registrazione è andata a buon fine.</strong>
+            </p>
+            <a routerLink="/login" >Vai alla pagina di login</a>
+          </div>
+          </div>
+        </div>
+
     </form>
   </div>
 </body>
 
-
-
-
-<!--<div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card bg-dark my-5">
-            <div class="card-body">
-              <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-              <ul class="text-center list-inline py-3">
-                <li class="list-inline-item">
-                  <a routerLink="/users" class="btn btn-info">List Users</a>
-                    </li>
-                <li class="list-inline-item">
-                  <a routerLink="/adduser" class="btn btn-info">Add User</a>
-                    </li>
-              </ul>
-            </div>
-          </div>
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-    </div>-->

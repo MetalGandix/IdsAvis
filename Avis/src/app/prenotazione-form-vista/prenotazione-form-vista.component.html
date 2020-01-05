@@ -6,17 +6,6 @@
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #prenotazioneFormForm="ngForm">
 
-          <!--<div class="form-group">
-              <label for="centro">Centro</label>
-              <input type="text" [(ngModel)]="prenotazioneForm.centro" 
-                class="form-control"
-                id="centro"
-                name="centro"
-                placeholder="Inserisci il centro dove effettuare la donazione"
-                required #centro="ngModel">
-              <div [hidden]="!centro.pristine" class="alert alert-danger">Devi inserire il centro</div>
-            </div>-->
-        
         <div class="form-group">
          <label for="centro">Centro</label>
         <select [(ngModel)]="prenotazioneForm.centro" class="form-control" id="centro" name="centro"
@@ -90,6 +79,16 @@
 
         <button type="submit" [disabled]="!userForm.form.valid" 
           class="btn btn-info">Submit</button>
+
+          <div class="row" style="margin-top: 30px;" *ngIf="showMsg">
+              <div class="col-xs-12">
+                <div class="alert alert-success">
+                <p>
+                    <strong>La prenotazione è stata registrata.</strong>
+                </p>
+              </div>
+              </div>
+            </div>
       </form>
     </div>
   </div>
