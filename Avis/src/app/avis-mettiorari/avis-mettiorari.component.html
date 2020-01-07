@@ -18,23 +18,41 @@
         <div class="form-group">
             <label for="data">Data</label>
             <input type="text" [(ngModel)]="donazione.data" class="form-control" id="data" name="data"
-                placeholder="Inserisci la nuova data" required #data="ngModel">
+                placeholder="Inserisci la nuova data" required #data="ngModel" required minlength="10" required maxlength="10">
+                <div *ngIf="data.invalid && (data.dirty || data.touched)" class="alert alert-danger">
+                    <div *ngIf="data.errors.required">
+                        Devi inserire una data
+                    </div>
+                <div *ngIf="data.errors.minlength || data.errors.maxlength">
+                    La data deve essere di almeno 10 caratteri (Esempio: 05/12/2019)
+                </div>
+                </div>
         </div>
 
         <div class="form-group">
                 <label for="ora">Ora</label>
                 <input type="text" [(ngModel)]="donazione.ora" class="form-control" id="ora" name="ora"
-                    placeholder="Inserisci il nuovo orario" required #ora="ngModel">
+                    placeholder="Inserisci il nuovo orario" required #ora="ngModel" required minlength="5" required maxlength="5">
+                    <div *ngIf="ora.invalid && (ora.dirty || ora.touched)" class="alert alert-danger">
+                        <div *ngIf="ora.errors.required">
+                            Devi inserire un'ora
+                        </div>
+                        <div *ngIf="ora.errors.minlength || ora.errors.maxlength">
+                           L'ora deve essere lunga almeno 5 caratteri (Esempio: 11:00)
+                        </div>
+                      </div>
+
             </div>
+
             <div class="container" style="justify-content: center; margin-top: 30px;">
-            <button type="submit" [disabled]="!userForm.form.valid" 
+            <button type="submit"  [disabled]="!donazioneForm.form.valid"
           class="btn btn-info">Submit</button>
         </div>
       </form>
 
 </div>
 
-<!--<div class="container" style="margin-bottom: 30px;">
+<div class="container" style="margin-bottom: 30px;">
         <a routerLink="/avis-page" class="btn btn-info">Torna alla pagina principale Avis</a>
       </div>
-    -->
+    

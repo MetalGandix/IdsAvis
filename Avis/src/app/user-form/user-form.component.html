@@ -3,7 +3,7 @@
     <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="text-align: -webkit-center; ">
 
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Name*</label>
         <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name" name="name"
           placeholder="Enter your name" required #name="ngModel">
           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
@@ -17,7 +17,7 @@
     </div>
 
       <div class="form-group">
-        <label for="lastName">Cognome</label>
+        <label for="lastName">Cognome*</label>
         <input type="text" [(ngModel)]="user.lastname" required minlength="2" class="form-control" id="lastName" name="lastName"
           placeholder="Enter your last name" required #lastName="ngModel">
           <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
         <input type="text" [(ngModel)]="user.email" class="form-control" id="email" name="email"
           placeholder="Enter your email address" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="form-group">
-        <label for="stato">Stato</label>
+        <label for="stato">Stato*</label>
           <select [(ngModel)]="user.stato" class="form-control" id="stato" name="stato"
           placeholder="Enter your CAP" required #stato="ngModel" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
             <option selected value="Ancona">Ancona 60131</option>
@@ -54,11 +54,16 @@
             <option value="Macerata">Macerata 62100</option>
             <option value="Pesaro e Urbino">Pesaro e Urbino 61049</option>
           </select>
-          <div [hidden]="!stato.pristine" class="alert alert-danger">Seleziona il tuo CAP</div>
+          <div *ngIf="stato.invalid && (stato.dirty || stato.touched)" class="alert alert-danger">
+              <div *ngIf="stato.errors.required">
+                  Devi inserire il tuo CAP.
+              </div>
+            </div>
+
         </div>
        
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Password*</label>
         <input type="password" [(ngModel)]="user.password"  required minlength="7" class="form-control" id="password" name="password"
           placeholder="Enter your password" required #password="ngModel">
           <div *ngIf="password.invalid && (lastName.dirty || password.touched)" class="alert alert-danger">
@@ -76,6 +81,10 @@
       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" 
       [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
       <div id="collapseBasic" [collapse]="isCollapsed" style="margin-top: 20px;">
+      </div>
+
+      <div class="container">
+        * = campo obbligatorio
       </div>
 
       <div class="row" style="margin-top: 30px; width: 350px; height: 350px;" *ngIf="showMsg">
