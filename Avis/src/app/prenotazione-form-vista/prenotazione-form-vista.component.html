@@ -11,10 +11,10 @@
         <select [(ngModel)]="prenotazioneForm.centro" class="form-control" id="centro" name="centro"
          required #centro="ngModel">
           <option value="Avis Ancona">Avis Ancona</option>
-          <option value="Avis Civitanova Marche">Avis Civitanova Marche</option>
+          <option value="Avis Ascoli Piceno">Avis Ascoli Piceno</option>
           <option value="Avis Comunale di Fermo">Avis Comunale di Fermo</option>
-          <option value="Avis Senigallia">Avis Senigallia</option>
-          <option value="Avis Fabriano">Avis Fabriano</option>
+          <option value="Avis Macerata">Avis Macerata</option>
+          <option value="Avis Pesaro e Urbino">Avis Pesaro e Urbino</option>
         </select>
         <div [hidden]="!centro.pristine" class="alert alert-danger">Devi inserire un centro</div>
       </div>
@@ -31,7 +31,11 @@
           [maxDate]="maxDate"
           #dp="bsDatepicker"
           bsDatepicker [(bsValue)]="myDateValue">
-        <div [hidden]="!compleanno.pristine" class="alert alert-danger">Inserisci la data per la donazione</div>  
+          <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="alert alert-danger">
+          <div *ngIf="telefono.errors.required">
+              Devi inserire una data dal calendario
+          </div>
+          </div>
     </div>
 
         <div class="form-group">
@@ -41,19 +45,31 @@
               id="telefono"
               name="telefono"
               placeholder="Inserisci il tuo numero di telefono"
+              required minlength="8"
               required #telefono="ngModel">
-            <div [hidden]="!telefono.pristine" class="alert alert-danger">Devi inserire il tuo numero di telefono</div>
+              <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="alert alert-danger">
+                  <div *ngIf="telefono.errors.required">
+                      Devi scrivere il tuo numero di telefono
+                  </div>
+                <div *ngIf="telefono.errors.minlength">
+                Il numero di telefono deve essere lungo almeno 2 caratteri
+            </div>
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="statosalute">Stato di Salute</label>
+            <label for="statosalute">Hai avuto problemi da evidenziare?</label>
             <input type="text" [(ngModel)]="prenotazioneForm.statosalute" 
               class="form-control"
               id="statosalute"
               name="statosalute"
               placeholder="Scrivi qua il tuo stato di salute"
               required #statosalute="ngModel">
-            <div [hidden]="!statosalute.pristine" class="alert alert-danger">Devi inserire il tuo stato di salute</div>
+              <div *ngIf="statosalute.invalid && (statosalute.dirty || statosalute.touched)" class="alert alert-danger">
+                  <div *ngIf="statosalute.errors.required">
+                      Scrivi se hai avuto problemi, se non ne hai avuti scrivi: niente
+                  </div>
+                  </div>
           </div>
 
           <div class="form-group">
@@ -64,7 +80,6 @@
               name="note"
               placeholder="Scrivi qua una nota"
               required #note="ngModel">
-            <div [hidden]="!note.pristine" class="alert alert-danger">Devi inserire una nota</div>
           </div>
 
           <div class="form-group">
@@ -77,14 +92,16 @@
            <div [hidden]="!donazioneEmergenza.pristine" class="alert alert-danger">Devi inserire una risposta</div>
          </div>
 
-        <button type="submit" [disabled]="!userForm.form.valid" 
-          class="btn btn-info">Submit</button>
+         <button type="submit" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" 
+      [disabled]="!prenotazioneFormForm.form.valid" class="btn btn-info">Submit</button>
 
           <div class="row" style="margin-top: 30px;" *ngIf="showMsg">
               <div class="col-xs-12">
                 <div class="alert alert-success">
                 <p>
-                    <strong>La prenotazione è stata registrata.</strong>
+                    <strong>La prenotazione è stata registrata.
+                    </strong>
                 </p>
               </div>
               </div>
