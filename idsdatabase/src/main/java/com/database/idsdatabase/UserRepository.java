@@ -8,5 +8,7 @@ import com.database.idsdatabase.User;
 // CRUD refers Create, Read, Update, Delete
 
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    
      
 }
