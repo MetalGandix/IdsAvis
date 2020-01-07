@@ -1,16 +1,18 @@
 <!-- QUESTA è LA PAGINA CHE GESTISCE LA TOOLBAR, COL ROUTERLINK MI CI SPOSTO NEL SITO -->
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
+<nav class="navbar navbar-expand-lg navbar-light" style="justify-content: center; background-color: #000000;">
+    <a class="navbar-brand"></a>
   <a class="navbar-brand" routerLink="/home" routerLinkActive="active" style="font-size: 24px; color: white;">
     <img src="assets/icons/Logo-Avis-Brescia1.png" >
   </a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" style="    background-color: rgb(38, 119, 248);"></span>
+  <button class="navbar-toggler " type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarNavAltMarkup"
+  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style="background-color: white;"></span>
   </button>
 
-  <div class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarNavAltMarkup">
+    
+    <ul class="navbar-nav mr-auto" style="align-items: center;">
       
       <li class="nav-item active">
         <a class="nav-link" routerLink="/donare" routerLinkActive="active" style="font-size: 24px ; color: white; ">Donazione
@@ -27,7 +29,6 @@
             <span class="sr-only">(current)</span></a>
         </li>
 
-      <li>
       <div class="btn-group" dropdown>
         <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" style="font-size: 24px; color: white; ">
           Login <span class="caret"></span>
@@ -50,7 +51,6 @@
             </button>
         </ul>
       </div>
-    </li>
 
     <li class="nav-item active">
         <a class="nav-link" routerLink="/sede" routerLinkActive="active" style="font-size: 24px ; color: white; ">Cerca la tua sede
