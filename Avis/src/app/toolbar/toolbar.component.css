@@ -3,3 +3,8 @@
         height: auto;
         max-width: 100%;
     }
+
+    .active{
+        color:rgb(200, 213, 255)!important;
+    
+    }
