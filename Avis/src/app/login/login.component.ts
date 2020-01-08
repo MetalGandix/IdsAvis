@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
     selector: 'login',
@@ -9,30 +11,33 @@ import { Component, OnInit } from '@angular/core';
 
 export class LoginComponent implements OnInit {
 
-    //model: any = {};
+    username = ''
+    password = ''
+    invalidLogin = false
 
-    constructor(
-       /* private route: ActivatedRoute,
-        private router: Router,
-        private http: HttpClient*/
-    ) { }
+    constructor(private router: Router,
+        private loginservice: AuthenticationService) { }
 
     ngOnInit() {
-      //  sessionStorage.setItem('token', '');
     }
 
-    /*login() {
-        let url = 'http://localhost:8080/user';
-        this.http.post<Observable<boolean>>(url, {
-            name: this.model.name,
-            password: this.model.password
-        }).subscribe(isValid => {
-            if (isValid) {
-                sessionStorage.setItem('token', btoa(this.model.name + ':' + this.model.password));
-                this.router.navigate(['']);
-            } else {
-                alert("Authentication failed.")
+    checkLogin() {
+        (this.loginservice.authenticate(this.username, this.password).subscribe(
+          data => {
+            this.router.navigate([''])
+            this.invalidLogin = false
+            alert("Bentornato Utente")
+          },
+          error => {
+            if(this.invalidLogin = true){
+              alert("Il login è errato")
             }
-        });
-    }*/
-}
+            
+    
+          }
+        )
+        );
+    
+      }
+    }
+    

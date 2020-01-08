@@ -9,13 +9,13 @@
                         <form class="form-signin">
                             <div class="form-label-group">
                                     <p style="color:rgb(184, 17, 17);">Username</p>
-                                <input type="username" id="inputUsername" class="form-control" placeholder="Email address"
+                                <input type="username" name="username" [(ngModel)]="username" id="inputUsername" class="form-control" placeholder="Email address"
                                     required autofocus>
                                 <label for="inputUsername"></label>
                             </div>
                             <div class="form-label-group">
                                 <p style="color:rgb(184, 17, 17);">Password</p>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                <input type="password" name="password" [(ngModel)]="password" id="inputPassword" class="form-control" placeholder="Password"
                                     required>
                                 <label for="inputPassword"></label>
                             </div>
@@ -23,16 +23,15 @@
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Remember password</label>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" routerLink="/form-donatore" type="submit">Sign
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=checkLogin() type="submit">Sign
                                 in</button>
                             <hr class="my-4">
                         </form>
 
                         <form class="form-signin">
-                            <button class="btn btn-lg btn-google btn-block text-uppercase" routerLink="/user-form"><i 
-                                    class="fab fa-google mr-2"></i>Registrati</button>
+                            <button class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Registrati</button>
                         </form>
-
+                        <!--routerLink="/user-form"-->
                     </div>
                 </div>
             </div>
