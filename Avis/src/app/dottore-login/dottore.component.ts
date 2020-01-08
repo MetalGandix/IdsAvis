@@ -19,21 +19,19 @@ export class DottoreComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginSbagliato(){
-    if(this.invalidLogin == true){
-      alert('Il login è errato')
-    }
-
-  }
 
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         this.router.navigate([''])
         this.invalidLogin = false
+        alert("Il login è corretto")
       },
       error => {
-        this.invalidLogin = true
+        if(this.invalidLogin = true){
+          alert("Il login è errato")
+        }
+        
 
       }
     )
