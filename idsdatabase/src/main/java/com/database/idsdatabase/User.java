@@ -14,6 +14,8 @@ public class User {
  
  private String name;
 
+ private String username;
+
  private String lastname;
 
  private String email;
@@ -28,9 +30,10 @@ public class User {
 
  }
 
- public User(final long id, final String name, final String lastname, final String email, final String stato, final String password, final Role ruolo, final boolean donazioneEmergenza) {
+ public User(final long id, final String name,final String username, final String lastname, final String email, final String stato, final String password, final Role ruolo, final boolean donazioneEmergenza) {
   this.id = id;
   this.name = name;
+  this.username = username;
   this.lastname = lastname;
   this.email = email;
   this.stato = stato;
@@ -55,9 +58,17 @@ public class User {
         this.name = name;
  }
 
+ public String getusername() {
+       return username;
+      }
+     
+public void setusername(final String username) {
+       this.username = username;
+}
+
  @Override
  public String toString(){
-  return "" + id + "" + name + "" + lastname + "" + stato + "" + email + "" + password + "" + ruolo.getid() + "" + ruolo.getrole() ;
+  return "" + id + "" + name + "" + "" + username + "" + lastname + "" + stato + "" + email + "" + password + "" + ruolo.getid() + "" + ruolo.getrole() ;
  }
 
  public String getemail() {
