@@ -25,7 +25,7 @@ export class DottoreComponent implements OnInit {
       data => {
         this.router.navigate([''])
         this.invalidLogin = false
-        alert("Il login è corretto")
+        alert("Bentornato dottore")
       },
       error => {
         if(this.invalidLogin = true){
