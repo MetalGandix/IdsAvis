@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,7 @@ import { AvisPageComponent } from './avis-page/avis-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './user-service.service';
 import { NgxLoadingModule } from 'ngx-loading';
 import { ChiPuoDonareComponent } from './chi-puo-donare/chi-puo-donare.component';
@@ -51,6 +52,8 @@ import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue
 import { AvisOrariComponent } from './avis-orari/avis-orari.component';
 import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
 import { AvisService } from './avis.service';
+import { BasicAuthHtppInterceptorService } from './service/basic-auth-httpp-interceptor.service';
+import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.component';
 
 @NgModule({
   declarations: [
@@ -80,12 +83,13 @@ import { AvisService } from './avis.service';
     AnalisiSangueListComponent,
     AvisOrariComponent,
     AvisMettiorariComponent,
-    
-  
+    LogoutDottoreComponent,
+
   ],
   
   imports: [
-    HttpClientModule, EmbedVideo.forRoot(),
+    HttpClientModule, 
+    EmbedVideo.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -127,7 +131,11 @@ import { AvisService } from './avis.service';
     SortableModule.forRoot()
 
   ],
-  providers: [UserService,PrenotazioneFormService,AvisService],
+  providers: [UserService,PrenotazioneFormService,AvisService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 
