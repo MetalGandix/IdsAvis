@@ -2,6 +2,21 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="text-align: -webkit-center; ">
 
+        <div class="form-group">
+            <label for="userName">Username*</label>
+            <input type="text" [(ngModel)]="user.username" required minlength="2" class="form-control" id="userName" name="userName"
+              placeholder="Enter your username" required #username="ngModel">
+              <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                  <div *ngIf="username.errors.required">
+                      Devi scrivere l'username.
+                  </div>
+                  <div *ngIf="username.errors.minlength">
+                      Il nome deve essere lungo almeno 2 caratteri.
+                  </div>
+              </div>
+        </div>
+    
+
       <div class="form-group">
         <label for="name">Name*</label>
         <input type="text" [(ngModel)]="user.name" required minlength="2" class="form-control" id="name" name="name"
@@ -38,14 +53,14 @@
               <div *ngIf="email.errors.required">
                   Devi scrivere una e-mail.
               </div>
-              <div *ngIf = "email.errors?.pattern && email.touched">
+              <div *ngIf = "email.errors?.pattern">
                  L'email non sembra essere corretta.
               </div>
           </div>
       </div>
 
       <div class="form-group">
-        <label for="stato">Stato*</label>
+        <label for="stato">CAP*</label>
           <select [(ngModel)]="user.stato" class="form-control" id="stato" name="stato"
           placeholder="Enter your CAP" required #stato="ngModel" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
             <option selected value="Ancona">Ancona 60131</option>
