@@ -1,22 +1,70 @@
 <div class="Divisore2" style="margin-top: 30px;">
-      <div style="TEXT-ALIGN: CENTER ;">
-          <h3>Analisi del Sangue</h3>
-      </div>
+  <div style="TEXT-ALIGN: CENTER ;">
+    <h3>Analisi del Sangue</h3>
+  </div>
 
 
-<div class="card my-5">
+  <div class="card my-5">
     <div class="card-body">
       <table class="table table-hover table-bordered">
         <thead>
           <tr>
             <th scope="col">Id</th>
-            <th scope="col">name</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Globuli Rossi</th>
+            <th scope="col">Globuli Bianchi</th>
+            <th scope="col">Emoglobina</th>
+            <th scope="col">Ematocrito</th>
+            <th scope="col">Mcv(Volume corpuscolare)</th>
+            <th scope="col">Mch(HB corpuscolare)</th>
+            <th scope="col">Mchc(Conc HB media)</th>
+            <th scope="col">Piastrine</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let AnalisiSangue of analisi">
             <td>{{ AnalisiSangue.id}}</td>
             <td>{{ AnalisiSangue.name}}</td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.globuliRossi}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.globuliBianchi}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.emoglobina}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.ematocrito}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.mcv}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.mch}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.mchc}}
+              </button>
+            </td>
+            <td>
+              <button [style.background-color]="toggle ? 'white' : 'red'" (click)="enableDisableRule()">
+                {{ AnalisiSangue.piastrine}}
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

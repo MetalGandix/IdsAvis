@@ -13,6 +13,15 @@ export class AnalisiSangueListComponent implements OnInit {
   analisi: AnalisiSangue[];
   constructor(private AnalisiSangueService: AnalisiSangueService) { }
 
+
+  toggle = true;
+  status = 'Enable'; 
+
+  enableDisableRule(analisi) {
+      this.toggle = !this.toggle;
+      this.status = this.toggle ? 'Enable' : 'Disable';
+  }
+
   ngOnInit() {
     this.AnalisiSangueService.findAll().subscribe(data =>{
       this.analisi = data;
