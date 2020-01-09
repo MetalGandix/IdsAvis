@@ -14,13 +14,56 @@ export class AnalisiSangueListComponent implements OnInit {
   constructor(private AnalisiSangueService: AnalisiSangueService) { }
 
 
-  toggle = true;
+  toggleGlobuliRossi = true;
+  toggleGlobuliBianchi = true;
+  toggleEmoglobina = true;
+  toggleEmatocrito = true;
+  toggleMcv = true;
+  toggleMch = true;
+  toggleMchc = true;
+  togglePiastrine = true;
+  
   status = 'Enable'; 
 
-  enableDisableRule(analisi) {
-      this.toggle = !this.toggle;
-      this.status = this.toggle ? 'Enable' : 'Disable';
+  enableDisableRuleGlobuliRossi() {
+      this.toggleGlobuliRossi = !this.toggleGlobuliRossi;
+      this.status = this.toggleGlobuliRossi ? 'Enable' : 'Disable';
   }
+
+  enableDisableRuleGlobuliBianchi() {
+    this.toggleGlobuliBianchi = !this.toggleGlobuliBianchi;
+    this.status = this.toggleGlobuliBianchi ? 'Enable' : 'Disable';
+}
+
+enableDisableRuleEmoglobina() {
+  this.toggleEmoglobina = !this.toggleEmoglobina;
+  this.status = this.toggleEmoglobina ? 'Enable' : 'Disable';
+}
+
+enableDisableRuleEmatocrito() {
+  this.toggleEmatocrito = !this.toggleEmatocrito;
+  this.status = this.toggleEmatocrito ? 'Enable' : 'Disable';
+}
+
+enableDisableRuleMcv() {
+  this.toggleMcv = !this.toggleMcv;
+  this.status = this.toggleMcv ? 'Enable' : 'Disable';
+}
+
+enableDisableRuleMch() {
+  this.toggleMch = !this.toggleMch;
+  this.status = this.toggleMch ? 'Enable' : 'Disable';
+}
+
+enableDisableRuleMchc() {
+  this.toggleMchc = !this.toggleMchc;
+  this.status = this.toggleMchc ? 'Enable' : 'Disable';
+}
+
+enableDisableRulePiastrine() {
+  this.togglePiastrine = !this.togglePiastrine;
+  this.status = this.togglePiastrine ? 'Enable' : 'Disable';
+}
 
   ngOnInit() {
     this.AnalisiSangueService.findAll().subscribe(data =>{
