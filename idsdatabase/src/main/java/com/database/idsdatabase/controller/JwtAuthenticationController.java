@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.database.idsdatabase.JwtDottoreDetailsService;
 
-
-import com.database.idsdatabase.JwtTokenUtil;
-import com.database.idsdatabase.JwtRequest;
-import com.database.idsdatabase.JwtResponse;
+import com.database.idsdatabase.jwt.JwtDottoreDetailsService;
+import com.database.idsdatabase.jwt.JwtTokenUtil;
+import com.database.idsdatabase.jwt.JwtRequest;
+import com.database.idsdatabase.jwt.JwtResponse;
 
 @RestController
 @CrossOrigin

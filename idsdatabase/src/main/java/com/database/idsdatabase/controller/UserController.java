@@ -1,9 +1,10 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.controller;
 
 import java.util.List;
 
+import com.database.idsdatabase.entity.User;
+import com.database.idsdatabase.repository.UserRepository;
 
-import com.database.idsdatabase.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

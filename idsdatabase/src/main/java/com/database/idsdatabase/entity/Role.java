@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

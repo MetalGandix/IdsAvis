@@ -1,10 +1,12 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import com.database.idsdatabase.entity.Donazione;
 
 @Entity
 public class PrenotazioneForm{
