@@ -25,7 +25,9 @@ export class AvisOrariComponent implements OnInit {
 
   cancellaOrario(orari: OrarioDonazione): void {
     this.orarioDonazioneService.delete(orari)
-      .subscribe();
+      .subscribe(data => {
+        this.orari = this.orari.filter(data => data !== orari);
+      });
   }
 
   ngOnInit() {
