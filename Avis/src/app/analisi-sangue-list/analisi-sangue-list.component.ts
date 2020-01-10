@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalisiSangue } from '../analisi-sangue';
 import { AnalisiSangueService } from '../analisi-sangue.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-analisi-sangue-list',
@@ -9,10 +10,21 @@ import { AnalisiSangueService } from '../analisi-sangue.service';
 })
 export class AnalisiSangueListComponent implements OnInit {
   
-
+  showMsg: boolean = false;
   analisi: AnalisiSangue[];
-  constructor(private AnalisiSangueService: AnalisiSangueService) { }
+  analisiSangue: AnalisiSangue;
+  
+  constructor(private AnalisiSangueService: AnalisiSangueService,
+              private route: ActivatedRoute,
+              private router: Router) {
+                this.analisiSangue = new AnalisiSangue();
+               }
 
+
+onSubmit(){
+  this.AnalisiSangueService.save(this.analisiSangue).subscribe(data =>{this.showMsg= true;
+  })
+}
 
   toggleGlobuliRossi = true;
   toggleGlobuliBianchi = true;

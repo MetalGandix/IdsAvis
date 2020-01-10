@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     checkLogin() {
         (this.loginservice.authenticate(this.username, this.password).subscribe(
           data => {
-            this.router.navigate([''])
+            this.router.navigate(['/prenotazione-form-vista'])
             this.invalidLogin = false
             alert("Bentornato Utente")
           },

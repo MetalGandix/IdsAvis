@@ -21,6 +21,7 @@ public class AnalisiSangue
 	private String mch;
 	private String mchc;
 	private String piastrine;
+	private String annotazione;
 	
 	
 	public AnalisiSangue(){
@@ -39,7 +40,15 @@ public class AnalisiSangue
     
 	public void setid(final Long id) {
 		this.id = id;
-    }
+	}
+	
+	public String getannotazione() {
+		return annotazione;
+	}
+
+	public void setannotazione(final String annotazione) {
+        this.annotazione = annotazione;
+	}
 
     public String getname() {
 		return name;
@@ -115,6 +124,6 @@ public class AnalisiSangue
 
     @Override
 	public String toString(){
-		return "" + id + "" + name + "" + globuliRossi + "" + globuliBianchi + "" + emoglobina + "" + ematocrito + "" + mcv + "" + mch + "" + mchc + "" + piastrine;
+		return "" + id + "" + name + "" + globuliRossi + "" + globuliBianchi + "" + emoglobina + "" + ematocrito + "" + mcv + "" + mch + "" + mchc + "" + piastrine + "" + annotazione;
 	}
 }
