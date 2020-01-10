@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.jwt;
 
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import  com.database.idsdatabase.JwtDottoreDetailsService;
+import  com.database.idsdatabase.jwt.JwtDottoreDetailsService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 

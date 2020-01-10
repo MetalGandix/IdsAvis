@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.dto;
 
 public class DottoreDTO {
 	private String username;

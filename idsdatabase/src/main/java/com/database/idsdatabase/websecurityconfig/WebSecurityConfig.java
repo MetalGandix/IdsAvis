@@ -1,4 +1,7 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.websecurityconfig;
+
+import com.database.idsdatabase.jwt.JwtAuthenticationEntryPoint;
+import com.database.idsdatabase.jwt.JwtRequestFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

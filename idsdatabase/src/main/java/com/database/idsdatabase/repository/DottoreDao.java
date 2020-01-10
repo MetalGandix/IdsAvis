@@ -1,9 +1,9 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.database.idsdatabase.Dottore;
+import com.database.idsdatabase.entity.Dottore;
 
 @Repository
 public interface DottoreDao extends CrudRepository<Dottore, Integer> {

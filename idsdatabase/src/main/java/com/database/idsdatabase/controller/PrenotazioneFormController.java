@@ -1,6 +1,9 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.controller;
 
 import java.util.List;
+
+import com.database.idsdatabase.entity.PrenotazioneForm;
+import com.database.idsdatabase.repository.PrenotazioneFormRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

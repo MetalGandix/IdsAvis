@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.jwt;
 
 import java.io.Serializable;
 import java.util.Date;

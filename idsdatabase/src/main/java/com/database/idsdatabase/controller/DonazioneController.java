@@ -1,6 +1,9 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.controller;
 
 import java.util.List;
+
+import com.database.idsdatabase.entity.Donazione;
+import com.database.idsdatabase.repository.DonazioneRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;

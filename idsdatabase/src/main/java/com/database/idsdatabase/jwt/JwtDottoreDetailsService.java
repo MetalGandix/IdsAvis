@@ -1,4 +1,4 @@
-package com.database.idsdatabase;
+package com.database.idsdatabase.jwt;
 
 import java.util.ArrayList;
 
@@ -9,9 +9,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.database.idsdatabase.DottoreDao;
-import com.database.idsdatabase.Dottore;
-import com.database.idsdatabase.DottoreDTO;
+import com.database.idsdatabase.repository.DottoreDao;
+import com.database.idsdatabase.entity.Dottore;
+import com.database.idsdatabase.dto.DottoreDTO;
 
 @Service
 public class JwtDottoreDetailsService implements UserDetailsService {
