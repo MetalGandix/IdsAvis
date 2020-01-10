@@ -31,8 +31,8 @@ export class AvisService {
      return this.http.post<OrarioDonazione>(this.avisUrl, orarioDonazione);
    }
 
-   public delete(orari) {
-    return this.http.delete<OrarioDonazione>(this.avisUrl + "/"+ orari.id);
+   public delete(orarioDonazione: OrarioDonazione) {
+    return this.http.delete<OrarioDonazione>(this.avisUrl + "/"+ orarioDonazione);
   }
 }
 
