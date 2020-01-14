@@ -19,6 +19,7 @@
             <th scope="col">Mchc(Conc HB media)</th>
             <th scope="col">Piastrine</th>
             <th scope="col">Annotazione</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -65,12 +66,14 @@
                 {{ AnalisiSangue.piastrine}}
               </button>
             </td>
+        
             <td>
                 <form (ngSubmit)="onSubmit()" #analisiSangueForm="ngForm" style="text-align: -webkit-center; ">
           <input type="text" [(ngModel)]="analisiSangue.annotazione" class="form-control" required #annotazione="ngModel"
            required #annotazione="ngModel">
            </form>
               </td>
+              <button class="btn btn-danger" (click)="cancellaAnalisi()">Elimina analisi</button>
 
           </tr>
         </tbody>

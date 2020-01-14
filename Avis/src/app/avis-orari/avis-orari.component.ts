@@ -23,12 +23,16 @@ export class AvisOrariComponent implements OnInit {
     private router: Router,
     private orarioDonazioneService: AvisService) { }
 
-  cancellaOrario(orari: OrarioDonazione): void {
-    this.orarioDonazioneService.delete(orari)
-      .subscribe(data => {
-        this.orari = this.orari.filter(data => data !== orari);
-      });
-  }
+  cancellaOrario(orari: OrarioDonazione){
+    this.orarioDonazioneService
+      .deleteOrario(orari.id)
+      .subscribe(() => console.log("orario cancellato"));
+      
+      };
+
+      /*data => {
+        this.orari = this.orari.filter(data => data !== orari*/
+  
 
   ngOnInit() {
     this.orarioDonazioneService.findAll().subscribe(data => {

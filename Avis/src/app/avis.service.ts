@@ -5,23 +5,24 @@ import { OrarioDonazione } from './orario-donazione'
 import { catchError } from 'rxjs/operators';
 
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': '"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaWNoZWxlIiwiZXhwIjoxNTc5MDYwMDY2LCJpYXQiOjE1NzkwNDIwNjZ9.TdVTPYCPeDNLXJWA8e_O9AAAlbOWoDzJoWQNBGsjJjwqkYGcO2DLFhYx3J7HbxVrQqPDUQJ6BrXcQ6fTZHN0kg"'
+  })
+};
 
 @Injectable()
 export class AvisService {
 
-  private avisUrl: string;
+
   handleError: any;
+ 
 
-   /* httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  };*/
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    this.avisUrl = 'http://localhost:8080/orariDonazione';
-   }
+    avisUrl = 'http://localhost:8080/orariDonazione';
+   
 
    public findAll(): Observable<OrarioDonazione[]> {
      return this.http.get<OrarioDonazione[]>(this.avisUrl)
@@ -31,8 +32,12 @@ export class AvisService {
      return this.http.post<OrarioDonazione>(this.avisUrl, orarioDonazione);
    }
 
-   public delete(orari) {
-    return this.http.delete<OrarioDonazione>(this.avisUrl + "/"+ orari.id);
+    deleteOrario(id: number): Observable<void> {
+    const url = `${this.avisUrl}/${id}`;
+    return this.http.delete(url, httpOptions)
+    .pipe(
+      catchError(this.handleError("Orario non eliminato"))
+    );
   }
 }
 
