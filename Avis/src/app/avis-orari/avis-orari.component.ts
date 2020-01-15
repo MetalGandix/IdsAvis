@@ -18,6 +18,9 @@ export class AvisOrariComponent implements OnInit {
   orari: OrarioDonazione[];
   donazione: OrarioDonazione;
 
+
+
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -30,8 +33,9 @@ export class AvisOrariComponent implements OnInit {
       };
 
 
-  vedereId(orari: OrarioDonazione){
-    console.log("$orari.id",orari.id)
+
+  vedereId(orari){
+    console.log(this.orari.indexOf(orari.id))
   }
 
       /*data => {
@@ -43,5 +47,7 @@ export class AvisOrariComponent implements OnInit {
       this.orari = data;
     })
   }
+
+ 
 
 }

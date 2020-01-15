@@ -32,7 +32,7 @@ export class AvisService {
      return this.http.post<OrarioDonazione>(this.avisUrl, orarioDonazione);
    }
 
-    deleteOrario(id: number): Observable<void> {
+    deleteOrario(id): Observable<OrarioDonazione> {
     const url = `${this.avisUrl}/${id}`;
     return this.http.delete(url, httpOptions)
     .pipe(
