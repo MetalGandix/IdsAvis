@@ -26,9 +26,13 @@ export class AvisOrariComponent implements OnInit {
   cancellaOrario(orari: OrarioDonazione){
     this.orarioDonazioneService
       .deleteOrario(orari.id)
-      .subscribe(() => console.log("orario cancellato"));
-      
+      .subscribe(() => console.log("orario cancellato "));
       };
+
+
+  vedereId(orari: OrarioDonazione){
+    console.log("$orari.id",orari.id)
+  }
 
       /*data => {
         this.orari = this.orari.filter(data => data !== orari*/

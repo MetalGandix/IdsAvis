@@ -36,7 +36,7 @@ export class AvisService {
     const url = `${this.avisUrl}/${id}`;
     return this.http.delete(url, httpOptions)
     .pipe(
-      catchError(this.handleError("Orario non eliminato"))
+      catchError(this.handleError("deleteOrario"))
     );
   }
 }
