@@ -26,16 +26,17 @@ export class AvisOrariComponent implements OnInit {
     private router: Router,
     private orarioDonazioneService: AvisService) { }
 
-  cancellaOrario(orari: OrarioDonazione){
+  cancellaOrario(id: OrarioDonazione){
+    console.log(id)
     this.orarioDonazioneService
-      .deleteOrario(orari.id)
+      .deleteOrario(id)
       .subscribe(() => console.log("orario cancellato "));
       };
 
 
 
-  vedereId(orari){
-    console.log(this.orari.indexOf(orari.id))
+  vedereId(){
+    console.log(this.orari)
   }
 
       /*data => {

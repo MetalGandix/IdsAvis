@@ -1,36 +1,32 @@
 package com.database.idsdatabase.entity;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Role{
+public class Role {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
-    private String role;
+    @Column
+    private String name;
 
+    @Column
+    private String description;
 
-public long getid() {
-    return id;
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
-
-public void setid(final Long id) {
-    this.id = id;
-}
-
-public String getrole(){
-    return role;
-}
-
-public void setrole(final String role) {
-    this.role = role;
-}
-
-
-}
-
-
-
-

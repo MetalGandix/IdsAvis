@@ -1,6 +1,7 @@
 package com.database.idsdatabase.dto;
 
-public class DottoreDTO {
+
+public class UserDTO {
 	private String username;
 	private String password;
 

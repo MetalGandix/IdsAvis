@@ -2,9 +2,12 @@ package com.database.idsdatabase.controller;
 
 import java.util.List;
 
-import com.database.idsdatabase.entity.User;
-import com.database.idsdatabase.repository.UserRepository;
+import com.database.idsdatabase.dto.UserDTO;
+import com.database.idsdatabase.entity.DAOUser;
+import com.database.idsdatabase.jwt.JwtUserDetailsService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,21 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
-
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-     
-    private UserRepository userRepository;
+    
+    @Autowired
+    private JwtUserDetailsService userRepository;
  
+    @PreAuthorize("hasRole('AVIS')")
     @GetMapping("/users")
-    public List<User> getUser() {
-        List<User>listaUtenti = (List<User>) userRepository.findAll();
-        return listaUtenti;
+    public List<DAOUser> getUser() {
+        return userRepository.findAll();
     }
  
+    
     @PostMapping("/user")
-    void addUser(@RequestBody User user) {
+    void addUser(@RequestBody UserDTO user) {
         userRepository.save(user);
     }
 

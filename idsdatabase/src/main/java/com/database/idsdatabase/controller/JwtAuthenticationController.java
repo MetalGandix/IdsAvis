@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.database.idsdatabase.jwt.JwtDottoreDetailsService;
+import com.database.idsdatabase.jwt.JwtUserDetailsService;
 import com.database.idsdatabase.jwt.JwtTokenUtil;
 import com.database.idsdatabase.jwt.JwtRequest;
 import com.database.idsdatabase.jwt.JwtResponse;
@@ -29,7 +29,7 @@ public class JwtAuthenticationController {
 	private JwtTokenUtil jwtTokenUtil;
 
 	@Autowired
-	private JwtDottoreDetailsService userDetailsService;
+	private JwtUserDetailsService userDetailsService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {

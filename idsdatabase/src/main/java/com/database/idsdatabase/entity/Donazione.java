@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Donazione{
@@ -39,16 +38,5 @@ public class Donazione{
 
 	public void setora(final String ora) {
 		this.ora = ora;
-    }
-    
-    @ManyToOne
-    private User name;
-
-    public User getUser(){
-        return name;
-    }
-
-    public void setUser(User name){
-        this.name = name;
     }
 }

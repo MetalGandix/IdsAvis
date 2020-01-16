@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': '"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaWNoZWxlIiwiZXhwIjoxNTc5MDYwMDY2LCJpYXQiOjE1NzkwNDIwNjZ9.TdVTPYCPeDNLXJWA8e_O9AAAlbOWoDzJoWQNBGsjJjwqkYGcO2DLFhYx3J7HbxVrQqPDUQJ6BrXcQ6fTZHN0kg"'
+    'Authorization': 'Bearer'
   })
 };
 
@@ -32,7 +32,7 @@ export class AvisService {
      return this.http.post<OrarioDonazione>(this.avisUrl, orarioDonazione);
    }
 
-    deleteOrario(id): Observable<OrarioDonazione> {
+    deleteOrario(id): Observable<{OrarioDonazione}> {
     const url = `${this.avisUrl}/${id}`;
     return this.http.delete(url, httpOptions)
     .pipe(

@@ -5,6 +5,7 @@ import java.util.List;
 import com.database.idsdatabase.entity.PrenotazioneForm;
 import com.database.idsdatabase.repository.PrenotazioneFormRepository;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +22,14 @@ public class PrenotazioneFormController {
 
     private PrenotazioneFormRepository prenotazioneFormRepository;
 
+    @PreAuthorize("hasRole('UTENTE')")
     @GetMapping("/prenotazioneForms")
     public List<PrenotazioneForm> getPrenotazioneForm(){
         List<PrenotazioneForm>listaPrenotazioneForm = (List<PrenotazioneForm>) prenotazioneFormRepository.findAll();
         return listaPrenotazioneForm;
     }
 
+    @PreAuthorize("hasRole('UTENTE')")
     @PostMapping("/prenotazioneForms")
     void addPrenotazioneForm(@RequestBody PrenotazioneForm prenotazioneForm){
         prenotazioneFormRepository.save(prenotazioneForm);

@@ -1,5 +1,7 @@
 package com.database.idsdatabase.websecurityconfig;
 
+import javax.annotation.Resource;
+
 import com.database.idsdatabase.jwt.JwtAuthenticationEntryPoint;
 import com.database.idsdatabase.jwt.JwtRequestFilter;
 
@@ -26,11 +28,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
+	@Resource(name = "userService")
 	@Autowired
 	private UserDetailsService jwtUserDetailsService;
 
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
+
+	@Autowired
+    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(jwtUserDetailsService)
+                .passwordEncoder(passwordEncoder());
+	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -56,7 +65,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/268", "/orariDonazione","/orariDonazione/271", "/user", "/prenotazioneForms", "/analisiSangues" , "/analisi", "user-form").permitAll().
+				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/268", "/orariDonazione","/orariDonazione/289", "/user", "/analisiSangues" , "/analisi", "user-form").permitAll().
+				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
+				.permitAll().*/
 				// all other requests need to be authenticated
 				anyRequest().authenticated().and().
 				// make sure we use stateless session; session won't be used to

@@ -10,17 +10,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let orarioDonazione of orari; let id = index">
+        <tr *ngFor="let orarioDonazione of orari">
           <td>{{ orarioDonazione.id }}</td>
           <td>{{ orarioDonazione.data }}</td>
           <td>{{ orarioDonazione.ora }}
-          </td><button class="btn btn-danger" (click)="cancellaOrario(orari.id)">Elimina orario</button>
+          </td><button class="btn btn-danger" (click)="cancellaOrario(orarioDonazione.id)">Elimina orario</button>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 <div class="container" style="margin-bottom: 30px;">
-  <button class="btn btn-danger" (click)="vedereId(orari.id)">Guarda info su console</button>
+  <button class="btn btn-danger" (click)="vedereId(orari)">Guarda info su console</button>
   <a routerLink="/avis-page" class="btn btn-info">Torna alla pagina principale Avis</a>
 </div>
