@@ -23,7 +23,6 @@ import { FormDonatoreComponent } from './form-donatore/form-donatore.component';
 import { InfoDonazioneComponent } from './info-donazione/info-donazione.component';
 import { SangueComponent } from './sangue/sangue.component';
 import { DonareComponent } from './donare/donare.component';
-import { SedeComponent } from './sede/sede.component';
 import { FooterComponent } from './footer/footer.component';
 import { AvisPageComponent } from './avis-page/avis-page.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -69,7 +68,6 @@ import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.componen
     InfoDonazioneComponent,
     SangueComponent,
     DonareComponent,
-    SedeComponent,
     FooterComponent,
     AvisPageComponent,
     UserListComponent,
@@ -109,7 +107,6 @@ import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.componen
       { path: 'info-donazione', component: InfoDonazioneComponent},
       { path: 'sangue', component: SangueComponent},
       { path: 'donare', component: DonareComponent},
-      { path: 'sede', component: SedeComponent},
       { path: 'user-form', component: UserFormComponent},
       { path: 'chi-puo-donare', component: ChiPuoDonareComponent},
       { path: 'come-donare', component: ComeDonareComponent},
