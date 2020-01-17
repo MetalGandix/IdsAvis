@@ -21,14 +21,13 @@ public class UserController {
     @Autowired
     private JwtUserDetailsService userRepository;
  
-    @PreAuthorize("hasRole('AVIS')")
     @GetMapping("/users")
     public List<DAOUser> getUser() {
         return userRepository.findAll();
     }
  
     
-    @PostMapping("/user")
+    @PostMapping("/users")
     void addUser(@RequestBody UserDTO user) {
         userRepository.save(user);
     }
