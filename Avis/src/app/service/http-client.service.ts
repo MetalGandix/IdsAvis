@@ -22,5 +22,12 @@ export class User {
 export class HttpClientService {
 
   constructor(private httpClient: HttpClient){}
- 
+
+  getDottore() {
+    return this.httpClient.get<Dottore[]>('http://localhost:8080/dottore');
+  }
+
+  getUtente() {
+    return this.httpClient.get<User[]>('http://localhost:8080/user');
+  }
 }
