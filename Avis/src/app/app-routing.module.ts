@@ -9,12 +9,15 @@ import { PrenotazioneFormVistaComponent } from './prenotazione-form-vista/prenot
 import { AnalisiSangueListComponent } from './analisi-sangue-list/analisi-sangue-list.component';
 import { AvisOrariComponent } from './avis-orari/avis-orari.component';
 import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
+import { AuthenticationService } from './service/authentication.service';
+import { AuthGuardComponent } from './auth-guard/auth-guard.component';
 const routes: Routes = [
+
   { path: 'user', component: UserListComponent },
   { path: 'adduser', component: UserFormComponent },
   { path: 'login', component: LoginComponent },
   { path: 'pagina-accesso', component: PaginaAccessoComponent},
-  { path: 'prenotazione-form-list', component: PrenotazioneFormListComponent},
+  { path: 'prenotazione-form-list', component: PrenotazioneFormListComponent, canActivate: [AuthGuardComponent]},
   { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent},
   { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
   { path: 'avis-orari', component: AvisOrariComponent},
