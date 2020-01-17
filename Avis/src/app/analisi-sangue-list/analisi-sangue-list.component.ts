@@ -20,13 +20,19 @@ export class AnalisiSangueListComponent implements OnInit {
                 this.analisiSangue = new AnalisiSangue();
                }
 
-
-onSubmit(){
-  this.AnalisiSangueService.save(this.analisiSangue).subscribe(data =>{this.showMsg= true;
-  })
+vediId(id: AnalisiSangue)
+{
+  console.log(id);
 }
 
-  toggleGlobuliRossi = true;
+  aggiornaAnalisi(analisiSangue: AnalisiSangue){
+    this.AnalisiSangueService.updateAnalisi(analisiSangue).subscribe(data=>{
+      this.showMsg=true;
+    })
+
+  }
+
+  /*toggleGlobuliRossi = true;
   toggleGlobuliBianchi = true;
   toggleEmoglobina = true;
   toggleEmatocrito = true;
@@ -36,8 +42,9 @@ onSubmit(){
   togglePiastrine = true;
   
   status = 'Enable'; 
+  */
 
-  enableDisableRuleGlobuliRossi() {
+  /*enableDisableRuleGlobuliRossi() {
       this.toggleGlobuliRossi = !this.toggleGlobuliRossi;
       this.status = this.toggleGlobuliRossi ? 'Enable' : 'Disable';
   }
@@ -75,7 +82,7 @@ enableDisableRuleMchc() {
 enableDisableRulePiastrine() {
   this.togglePiastrine = !this.togglePiastrine;
   this.status = this.togglePiastrine ? 'Enable' : 'Disable';
-}
+}*/
 
   ngOnInit() {
     this.AnalisiSangueService.findAll().subscribe(data =>{
