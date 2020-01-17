@@ -37,66 +37,6 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Name*</label>
-            <input type="text" [(ngModel)]="prenotazioneForm.name" required minlength="2" class="form-control" id="name" name="name"
-              placeholder="Enter your name" required #name="ngModel">
-              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                  <div *ngIf="name.errors.required">
-                      Devi scrivere Il nome.
-                  </div>
-                  <div *ngIf="name.errors.minlength">
-                      Il nome deve essere lungo almeno 2 caratteri.
-                  </div>
-              </div>
-        </div>
-    
-          <div class="form-group">
-            <label for="lastName">Cognome*</label>
-            <input type="text" [(ngModel)]="prenotazioneForm.lastname" required minlength="2" class="form-control" id="lastName" name="lastName"
-              placeholder="Enter your last name" required #lastName="ngModel">
-              <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
-                  <div *ngIf="lastName.errors.required">
-                      Devi scrivere Il cognome.
-                  </div>
-                  <div *ngIf="lastName.errors.minlength">
-                      Il cognome deve essere lungo almeno 2 caratteri.
-                  </div>
-              </div>
-          </div>
-    
-          <div class="form-group">
-            <label for="email">Email*</label>
-            <input type="text" [(ngModel)]="prenotazioneForm.email" class="form-control" id="email" name="email"
-              placeholder="Enter your email address" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                  <div *ngIf="email.errors.required">
-                      Devi scrivere una e-mail.
-                  </div>
-                  <div *ngIf = "email.errors?.pattern">
-                     L'email non sembra essere corretta.
-                  </div>
-              </div>
-          </div>
-    
-          <div class="form-group">
-            <label for="stato">CAP*</label>
-              <select [(ngModel)]="prenotazioneForm.stato" class="form-control" id="stato" name="stato"
-              placeholder="Enter your CAP" required #stato="ngModel" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected value="Ancona">Ancona 60131</option>
-                <option value="Ascoli Piceno">Ascoli Piceno 63100</option>
-                <option value="Fermo">Fermo 63100</option>
-                <option value="Macerata">Macerata 62100</option>
-                <option value="Pesaro e Urbino">Pesaro e Urbino 61049</option>
-              </select>
-              <div *ngIf="stato.invalid && (stato.dirty || stato.touched)" class="alert alert-danger">
-                  <div *ngIf="stato.errors.required">
-                      Devi inserire il tuo CAP.
-                  </div>
-                </div>
-    
-            </div>
-
-        <div class="form-group">
           <label for="telefono">Numero di telefono*</label>
           <input type="text" [(ngModel)]="prenotazioneForm.telefono" class="form-control" id="telefono" name="telefono"
             placeholder="Inserisci il tuo numero di telefono" required minlength="8" required #telefono="ngModel">
