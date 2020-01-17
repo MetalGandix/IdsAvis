@@ -27,50 +27,70 @@
             <td>{{ AnalisiSangue.id}}</td>
             <td>{{ AnalisiSangue.name}}</td>
             <td>
-              {{ AnalisiSangue.globuliRossi}}
+              <button [style.background-color]="toggleGlobuliRossi ? 'white' : 'red'" (click)="enableDisableRuleGlobuliRossi()">
+                {{ AnalisiSangue.globuliRossi}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.globuliBianchi}}
+              <button [style.background-color]="toggleGlobuliBianchi ? 'white' : 'red'" (click)="enableDisableRuleGlobuliBianchi()">
+                {{ AnalisiSangue.globuliBianchi}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.emoglobina}}
+              <button [style.background-color]="toggleEmoglobina ? 'white' : 'red'" (click)="enableDisableRuleEmoglobina()">
+                {{ AnalisiSangue.emoglobina}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.ematocrito}}
+              <button [style.background-color]="toggleEmatocrito ? 'white' : 'red'" (click)="enableDisableRuleEmatocrito()">
+                {{ AnalisiSangue.ematocrito}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.mcv}}
+              <button [style.background-color]="toggleMcv ? 'white' : 'red'" (click)="enableDisableRuleMcv()">
+                {{ AnalisiSangue.mcv}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.mch}}
+              <button [style.background-color]="toggleMch ? 'white' : 'red'" (click)="enableDisableRuleMch()">
+                {{ AnalisiSangue.mch}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.mchc}}
+              <button [style.background-color]="toggleMchc ? 'white' : 'red'" (click)="enableDisableRuleMchc()">
+                {{ AnalisiSangue.mchc}}
+              </button>
             </td>
             <td>
-              {{ AnalisiSangue.piastrine}}
+              <button [style.background-color]="togglePiastrine ? 'white' : 'red'" (click)="enableDisableRulePiastrine()">
+                {{ AnalisiSangue.piastrine}}
+              </button>
             </td>
+        
             <td>
-                {{ AnalisiSangue.annotazione }}
-            </td>
-            <td>
-                <button class="btn btn-danger" (click)="vediId(AnalisiSangue)">Vedi l'id</button>
-                <input type="text" [(ngModel)]="analisiSangue.annotazione" class="form-control">
-            </td>
+                <form (ngSubmit)="onSubmit()" #analisiSangueForm="ngForm" style="text-align: -webkit-center; ">
+          <input type="text" [(ngModel)]="analisiSangue.annotazione" class="form-control" required #annotazione="ngModel"
+           required #annotazione="ngModel">
+           </form>
+              </td>
+              <button class="btn btn-danger" (click)="cancellaAnalisi()">Elimina analisi</button>
+
           </tr>
-        </tbody>   
+        </tbody>
       </table>
-      <button class="btn btn-danger" (click)="aggiornaAnalisi(AnalisiSangue)">Aggiungi il commento</button>
+      <button type="submit" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" class="btn btn-info">Submit</button>
+      <div id="collapseBasic" [collapse]="isCollapsed" style="margin-top: 20px;">
       </div>
 
       <div class="row" style="margin-top: 30px; width: 350px; height: 350px;" *ngIf="showMsg">
-        <div class="col-xs-12">
-          <div class="alert alert-success">
+          <div class="col-xs-12">
+            <div class="alert alert-success">
             <p>
-              <strong>Hai scritto con successo l'annotazione</strong>
+                <strong>Hai scritto con successo l'annotazione</strong>
             </p>
           </div>
+          </div>
         </div>
-      </div>
     </div>
   </div>

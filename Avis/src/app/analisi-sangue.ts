@@ -1,5 +1,4 @@
 export class AnalisiSangue {
-    id: any;
+    id: String;
     name: String;
-    annotazione: String;
 }
