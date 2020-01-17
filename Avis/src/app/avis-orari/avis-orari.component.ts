@@ -27,10 +27,14 @@ export class AvisOrariComponent implements OnInit {
     private orarioDonazioneService: AvisService) { }
 
   cancellaOrario(id: OrarioDonazione){
-    console.log(id)
+    console.log(id.id)
     this.orarioDonazioneService
-      .deleteOrario(id)
-      .subscribe(() => console.log("orario cancellato "));
+      .deleteOrario(id.id)
+      .subscribe(res=>{
+        console.log(res)
+      }, err => {
+        console.log(err)
+      });
       };
 
 
