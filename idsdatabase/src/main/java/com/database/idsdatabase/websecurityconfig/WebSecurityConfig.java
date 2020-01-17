@@ -65,11 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-<<<<<<< HEAD
-				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "user-form").permitAll().
-=======
-				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "/analisi/{id}", "/analisi/{annotazione}", "user-form").permitAll().
->>>>>>> parent of 7dfeb08... Se ora mi registro come utente, mi manda la password cryptata
+				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "/users").permitAll().
 				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
 				.permitAll().*/
 				// all other requests need to be authenticated
