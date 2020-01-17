@@ -25,12 +25,20 @@ public class PrenotazioneForm{
     private String note;
 
     private String donazioneEmergenza;
+
+    private String name;
+
+    private String lastname;
+    
+    private String email;
+    
+	private String stato;
     
     public PrenotazioneForm(){
 
     }
 
-    public PrenotazioneForm(final long id, final String centro, final String compleanno, final String telefono, final String statosalute, final String note, final String donazioneEmergenza){
+    public PrenotazioneForm(final long id, final String centro, final String name, final String lastname, final String email, final String stato, final String compleanno, final String telefono, final String statosalute, final String note, final String donazioneEmergenza){
         this.id = id;
         this.centro = centro;
         this.compleanno = compleanno;
@@ -38,6 +46,11 @@ public class PrenotazioneForm{
         this.statosalute = statosalute;
         this.note = note;
         this.donazioneEmergenza = donazioneEmergenza;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.stato = stato;
+
     }
 
     public long getid() {
@@ -119,9 +132,41 @@ public class PrenotazioneForm{
   this.ora = ora;
     }
 
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getemail() {
+		return email;
+	   }
+	  
+	   public void setemail(final String email) {
+		this.email = email;
+	}
+
+	public String getstato() {
+		return stato;
+	   }
+	  
+	   public void setstato(final String stato) {
+			  this.stato = stato;
+	   }
+	  
+	   public String getlastname() {
+		return lastname;
+	   }
+	  
+	   public void setlastname(final String lastname) {
+		this.lastname = lastname;
+	   }
+
     @Override
  public String toString(){
-        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + name + "" + lastname + "" + email + "" + stato + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
         
     }
 

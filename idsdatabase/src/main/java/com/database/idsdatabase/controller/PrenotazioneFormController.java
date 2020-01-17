@@ -29,7 +29,6 @@ public class PrenotazioneFormController {
         return listaPrenotazioneForm;
     }
 
-    @PreAuthorize("hasRole('UTENTE')")
     @PostMapping("/prenotazioneForms")
     void addPrenotazioneForm(@RequestBody PrenotazioneForm prenotazioneForm){
         prenotazioneFormRepository.save(prenotazioneForm);
