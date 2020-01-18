@@ -23,18 +23,31 @@
           </div>
         </div>
 
+        
         <div class="form-group">
-          <label for="centro">Data*</label>
-          <input type="text" [(ngModel)]="prenotazioneForm.compleanno" class="form-control" id="compleanno"
-            name="compleanno" placeholder="Inserisci la data in cui si vuole effettuare la donazione" required
-            #compleanno="ngModel" [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker
-            [(bsValue)]="myDateValue">
-          <div *ngIf="compleanno.invalid && (compleanno.dirty || compleanno.touched)" class="alert alert-danger">
-            <div *ngIf="compleanno.errors.required">
-              Devi inserire una data dal calendario
-            </div>
+          <label for="compleanno">Data*</label>
+          <div [(ngModel)]="prenotazioneForm.compleanno" #compleanno="ngModel">
+            <button (click)="vediOrari()">
+              Clicca per vedere gli orari disponibili per la donazione
+            </button>
+            <div>
+                <input type="text" [(ngModel)]="prenotazioneForm.compleanno" class="form-control" id="compleanno" name="compleanno"
+                placeholder="" required minlength="8" required #compleanno="ngModel">
+          <tr *ngFor="let orarioDonazione of orari">
+              <button style="margin-bottom: 15px; margin-top: 15px; margin-right: 15px;">
+            <td>
+            data: {{ orarioDonazione.data }}
+          </td>
+          <td>
+           ora: {{ orarioDonazione.ora }} 
+          </td>
+        </button>
+          <button>premi per prenotare la visita in questa data</button>
+            </tr>
           </div>
         </div>
+          </div>
+       
 
         <div class="form-group">
           <label for="telefono">Numero di telefono*</label>
