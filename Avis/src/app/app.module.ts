@@ -53,8 +53,6 @@ import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.compo
 import { AvisService } from './avis.service';
 import { BasicAuthHtppInterceptorService } from './service/basic-auth-httpp-interceptor.service';
 import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.component';
-import { AuthGuardComponent } from './auth-guard/auth-guard.component';
-import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +81,8 @@ import { AuthenticationService } from './service/authentication.service';
     AnalisiSangueListComponent,
     AvisOrariComponent,
     AvisMettiorariComponent,
-    LogoutDottoreComponent
+    LogoutDottoreComponent,
+
   ],
   
   imports: [
@@ -129,7 +128,7 @@ import { AuthenticationService } from './service/authentication.service';
     SortableModule.forRoot()
 
   ],
-  providers: [UserService,PrenotazioneFormService,AvisService,AuthenticationService, AuthGuardComponent,
+  providers: [UserService,PrenotazioneFormService,AvisService,
     {
       provide: HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
     }
