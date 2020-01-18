@@ -41,7 +41,7 @@ public class AnalisiSangueController {
         return "deleted";
     }
 
-    @PutMapping("/analisiSangues/{analisiid}")
+    @PutMapping(path = "/analisi", consumes = {"application/json"})
     public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi)
     {
         analisisangueRepository.save(analisi);

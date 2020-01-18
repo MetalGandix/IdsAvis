@@ -65,7 +65,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
+<<<<<<< HEAD
 				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones","/prenotazioneForms", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "/analisi/{id}", "/analisi/{annotazione}", "user-form").permitAll().
+=======
+				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "user-form").permitAll().
+>>>>>>> parent of 8bca63b... Ci sono vicino ma non mi funziona
 				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
 				.permitAll().*/
 				// all other requests need to be authenticated
