@@ -13,8 +13,8 @@
         <tr *ngFor="let orarioDonazione of orari">
           <td>{{ orarioDonazione.id }}</td>
           <td>{{ orarioDonazione.data }}</td>
-          <td>{{ orarioDonazione.ora }}
-          </td><button class="btn btn-danger" (click)="cancellaOrario(orarioDonazione)">Elimina orario</button>
+          <td>{{ orarioDonazione.ora }}</td>
+          <button class="btn btn-danger" (click)="cancellaOrario(orarioDonazione)">Elimina orario</button>
         </tr>
       </tbody>
     </table>
