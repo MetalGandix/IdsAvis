@@ -27,6 +27,12 @@ export class UserFormComponent {
     })
   }
 
+  existUser(){
+    this.userService.existUser(this.user.username).subscribe(res=>{
+      console.log(res);
+    })
+  }
+
   /*gotoUserList() {
     this.router.navigate(['/users']);
   }*/

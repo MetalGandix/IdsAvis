@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import com.database.idsdatabase.entity.DAOUser;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -14,8 +16,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
+
 @Component
 public class JwtTokenUtil implements Serializable {
+
+
+	private JwtUserDetailsService userDetailsService;
 
 	private static final long serialVersionUID = -2550185165626007488L;
 

@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -65,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones","/prenotazioneForms", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues{id}" , "/analisi", "/analisi/{id}", "/analisi/{annotazione}", "user-form").permitAll().
+				.authorizeRequests().antMatchers("/authenticate", "/register", "/donaziones","/prenotazioneForms", "/donaziones/{id}", "/orariDonazione", "/orariDonazione/{id}", "/user", "/analisiSangues/{id}" , "/analisi", "/analisi/{id}", "/analisi/{annotazione}", "user-form", "/existUser/{username}").permitAll().
 				/*.permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
 				.permitAll().*/
 				// all other requests need to be authenticated
@@ -74,6 +75,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// store user's state.
 				exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+	httpSecurity
+				.logout().logoutSuccessUrl("/login");
 
 		// Add a filter to validate the tokens with every request
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

@@ -26,8 +26,11 @@ vediId(id: AnalisiSangue)
 }
 
   aggiornaAnalisi(analisiSangue: AnalisiSangue){
-    this.AnalisiSangueService.updateAnalisi(analisiSangue).subscribe(data=>{
+    console.log(analisiSangue);
+    this.AnalisiSangueService.updateAnalisi(analisiSangue).subscribe(()=>{
       this.showMsg=true;
+    },err=>{
+      console.log(err);
     })
 
   }

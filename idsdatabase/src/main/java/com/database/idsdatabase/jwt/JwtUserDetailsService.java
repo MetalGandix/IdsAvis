@@ -37,6 +37,15 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority(user));
 	}
 
+	public DAOUser findUserById(String username){
+		DAOUser user = userDao.findByUsername(username);
+		System.out.println(user);
+		if(user==null){
+			return null;
+		}else{
+			return user;
+		}
+	}
 	//role based
 	private Set getAuthority(DAOUser user) { //Prende i ruoli
         Set authorities = new HashSet<>();
@@ -58,6 +67,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		return userDao.save(newUser);
 	}
+
+	/*public String getRoleByUsername(String username){
+		DAOUser user = userDao.findByUsername(username);
+	}*/
 
 	/*
 	public void delete(String username) {
