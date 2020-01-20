@@ -9,7 +9,7 @@ export class UserService {
   private userUrl: string
  
   constructor(private http: HttpClient) {
-    this.userUrl = 'http://localhost:8080/user';
+    this.userUrl = 'http://localhost:8080/';
   }
 
   /*login(callback, user) {
@@ -21,10 +21,14 @@ export class UserService {
  }*/
  
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get<User[]>(this.userUrl+"user");
   }
  
   public save(user: User) {
-    return this.http.post<User>(this.userUrl, user);
+    return this.http.post<User>(this.userUrl+"user", user);
+  }
+
+  public existUser(username: string) {
+    return this.http.get<boolean>(this.userUrl+"existUser/"+username);
   }
 }

@@ -5,7 +5,7 @@
         <div class="form-group">
             <label for="userName">Username*</label>
             <input type="text" [(ngModel)]="user.username" required minlength="2" class="form-control" id="userName" name="userName"
-              placeholder="Enter your username" required #username="ngModel">
+              placeholder="Enter your username" required #username="ngModel" (keyup)="existUser()">
               <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
                   <div *ngIf="username.errors.required">
                       Devi scrivere l'username.
@@ -114,6 +114,9 @@
         </div>
 
     </form>
+    <div>
+      <a style="color: red;" routerLink="/home" >Torna alla home</a>
+    </div>
   </div>
 </body>
 

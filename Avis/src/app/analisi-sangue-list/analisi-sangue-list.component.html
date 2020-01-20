@@ -23,7 +23,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let AnalisiSangue of analisi">
+          <tr *ngFor="let AnalisiSangue of analisi; let x = index;">
             <td>{{ AnalisiSangue.id}}</td>
             <td>{{ AnalisiSangue.name}}</td>
             <td>
@@ -55,12 +55,12 @@
             </td>
             <td>
                 <button class="btn btn-danger" (click)="vediId(AnalisiSangue)">Vedi l'id</button>
-                <input type="text" [(ngModel)]="analisiSangue.annotazione" class="form-control">
+                <input type="text" [(ngModel)]="analisi[x].annotazione" class="form-control">
+                <button class="btn btn-danger" (click)="aggiornaAnalisi(analisi[x])">Aggiungi il commento</button>
             </td>
           </tr>
         </tbody>   
       </table>
-      <button class="btn btn-danger" (click)="aggiornaAnalisi(AnalisiSangue)">Aggiungi il commento</button>
       </div>
 
       <div class="row" style="margin-top: 30px; width: 350px; height: 350px;" *ngIf="showMsg">

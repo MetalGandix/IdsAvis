@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     private JwtUserDetailsService userRepository;
  
-    @PreAuthorize("hasRole('AVIS')")
+    //@PreAuthorize("hasRole('AVIS')")
     @GetMapping("/users")
     public List<DAOUser> getUser() {
         return userRepository.findAll();
@@ -33,5 +33,16 @@ public class UserController {
         userRepository.save(user);
     }
 
+   /* @GetMapping("/existUser/{username}")
+    public boolean existUser(String username){
+        List<DAOUser> users = getUser();
+        boolean userFound = false;
+        users.forEach(u->{
+            if(u.getUsername()==username){
+                userFound=true;
+            }
+        });*/
+    }
 
-}
+
+

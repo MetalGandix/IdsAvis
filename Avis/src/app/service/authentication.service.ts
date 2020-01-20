@@ -39,7 +39,7 @@ export class AuthenticationService {
       map(
         userData => {
         sessionStorage.setItem('username',username);
-        let tokenStr= 'Bearer '+userData.token;
+        let tokenStr= userData.token;
         sessionStorage.setItem('token', tokenStr);
         return userData;
         }
@@ -49,12 +49,12 @@ export class AuthenticationService {
   }
   
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    //console.log(!(user === null))
+    let user = sessionStorage.getItem('token');
     return !(user === null)
   }
 
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('token');
   }
 }
