@@ -24,22 +24,20 @@ public class PrenotazioneForm{
 
     private String note;
 
-    private String donazioneEmergenza;
+   
     
     public PrenotazioneForm(){
 
     }
 
-    public PrenotazioneForm(final long id, final String centro, final String compleanno, final String telefono, final String statosalute, final String note, final String donazioneEmergenza){
+    public PrenotazioneForm(final long id, final String centro, final String compleanno, final String telefono, final String statosalute, final String note){
         this.id = id;
         this.centro = centro;
         this.compleanno = compleanno;
         this.telefono = telefono;
         this.statosalute = statosalute;
         this.note = note;
-        this.donazioneEmergenza = donazioneEmergenza;
     }
-
     public long getid() {
   return id;
  }
@@ -89,13 +87,7 @@ public class PrenotazioneForm{
         this.statosalute = statosalute;
     }
 
-    public String getdonazioneEmergenza() {
-  return donazioneEmergenza;
- }
 
- public void setdonazioneEmergenza(final String donazioneEmergenza) {
-  this.donazioneEmergenza = donazioneEmergenza;
- }
 
     @ManyToOne
     private Donazione data;
@@ -121,7 +113,7 @@ public class PrenotazioneForm{
 
     @Override
  public String toString(){
-        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + "" + donazioneEmergenza + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + ""  + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
         
     }
 
