@@ -31,6 +31,9 @@ public class DAOUser {
 	@Column
 	private String stato;
 
+	@Column
+	private String DonazioneEmergenza;
+
 	//role based
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
@@ -107,6 +110,15 @@ public class DAOUser {
 	  
 	   public void setlastname(final String lastname) {
 		this.lastname = lastname;
+	   }
+
+	   
+	   public String getDonazioneEmergenza() {
+		return DonazioneEmergenza;
+	   }
+	  
+	   public void setDonazioneEmergenza(final String DonazioneEmergenza) {
+		this.DonazioneEmergenza = DonazioneEmergenza;
 	   }
 
 }

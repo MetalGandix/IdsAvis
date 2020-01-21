@@ -44,13 +44,6 @@ public class JwtAuthenticationController {
 	}
 	
 
-	/*
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public ResponseEntity<?> deleteUser(@RequestBody UserDTO user) throws Exception {
-		return ResponseEntity.ok(userDetailsService.delete(user.getUsername()));
-	}
-	*/
-
 	private void authenticate(String username, String password) throws Exception {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));

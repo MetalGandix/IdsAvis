@@ -80,21 +80,7 @@
             placeholder="Scrivi qua una nota">
         </div>
 
-        <div class="form-group">
-          <label for="donazioneEmergenza">Donazione d'emergenza*</label>
-          <select [(ngModel)]="prenotazioneForm.donazioneEmergenza" class="form-control" id="donazioneEmergenza"
-            name="donazioneEmergenza" placeholder="Inserisci la risposta alla donazione d'emergenza" required
-            #donazioneEmergenza="ngModel">
-            <option value="SI">SI</option>
-            <option value="NO">NO</option>
-          </select>
-          <div *ngIf="donazioneEmergenza.invalid && (donazioneEmergenza.dirty || donazioneEmergenza.touched)" class="alert alert-danger">
-              <div *ngIf="donazioneEmergenza.errors.required">
-                 Devi rispondere si o no
-                </div>
-            </div>
-
-        </div>
+     
 
         <button type="submit" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"
