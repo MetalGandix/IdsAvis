@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PrenotazioneForm } from '../prenotazione-form';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PrenotazioneFormService } from '../prenotazione-form.service';
@@ -10,7 +10,7 @@ import { OrarioDonazione } from '../orario-donazione';
   templateUrl: './prenotazione-form-vista.component.html',
   styleUrls: ['./prenotazione-form-vista.component.css']
 })
-export class PrenotazioneFormVistaComponent {
+export class PrenotazioneFormVistaComponent implements OnInit  {
 
   prenotazioneForm: PrenotazioneForm;
   orari: OrarioDonazione[];
@@ -25,7 +25,7 @@ export class PrenotazioneFormVistaComponent {
     this.prenotazioneForm = new PrenotazioneForm();
   }
 
-  vediOrari(){
+  ngOnInit(){
     this.orarioDonazioneService.findAll().subscribe(data => {
       this.orari = data;
   })

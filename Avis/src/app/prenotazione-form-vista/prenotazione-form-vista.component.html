@@ -23,31 +23,25 @@
           </div>
         </div>
 
-        
+
+
         <div class="form-group">
           <label for="compleanno">Data*</label>
-          <div [(ngModel)]="prenotazioneForm.compleanno" #compleanno="ngModel">
-            <button (click)="vediOrari()">
-              Clicca per vedere gli orari disponibili per la donazione
-            </button>
-            <div>
-                <input type="text" [(ngModel)]="prenotazioneForm.compleanno" class="form-control" id="compleanno" name="compleanno"
-                placeholder="" required minlength="8" required #compleanno="ngModel">
-          <tr *ngFor="let orarioDonazione of orari">
-              <button style="margin-bottom: 15px; margin-top: 15px; margin-right: 15px;">
-            <td>
-            data: {{ orarioDonazione.data }}
-          </td>
-          <td>
-           ora: {{ orarioDonazione.ora }} 
-          </td>
-        </button>
-          <button>premi per prenotare la visita in questa data</button>
-            </tr>
-          </div>
+          <select [(ngModel)]="prenotazioneForm.compleanno" class="form-control" id="compleanno" name="compleanno"
+          required
+            #compleanno="ngModel">
+          <option *ngFor="let orarioDonazione of orari" [value]="orarioDonazione.data" [value]="orarioDonazione.ora">
+                data: {{ orarioDonazione.data }}
+                ora: {{ orarioDonazione.ora }}
+           </option>
+           </select>
+           <div *ngIf="compleanno.invalid && (compleanno.dirty || compleanno.touched)" class="alert alert-danger">
+           <div *ngIf="compleanno.errors.required">
+              Devi selezionare una data
+            </div>
         </div>
-          </div>
-       
+        </div>
+
 
         <div class="form-group">
           <label for="telefono">Numero di telefono*</label>
@@ -80,14 +74,14 @@
             placeholder="Scrivi qua una nota">
         </div>
 
-     
+
 
         <button type="submit" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"
           [disabled]="!prenotazioneFormForm.form.valid" class="btn btn-info">Submit</button>
 
 
-          
+
 
 
         <div class="container" style="margin-top:30px;">

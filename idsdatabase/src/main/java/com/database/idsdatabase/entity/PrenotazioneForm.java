@@ -87,33 +87,9 @@ public class PrenotazioneForm{
         this.statosalute = statosalute;
     }
 
-
-
-    @ManyToOne
-    private Donazione data;
-
-    public Donazione getdata(){
-  return data;
- }
-
- public void setdata(Donazione data){
-  this.data = data;
-    }
-    
-    @ManyToOne
-    private Donazione ora;
-
-    public Donazione getora(){
-  return ora;
- }
-
- public void setora(Donazione ora){
-  this.ora = ora;
-    }
-
     @Override
  public String toString(){
-        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note + ""  + "" + ora.getid() + "" + ora.getora() + "" + data.getid() + "" + data.getdata();
+        return "" + id + "" + centro + "" + compleanno + "" + telefono + "" + statosalute + "" + note;
         
     }
 
