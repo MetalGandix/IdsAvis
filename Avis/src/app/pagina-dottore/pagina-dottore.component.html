@@ -1,14 +1,14 @@
-
 <div class="container">
 
-            <ul class="text-center list-inline py-3">
-              <li class="list-inline-item">
-                <a routerLink="/analisi-sangue-list" class="btn btn-info">Lista analisi del sangue</a>
-                  </li>
-                  </ul>
-                  <div class="container" style="margin-bottom: 30px;">
-                  <button class="btn btn-danger" (click)="uscita()">Logout</button>
-                </div>
-
-    
+  <ul class="text-center list-inline py-3">
+    <li class="list-inline-item">
+      <a routerLink="/analisi-sangue-list" class="btn btn-info">Lista analisi del sangue</a>
+    </li>
+  </ul>
+  <div class="container" style="margin-bottom: 30px;">
+    <button class="btn btn-danger" (click)="uscita()">Logout</button>
+    <button class="btn btn-danger" style="margin-left: 30px;" (click)="avvisoDonazioneEmergenza()">
+      Donazione d'emergenza
+    </button>
   </div>
+</div>

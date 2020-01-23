@@ -20,6 +20,10 @@ export class PaginaDottoreComponent implements OnInit {
   ngOnInit() {
   }
 
+  avvisoDonazioneEmergenza(){
+    alert('Il messaggio della donazione di emergenza è stato mandato');
+  }
+
 
 
 }
