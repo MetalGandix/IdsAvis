@@ -38,9 +38,7 @@ export class PrenotazioneFormVistaComponent implements OnInit  {
   }
 
   uscita(){
-    this.prenotazioneService.logOut()
-    alert("Hai effettuato il Logout")
-    this.router.navigate(['/login'])
+    this.prenotazioneService.logOut();
     
   }
 
