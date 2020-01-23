@@ -1,14 +1,32 @@
 <div class="container">
+  <div class="titolo">
+    <div>BENTORNATO</div>
+    <p><b>DOTTORE!</b></p>
 
-  <ul class="text-center list-inline py-3">
-    <li class="list-inline-item">
-      <a routerLink="/analisi-sangue-list" class="btn btn-info">Lista analisi del sangue</a>
-    </li>
-  </ul>
-  <div class="container" style="margin-bottom: 30px;">
-    <button class="btn btn-danger" (click)="uscita()">Logout</button>
-    <button class="btn btn-danger" style="margin-left: 30px;" (click)="avvisoDonazioneEmergenza()">
-      Donazione d'emergenza
-    </button>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card my-5">
+          <div class="card-body">
+            <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+            <ul class="text-center list-inline py-3">
+              <li class="list-inline-item" style="margin-bottom: 30px; margin-right: 15px;">
+                <a routerLink="/analisi-sangue-list" class="btn btn-info">Lista analisi del sangue</a>
+              </li>
+              <li class="list-inline-item" style="margin-bottom: 30px; margin-right: 15px;">
+                <button class="btn btn-info" style="margin-left: 30px;" (click)="avvisoDonazioneEmergenza()">
+                  Donazione d'emergenza
+                </button>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
+    <button class="btn btn-danger" style="margin-bottom: 30px;" (click)="uscita()">Logout</button>
+
+
 </div>

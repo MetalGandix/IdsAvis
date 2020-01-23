@@ -1,0 +1,23 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-hover table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Giorno</th>
+            <th scope="col">Ora</th>
+            <th scope="col">Operazione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orarioDonazione of orari">
+            <td>{{ orarioDonazione.data }}</td>
+            <td>{{ orarioDonazione.ora }}</td>
+            <button class="btn btn-danger" (click)="cancellaOrario(orarioDonazione)">Elimina orario</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container" style="margin-bottom: 30px;">
+    <a routerLink="/avis-page" class="btn btn-info">Torna alla pagina principale Avis</a>
+  </div>

@@ -1,0 +1,14 @@
+.titolo{
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    font-style: oblique;
+}
+
+p{
+    color: red;
+}
+
+.card{
+    background-color: rgb(104, 98, 98);
+}

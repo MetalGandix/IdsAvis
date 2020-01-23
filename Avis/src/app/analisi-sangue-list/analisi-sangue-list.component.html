@@ -5,11 +5,10 @@
 
   <div class="card my-5">
     <div class="card-body">
-      <table class="table table-hover table-bordered">
+      <table class="table table-hover table-hover table-bordered">
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nome</th>
+            <th scope="col">Paziente</th>
             <th scope="col">Globuli Rossi</th>
             <th scope="col">Globuli Bianchi</th>
             <th scope="col">Emoglobina</th>
@@ -24,7 +23,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let AnalisiSangue of analisi; let x = index;">
-            <td>{{ AnalisiSangue.id}}</td>
             <td>{{ AnalisiSangue.name}}</td>
             <td>
               {{ AnalisiSangue.globuliRossi}}
