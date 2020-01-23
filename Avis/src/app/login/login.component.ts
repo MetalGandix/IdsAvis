@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
           data => {
             this.router.navigate(['/prenotazione-form-vista'])
             this.invalidLogin = false
-            alert("Bentornato Utente")
           },
           error => {
             if(this.invalidLogin = true){

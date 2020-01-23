@@ -11,6 +11,10 @@ import { AvisOrariComponent } from './avis-orari/avis-orari.component';
 import { AvisMettiorariComponent } from './avis-mettiorari/avis-mettiorari.component';
 import { AuthenticationService } from './service/authentication.service';
 import { AuthGuardComponent } from './auth-guard/auth-guard.component';
+import { AvisPageComponent } from './avis-page/avis-page.component';
+import { RoleGuardComponent } from './role-guard/role-guard.component';
+import { DottoreComponent } from './dottore-login/dottore.component';
+import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
 const routes: Routes = [
 
   { path: 'user', component: UserListComponent },
@@ -18,10 +22,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'pagina-accesso', component: PaginaAccessoComponent},
   { path: 'prenotazione-form-list', component: PrenotazioneFormListComponent, canActivate: [AuthGuardComponent]},
-  { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent},
-  { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
-  { path: 'avis-orari', component: AvisOrariComponent},
-  { path: 'avis-mettiorari', component: AvisMettiorariComponent}
+  { path: 'prenotazione-form-vista', component: PrenotazioneFormVistaComponent, canActivate: [RoleGuardComponent]},
+  { path: 'analisi-sangue-list', component: AnalisiSangueListComponent, canActivate: [RoleGuardComponent]},
+  { path: 'avis-orari', component: AvisOrariComponent, canActivate: [RoleGuardComponent]},
+  { path: 'avis-mettiorari', component: AvisMettiorariComponent,canActivate: [RoleGuardComponent]},
+  { path: 'avis-page', component: AvisPageComponent, canActivate: [RoleGuardComponent]},
+  { path: 'pagina-dottore', component: PaginaDottoreComponent, canActivate: [RoleGuardComponent]}
+
 ];
  
 @NgModule({

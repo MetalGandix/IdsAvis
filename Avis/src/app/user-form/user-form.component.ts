@@ -13,7 +13,7 @@ export class UserFormComponent {
 
   user: User;
   showMsg: boolean = false;
-
+  userExist: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,9 +28,15 @@ export class UserFormComponent {
   }
 
   existUser(){
-    this.userService.existUser(this.user.username).subscribe(res=>{
-      console.log(res);
-    })
+    if(this.user.username!=''){
+      this.userService.existUser(this.user.username).subscribe(res=>{
+        if(res){
+          this.userExist=true;
+        }else{
+          this.userExist=false;
+        }
+      })
+    }
   }
 
   /*gotoUserList() {

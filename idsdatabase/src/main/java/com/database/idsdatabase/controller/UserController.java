@@ -1,5 +1,6 @@
 package com.database.idsdatabase.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.database.idsdatabase.dto.UserDTO;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +23,7 @@ public class UserController {
     @Autowired
     private JwtUserDetailsService userRepository;
  
-    //@PreAuthorize("hasRole('AVIS')")
+    @PreAuthorize("hasRole('AVIS')")
     @GetMapping("/users")
     public List<DAOUser> getUser() {
         return userRepository.findAll();
@@ -33,16 +35,15 @@ public class UserController {
         userRepository.save(user);
     }
 
-   /* @GetMapping("/existUser/{username}")
-    public boolean existUser(String username){
-        List<DAOUser> users = getUser();
-        boolean userFound = false;
-        users.forEach(u->{
-            if(u.getUsername()==username){
-                userFound=true;
-            }
-        });*/
+   @GetMapping("/existUser/{username}")
+    public boolean existUser(@PathVariable String username){
+        if(userRepository.findUserByUsername(username)==null){
+            return false;
+        }else{
+            return true;
+        }
     }
+}
 
 
 

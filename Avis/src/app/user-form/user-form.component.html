@@ -6,13 +6,16 @@
             <label for="userName">Username*</label>
             <input type="text" [(ngModel)]="user.username" required minlength="2" class="form-control" id="userName" name="userName"
               placeholder="Enter your username" required #username="ngModel" (keyup)="existUser()">
-              <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+              <div *ngIf="(username.invalid && (username.dirty || username.touched)) || userExist " class="alert alert-danger">
                   <div *ngIf="username.errors.required">
                       Devi scrivere l'username.
                   </div>
                   <div *ngIf="username.errors.minlength">
                       Il nome deve essere lungo almeno 2 caratteri.
                   </div>
+                  <div *ngIf="userExist && !username.errors">
+                    Questo username è già utilizzato.
+                </div>
               </div>
         </div>
     

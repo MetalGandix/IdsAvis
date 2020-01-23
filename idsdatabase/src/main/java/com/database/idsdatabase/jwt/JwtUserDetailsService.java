@@ -4,6 +4,7 @@ package com.database.idsdatabase.jwt;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 //import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,21 +35,16 @@ public class JwtUserDetailsService implements UserDetailsService {
 		}
 		//return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),	new ArrayList<>());
 		//role based
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority(user));
+		org.springframework.security.core.userdetails.User u = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority(user));
+		return u;
 	}
 
-	public DAOUser findUserById(String username){
-		DAOUser user = userDao.findByUsername(username);
-		System.out.println(user);
-		if(user==null){
-			return null;
-		}else{
-			return user;
-		}
+	public DAOUser findUserByUsername(String username){
+		return userDao.findByUsername(username);
 	}
 	//role based
-	private Set getAuthority(DAOUser user) { //Prende i ruoli
-        Set authorities = new HashSet<>();
+	private Set<GrantedAuthority> getAuthority(DAOUser user) { //Prende i ruoli
+        Set<GrantedAuthority> authorities = new HashSet<>();
 		user.getRoles().forEach(role -> {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
 		});

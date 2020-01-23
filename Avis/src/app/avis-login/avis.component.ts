@@ -24,7 +24,6 @@ export class AvisComponent implements OnInit {
         data => {
           this.router.navigate(['/avis-page'])
           this.invalidLogin = false
-          alert("Bentornata Avis")
         },
         error => {
           if(this.invalidLogin = true){
