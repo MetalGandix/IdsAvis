@@ -56,6 +56,7 @@ import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.componen
 import { AuthGuardComponent } from './auth-guard/auth-guard.component';
 import { AuthenticationService } from './service/authentication.service';
 import { RoleGuardComponent } from './role-guard/role-guard.component';
+import { AndamentoAnalisiComponent } from './andamento-analisi/andamento-analisi.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { RoleGuardComponent } from './role-guard/role-guard.component';
     AvisOrariComponent,
     AvisMettiorariComponent,
     LogoutDottoreComponent,
-    RoleGuardComponent
+    RoleGuardComponent,
+    AndamentoAnalisiComponent
   ],
   
   imports: [
@@ -115,7 +117,8 @@ import { RoleGuardComponent } from './role-guard/role-guard.component';
       { path: 'come-donare', component: ComeDonareComponent},
       { path: 'dottore', component: PaginaDottoreComponent},
       { path: 'analisi-sangue-list', component: AnalisiSangueListComponent},
-      { path: 'avis-page', component: AvisPageComponent}
+      { path: 'avis-page', component: AvisPageComponent},
+      { path: 'andamento-analisi', component:AndamentoAnalisiComponent}
     ]),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),

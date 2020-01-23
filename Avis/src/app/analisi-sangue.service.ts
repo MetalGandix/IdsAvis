@@ -34,4 +34,10 @@ export class AnalisiSangueService {
     const url = `${this.analisiSanguesUrl}/${AnalisiSangue.id}`;
     return this.http.put<AnalisiSangue>(url,AnalisiSangue, httpOptions);
    }
+
+   
+  public vediAnalisi(AnalisiSangue: AnalisiSangue): Observable<AnalisiSangue> {
+    const url = `${this.analisiSanguesUrl}/${AnalisiSangue.id}`;
+    return this.http.get<AnalisiSangue>(url);
+   }
 }
