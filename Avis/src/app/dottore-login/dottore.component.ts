@@ -23,7 +23,7 @@ export class DottoreComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-        this.router.navigate(['/dottore'])
+        this.router.navigate(['pagina-dottore'])
         this.invalidLogin = false
       },
       error => {

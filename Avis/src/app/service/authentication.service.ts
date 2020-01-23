@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { CanActivate, RouteConfigLoadEnd } from '@angular/router';
+import { CanActivate, RouteConfigLoadEnd, Router } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 
 export class Dottore{
@@ -32,7 +32,7 @@ export class JwtResponse{
 })
 export class AuthenticationService {
 
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient, private router: Router) { 
      }
 
   authenticate(username, password) {
@@ -57,7 +57,7 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('token');
-    location.reload();
+    this.router.navigate(['/home']);
   }
 
   getRole(){

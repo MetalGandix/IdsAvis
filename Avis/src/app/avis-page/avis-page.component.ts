@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-avis-page',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvisPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private prenotazioneService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  uscita(){
+    this.prenotazioneService.logOut();
   }
 
 }

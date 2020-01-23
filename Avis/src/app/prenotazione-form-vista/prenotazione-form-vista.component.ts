@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PrenotazioneFormService } from '../prenotazione-form.service';
 import { AvisService } from '../avis.service';
 import { OrarioDonazione } from '../orario-donazione';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-prenotazione-form-vista',
@@ -15,13 +16,13 @@ export class PrenotazioneFormVistaComponent implements OnInit  {
   prenotazioneForm: PrenotazioneForm;
   orari: OrarioDonazione[];
   showMsg: boolean = false;
+  router: any;
 
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
     private orarioDonazioneService: AvisService,
-    private prenotazioneFormService: PrenotazioneFormService) {
+    private prenotazioneFormService: PrenotazioneFormService,
+    private prenotazioneService: AuthenticationService) {
     this.prenotazioneForm = new PrenotazioneForm();
   }
 
@@ -32,12 +33,13 @@ export class PrenotazioneFormVistaComponent implements OnInit  {
 }
 
   onSubmit() {
-    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(data =>{this.showMsg= true;
+    this.prenotazioneFormService.save(this.prenotazioneForm).subscribe(() =>{this.showMsg= true;
     })
   }
 
-  /*gotoPrenotazioneFormList() {
-    this.router.navigate(['/prenotazioni']);
-  }*/
+  uscita(){
+    this.prenotazioneService.logOut();
+    
+  }
 
 }
