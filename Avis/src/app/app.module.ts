@@ -55,6 +55,7 @@ import { BasicAuthHtppInterceptorService } from './service/basic-auth-httpp-inte
 import { LogoutDottoreComponent } from './logout-dottore/logout-dottore.component';
 import { AuthGuardComponent } from './auth-guard/auth-guard.component';
 import { AuthenticationService } from './service/authentication.service';
+import { RoleGuardComponent } from './role-guard/role-guard.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { AuthenticationService } from './service/authentication.service';
     AnalisiSangueListComponent,
     AvisOrariComponent,
     AvisMettiorariComponent,
-    LogoutDottoreComponent
+    LogoutDottoreComponent,
+    RoleGuardComponent
   ],
   
   imports: [
@@ -129,7 +131,7 @@ import { AuthenticationService } from './service/authentication.service';
     SortableModule.forRoot()
 
   ],
-  providers: [UserService,PrenotazioneFormService,AvisService,AuthenticationService, AuthGuardComponent,
+  providers: [UserService,PrenotazioneFormService,AvisService,AuthenticationService, AuthGuardComponent, RoleGuardComponent,
     {
       provide: HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
     }

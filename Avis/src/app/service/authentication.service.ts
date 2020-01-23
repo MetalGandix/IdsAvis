@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { CanActivate } from '@angular/router';
+import { CanActivate, RouteConfigLoadEnd } from '@angular/router';
+import * as jwt_decode from "jwt-decode";
 
 export class Dottore{
   constructor(
@@ -56,5 +57,11 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('token');
+    location.reload();
+  }
+
+  getRole(){
+    let token = jwt_decode(sessionStorage.getItem('token'));
+    return token['role'];
   }
 }
