@@ -31,6 +31,7 @@ export class RoleGuardComponent implements OnInit {
 
       case 'analisi-sangue-list' :
       case 'pagina-dottore' :
+      case 'prenotazione-form-list' :
         if(this.authService.getRole().authority=='ROLE_DOTTORE'){
           return true;
         }else{
