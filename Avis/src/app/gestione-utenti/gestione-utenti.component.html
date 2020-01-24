@@ -3,16 +3,16 @@
       <table class="table table-hover table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Giorno</th>
-            <th scope="col">Ora</th>
-            <th scope="col">Operazione</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Elimina</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let orarioDonazione of orari">
-            <td>{{ orarioDonazione.data }}</td>
-            <td>{{ orarioDonazione.ora }}</td>
-            <button class="btn btn-danger" (click)="cancellaOrario(orarioDonazione)">Elimina orario</button>
+          <tr *ngFor="let UserDTO of user">
+            <td>{{ UserDTO.username }}</td>
+            <td>{{ UserDTO.password }}</td>
+            <button class="btn btn-danger" (click)="cancellaUser(UserDTO)">Elimina orario</button>
           </tr>
         </tbody>
       </table>

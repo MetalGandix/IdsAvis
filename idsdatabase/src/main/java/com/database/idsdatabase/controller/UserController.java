@@ -10,6 +10,7 @@ import com.database.idsdatabase.jwt.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +35,15 @@ public class UserController {
     void addUser(@RequestBody UserDTO user) {
         userRepository.save(user);
     }
+
+/*    @DeleteMapping("/user/{userid}")
+    public String deleteUser(@PathVariable long userid)
+    {
+        DAOUser user = userRepository.getOne(userid);
+        userRepository.delete(user);
+        return "deleted";
+    }
+*/
 
    @GetMapping("/existUser/{username}")
     public boolean existUser(@PathVariable String username){

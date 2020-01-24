@@ -4,4 +4,11 @@ export class User {
     name: string;
     lastname: string;
     password: string;
+    stato: string;
+    email: string;
+    DonazioneEmergenza: string;
+    
+
+
+    
 }
