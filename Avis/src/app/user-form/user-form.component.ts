@@ -43,10 +43,12 @@ export class UserFormComponent {
       this.userService.existUser(this.user.username).subscribe(res=>{
         if(res){
           this.userExist=true;
+          alert("Username già presente nel database")
         }else{
           this.userExist=false;
         }
       })
+     
     }
   }
 
