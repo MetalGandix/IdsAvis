@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  UserDTO } from '../user';
+import {  User } from '../user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user-service.service';
 
@@ -10,8 +10,8 @@ import { UserService } from '../user-service.service';
 })
 export class GestioneUtentiComponent implements OnInit {
   isCollapsed = false;
-  user: UserDTO[];
-  password: UserDTO;
+  user: User[];
+  password: User;
 
 
   constructor(    
