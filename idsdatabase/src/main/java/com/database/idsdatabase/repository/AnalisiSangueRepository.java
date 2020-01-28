@@ -8,4 +8,5 @@ import com.database.idsdatabase.entity.AnalisiSangue;
 //@RepositoryRestResource(collectionResourceRel="analisi",path = "analisi")
 public interface AnalisiSangueRepository extends JpaRepository<AnalisiSangue, Long> {
 
+
 }

@@ -59,6 +59,7 @@ import { RoleGuardComponent } from './role-guard/role-guard.component';
 import { AndamentoAnalisiComponent } from './andamento-analisi/andamento-analisi.component';
 import { GestioneUtentiComponent } from './gestione-utenti/gestione-utenti.component';
 import { ControlloAnalisiComponent } from './controllo-analisi/controllo-analisi.component';
+import { StatisticheComponent } from './statistiche/statistiche.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ControlloAnalisiComponent } from './controllo-analisi/controllo-analisi
     RoleGuardComponent,
     AndamentoAnalisiComponent,
     GestioneUtentiComponent,
-    ControlloAnalisiComponent
+    ControlloAnalisiComponent,
+    StatisticheComponent
   ],
   
   imports: [
@@ -124,7 +126,9 @@ import { ControlloAnalisiComponent } from './controllo-analisi/controllo-analisi
       { path: 'avis-page', component: AvisPageComponent},
       { path: 'andamento-analisi', component:AndamentoAnalisiComponent},
       { path: 'gestione-utenti', component:GestioneUtentiComponent},
-      { path: 'controllo-analisi', component:ControlloAnalisiComponent}
+      { path: 'controllo-analisi', component:ControlloAnalisiComponent},
+      { path: 'statistiche', component:StatisticheComponent}
+
 
     ]),
     CarouselModule.forRoot(),

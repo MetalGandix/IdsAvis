@@ -6,7 +6,7 @@ export class User {
     password: string;
     stato: string;
     email: string;
-    DonazioneEmergenza: string;
+    emergenza: string;
     
 
 

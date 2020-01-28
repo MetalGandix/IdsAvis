@@ -22,7 +22,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let AnalisiSangue of analisi; let index = index;" [class.active]= "index == 1">
+            <tr *ngFor="let AnalisiSangue of analisi; let first = first;"[ngClass] = "{first: first}">
               <td>{{ AnalisiSangue.name}}</td>
               <td>
                 {{ AnalisiSangue.globuliRossi}}

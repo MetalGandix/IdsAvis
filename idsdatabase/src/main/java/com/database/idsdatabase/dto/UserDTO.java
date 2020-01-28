@@ -8,7 +8,7 @@ public class UserDTO {
 	private String lastname;
 	private String email;
 	private String stato;
-	private String DonazioneEmergenza;
+	private String emergenza;
 
 
 	public String getUsername() {
@@ -59,12 +59,12 @@ public class UserDTO {
 		this.stato = stato;
 	}
 
-	public String getDonazioneEmergenza() {
-		return DonazioneEmergenza;
+	public String getEmergenza() {
+		return emergenza;
 	   }
 	  
-	   public void setDonazioneEmergenza(final String DonazioneEmergenza) {
-		this.DonazioneEmergenza = DonazioneEmergenza;
+	   public void setEmergenza(final String emergenza) {
+		this.emergenza = emergenza;
 	   }
 
 

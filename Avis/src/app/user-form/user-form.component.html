@@ -95,15 +95,15 @@
       </div>
 
       <div class="form-group">
-        <label for="DonazioneEmergenza">Donazione di Emergenza?*</label>
-        <select [(ngModel)]="user.DonazioneEmergenza" class="form-control" id="DonazioneEmergenza"
-          name="DonazioneEmergenza" placeholder="Inserisci la risposta alla donazione d'emergenza" required
-          #DonazioneEmergenza="ngModel">
+        <label for="emergenza">Donazione di Emergenza?*</label>
+        <select [(ngModel)]="user.emergenza" class="form-control" id="emergenza"
+          name="emergenza" placeholder="Inserisci la risposta alla donazione d'emergenza" required
+          #emergenza="ngModel">
           <option value="SI">SI</option>
           <option value="NO">NO</option>
         </select>
-        <div *ngIf="DonazioneEmergenza.invalid && (DonazioneEmergenza.dirty || DonazioneEmergenza.touched)" class="alert alert-danger">
-            <div *ngIf="DonazioneEmergenza.errors.required">
+        <div *ngIf="emergenza.invalid && (emergenza.dirty || emergenza.touched)" class="alert alert-danger">
+            <div *ngIf="emergenza.errors.required">
                Devi rispondere si o no
               </div>
           </div>

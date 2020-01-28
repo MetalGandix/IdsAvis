@@ -14,7 +14,8 @@ export class RoleGuardComponent implements OnInit {
     switch(route.routeConfig.path){
       case 'avis-page':
       case 'avis-mettiorari':
-      case 'avis-orari': {
+      case 'avis-orari':
+      case 'statistiche': {
         if(this.authService.getRole().authority=='ROLE_AVIS'){
           return true;
         }else{
@@ -32,6 +33,7 @@ export class RoleGuardComponent implements OnInit {
       case 'analisi-sangue-list' :
       case 'pagina-dottore' :
       case 'prenotazione-form-list' :
+    
         if(this.authService.getRole().authority=='ROLE_DOTTORE'){
           return true;
         }else{

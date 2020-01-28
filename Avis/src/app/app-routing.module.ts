@@ -15,6 +15,7 @@ import { AvisPageComponent } from './avis-page/avis-page.component';
 import { RoleGuardComponent } from './role-guard/role-guard.component';
 import { DottoreComponent } from './dottore-login/dottore.component';
 import { PaginaDottoreComponent } from './pagina-dottore/pagina-dottore.component';
+import { StatisticheComponent } from './statistiche/statistiche.component';
 const routes: Routes = [
 
   { path: 'user', component: UserListComponent },
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'avis-orari', component: AvisOrariComponent, canActivate: [RoleGuardComponent]},
   { path: 'avis-mettiorari', component: AvisMettiorariComponent,canActivate: [RoleGuardComponent]},
   { path: 'avis-page', component: AvisPageComponent, canActivate: [RoleGuardComponent]},
-  { path: 'pagina-dottore', component: PaginaDottoreComponent, canActivate: [RoleGuardComponent]}
+  { path: 'pagina-dottore', component: PaginaDottoreComponent, canActivate: [RoleGuardComponent]},
+  { path: 'statistiche', component: StatisticheComponent, canActivate: [RoleGuardComponent]}
+
 
 ];
  

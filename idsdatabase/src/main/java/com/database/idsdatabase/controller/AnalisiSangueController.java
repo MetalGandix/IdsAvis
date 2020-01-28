@@ -42,11 +42,7 @@ public class AnalisiSangueController {
     }
     */
 
-    @GetMapping("/analisi/{analisiid =1}")
-    public List<AnalisiSangue> getAnalisiID(){
-        return (List<AnalisiSangue>) analisisangueRepository.findAll();
-      
-    }
+   
     
 
     @PutMapping("/analisiSangues/{analisiid}")
