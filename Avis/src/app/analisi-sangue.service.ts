@@ -25,6 +25,16 @@ export class AnalisiSangueService {
     return this.http.get<AnalisiSangue[]>(this.analisiUrl);
   }
 
+
+
+  public findID(AnalisiSangue: AnalisiSangue): Observable<AnalisiSangue>{
+    const url = `${this.analisiUrl}/${AnalisiSangue.id}`;
+    return this.http.get<AnalisiSangue>(url)
+  }
+
+
+
+
   public save(AnalisiSangue: AnalisiSangue){
     return this.http.post<AnalisiSangue>(this.analisiUrl, AnalisiSangue);
   }
