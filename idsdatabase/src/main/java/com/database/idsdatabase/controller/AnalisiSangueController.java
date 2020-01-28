@@ -33,13 +33,21 @@ public class AnalisiSangueController {
         analisisangueRepository.save(analisisangue);
     }
 
-    @DeleteMapping("/analisiSangues/{analisiid}")
+ /*   @DeleteMapping("/analisiSangues/{analisiid}")
     public String deleteAnalisi(@PathVariable Long analisiid)
     {
         AnalisiSangue analisi = analisisangueRepository.getOne(analisiid);
         analisisangueRepository.delete(analisi);
         return "deleted";
     }
+    */
+
+    @GetMapping("/analisi/{analisiid =1}")
+    public List<AnalisiSangue> getAnalisiID(){
+        return (List<AnalisiSangue>) analisisangueRepository.findAll();
+      
+    }
+    
 
     @PutMapping("/analisiSangues/{analisiid}")
     public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi)
