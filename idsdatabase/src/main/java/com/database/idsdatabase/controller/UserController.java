@@ -24,7 +24,6 @@ public class UserController {
     @Autowired
     private JwtUserDetailsService userRepository;
  
-    @PreAuthorize("hasRole('AVIS')")
     @GetMapping("/users")
     public List<DAOUser> getUser() {
         return userRepository.findAll();
@@ -36,14 +35,6 @@ public class UserController {
         userRepository.save(user);
     }
 
-/*    @DeleteMapping("/user/{userid}")
-    public String deleteUser(@PathVariable long userid)
-    {
-        DAOUser user = userRepository.getOne(userid);
-        userRepository.delete(user);
-        return "deleted";
-    }
-*/
 
    @GetMapping("/existUser/{username}")
     public boolean existUser(@PathVariable String username){

@@ -27,34 +27,34 @@ public class DAOUser {
 
 	@Column
 	private String email;
-	
+
 	@Column
 	private String stato;
 
 	@Column
 	private String emergenza;
 
-	//role based
+	// role based
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
-	//role based
-	@JoinTable(name = "USER_ROLES", 
-				joinColumns = {	@JoinColumn(name = "USER_ID") }, 
-				inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") })
-	
-	//role based
+	// role based
+	@JoinTable(name = "USER_ROLES", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "ROLE_ID") })
+
+	// role based
 	private Set<Role> roles;
 
-	/*public DAOUser(final long id, final String name,final String username, final String lastname, final String email, final String stato, final String password) {
-		this.id = id;
-		this.name = name;
-		this.username = username;
-		this.lastname = lastname;
-		this.email = email;
-		this.stato = stato;
-		this.password = password;
-	   }*/
+	/*
+	 * public DAOUser(final long id, final String name,final String username, final
+	 * String lastname, final String email, final String stato, final String
+	 * password) { this.id = id; this.name = name; this.username = username;
+	 * this.lastname = lastname; this.email = email; this.stato = stato;
+	 * this.password = password; }
+	 */
 
+	public long getId() {
+		return this.id;
+	}
 
 	public String getUsername() {
 		return username;
@@ -73,11 +73,11 @@ public class DAOUser {
 	}
 
 	public Set<Role> getRoles() {
-        return roles;
+		return roles;
 	}
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	public String getName() {
@@ -87,38 +87,37 @@ public class DAOUser {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getemail() {
 		return email;
-	   }
-	  
-	   public void setemail(final String email) {
+	}
+
+	public void setemail(final String email) {
 		this.email = email;
 	}
 
 	public String getstato() {
 		return stato;
-	   }
-	  
-	   public void setstato(final String stato) {
-			  this.stato = stato;
-	   }
-	  
-	   public String getlastname() {
-		return lastname;
-	   }
-	  
-	   public void setlastname(final String lastname) {
-		this.lastname = lastname;
-	   }
+	}
 
-	   
-	   public String getemergenza() {
+	public void setstato(final String stato) {
+		this.stato = stato;
+	}
+
+	public String getlastname() {
+		return lastname;
+	}
+
+	public void setlastname(final String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getemergenza() {
 		return emergenza;
-	   }
-	  
-	   public void setemergenza(final String emergenza) {
+	}
+
+	public void setemergenza(final String emergenza) {
 		this.emergenza = emergenza;
-	   }
+	}
 
 }

@@ -3,6 +3,8 @@ package com.database.idsdatabase.jwt;
 
 import java.util.*;
 
+import javax.management.relation.Role;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,7 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.database.idsdatabase.repository.UserDao;
+import com.database.idsdatabase.repository.UserRoleRepository;
 import com.database.idsdatabase.entity.DAOUser;
+import com.database.idsdatabase.entity.UserRole;
 import com.database.idsdatabase.dto.UserDTO;
 
 //@Service 
@@ -23,6 +27,9 @@ public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
 	private UserDao userDao;
+
+	@Autowired
+	private UserRoleRepository userRoleRepository;
 
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
@@ -66,7 +73,13 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setstato(user.getStato());
 		newUser.setemergenza(user.getEmergenza());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		return userDao.save(newUser);
+		DAOUser saved = userDao.save(newUser);
+
+		UserRole newUserRole = new UserRole();
+		newUserRole.setRole_id(1);
+		newUserRole.setUser_id(saved.getId());
+		userRoleRepository.save(newUserRole);
+		return saved;
 	}
 
 	/*public String getRoleByUsername(String username){
