@@ -10,7 +10,9 @@ public class UserDTO {
 	private String stato;
 	private String emergenza;
 
+	public UserDTO() {
 
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -43,11 +45,11 @@ public class UserDTO {
 		this.name = name;
 	}
 
-	public String getEmail() {
+	public String getemail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setemail(String email) {
 		this.email = email;
 	}
 

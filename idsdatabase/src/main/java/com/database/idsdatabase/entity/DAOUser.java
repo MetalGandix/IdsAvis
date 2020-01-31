@@ -80,8 +80,8 @@ public class DAOUser {
 		this.roles = roles;
 	}
 
-	public String getName() {
-		return name;
+	public String getName() { 
+		return name; 
 	}
 
 	public void setName(String name) {

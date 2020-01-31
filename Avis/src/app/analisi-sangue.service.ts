@@ -35,7 +35,7 @@ export class AnalisiSangueService {
 
 
   public updateAnalisi(AnalisiSangue: AnalisiSangue): Observable<AnalisiSangue> {
-    const url = `${this.analisiSanguesUrl}/${AnalisiSangue.ematocrito}`;
+    const url = `${this.analisiSanguesUrl}/${AnalisiSangue.id}`;
     return this.http.put<AnalisiSangue>(url,AnalisiSangue, httpOptions);
    }
 

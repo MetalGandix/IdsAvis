@@ -47,7 +47,7 @@ public class AnalisiSangueController {
     @PutMapping("/analisiSangues/{analisiid}")
     public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi) throws MessagingException
     {
-        smtpMailSender.send(analisi.getemail(), "Test mail from Spring", analisi.getannotazione());
+        smtpMailSender.send(analisi.getemail(), "Riusultato Analisi del Sangue ", analisi.getannotazione());
         analisisangueRepository.save(analisi);
         return analisi;
     }

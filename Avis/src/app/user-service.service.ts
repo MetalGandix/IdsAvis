@@ -7,17 +7,22 @@ import { Observable } from 'rxjs';
 export class UserService {
  
   private userUrl: string
- 
+
   constructor(private http: HttpClient) {
     this.userUrl = 'http://localhost:8080/';
+    
+    
   }
  
-  public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl+"user");
-  }
+  
  
   public save(user: User) {
     return this.http.post<User>(this.userUrl+"user", user);
+  }
+
+  public callUserEmergenza():Observable<User[]> {
+    
+    return this.http.get<User[]>(this.userUrl+ "users");
   }
 
   public existUser(username: string) {

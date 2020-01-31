@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../service/authentication.service';
+import { UserService } from '../user-service.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-pagina-dottore',
@@ -8,7 +10,8 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class PaginaDottoreComponent implements OnInit {
 
-  constructor(private prenotazioneService: AuthenticationService) { }
+  constructor(private prenotazioneService: AuthenticationService,
+    private userService: UserService) { }
 
   router: any;
 
@@ -24,6 +27,10 @@ export class PaginaDottoreComponent implements OnInit {
     alert('Il messaggio della donazione di emergenza è stato mandato');
   }
 
+  chiamaUtente(){
+    this.userService.callUserEmergenza().subscribe()
+    alert('Il messaggio della donazione di emergenza è stato mandato');
+  }
 
 
 }
