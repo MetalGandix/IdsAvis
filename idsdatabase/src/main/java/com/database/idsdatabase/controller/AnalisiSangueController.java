@@ -1,16 +1,22 @@
 package com.database.idsdatabase.controller;
 
 import java.util.List;
+
+import javax.mail.MessagingException;
+
+import com.database.idsdatabase.SmtpMailSender;
 import com.database.idsdatabase.entity.AnalisiSangue;
 import com.database.idsdatabase.repository.AnalisiSangueRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,30 +39,16 @@ public class AnalisiSangueController {
         analisisangueRepository.save(analisisangue);
     }
 
- /*   @DeleteMapping("/analisiSangues/{analisiid}")
-    public String deleteAnalisi(@PathVariable Long analisiid)
-    {
-        AnalisiSangue analisi = analisisangueRepository.getOne(analisiid);
-        analisisangueRepository.delete(analisi);
-        return "deleted";
-    }
-    */
 
-   
-    
+    @Autowired
+	private SmtpMailSender smtpMailSender;
 
     @PutMapping("/analisiSangues/{analisiid}")
-    public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi)
+    public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi) throws MessagingException
     {
+        smtpMailSender.send(AnalisiSangue.getemail(), "Test mail from Spring", AnalisiSangue.getannotazione());
         analisisangueRepository.save(analisi);
         return analisi;
-
-        /*
-        Per provare su POSTMAN fare: 
-        public String al posto di AnalisiSangue
-        return "prova"
-        Se su postman esce prova, allora funziona
-        */
     }
 
 

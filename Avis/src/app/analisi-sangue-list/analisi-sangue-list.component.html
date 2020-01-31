@@ -17,13 +17,12 @@
             <th scope="col">Mch(HB corpuscolare)</th>
             <th scope="col">Mchc(Conc HB media)</th>
             <th scope="col">Piastrine</th>
-            <th scope="col">Annotazione</th>
-            <th scope="col"></th>
+            <th scope="col">Invia una mail</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let AnalisiSangue of analisi; let x = index;">
-            <td>{{ AnalisiSangue.name}}</td>
+            <td>{{ AnalisiSangue.paziente}}</td>
             <td>
               {{ AnalisiSangue.globuliRossi}}
             </td>
@@ -47,10 +46,7 @@
             </td>
             <td>
               {{ AnalisiSangue.piastrine}}
-            </td>
-            <td>
-                {{ AnalisiSangue.annotazione }}
-            </td>
+            </td>            
             <td>
                 <input type="text" [(ngModel)]="analisi[x].annotazione" class="form-control">
                 <button class="btn btn-danger" (click)="aggiornaAnalisi(analisi[x])">Aggiungi il commento</button>

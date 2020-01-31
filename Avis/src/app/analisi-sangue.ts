@@ -1,5 +1,7 @@
 export class AnalisiSangue {
     id: number;
-    name: String;
+    paziente: String;
     annotazione: String;
+    ematocrito: String;
+    email: String;
 }

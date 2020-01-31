@@ -20,6 +20,7 @@ export class AnalisiSangueService {
 
   private analisiUrl = 'http://localhost:8080/analisi'; 
   private analisiSanguesUrl = 'http://localhost:8080/analisiSangues'; 
+  private analisiSangueEmail = 'http://localhiost:8080/send-mail';
 
   public findAll(): Observable<AnalisiSangue[]> {
     return this.http.get<AnalisiSangue[]>(this.analisiUrl);
@@ -33,15 +34,8 @@ export class AnalisiSangueService {
   }
 
 
-
-
-  public save(AnalisiSangue: AnalisiSangue){
-    return this.http.post<AnalisiSangue>(this.analisiUrl, AnalisiSangue);
-  }
-
-
   public updateAnalisi(AnalisiSangue: AnalisiSangue): Observable<AnalisiSangue> {
-    const url = `${this.analisiSanguesUrl}/${AnalisiSangue.id}`;
+    const url = `${this.analisiSanguesUrl}/${AnalisiSangue.ematocrito}`;
     return this.http.put<AnalisiSangue>(url,AnalisiSangue, httpOptions);
    }
 

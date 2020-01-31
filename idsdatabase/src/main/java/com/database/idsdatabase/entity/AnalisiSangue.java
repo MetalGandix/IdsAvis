@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class AnalisiSangue
-{
+public class AnalisiSangue {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
-	private String name;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	private String paziente;
 	private String globuliRossi;
 	private String globuliBianchi;
 	private String emoglobina;
@@ -21,28 +20,35 @@ public class AnalisiSangue
 	private String mch;
 	private String mchc;
 	private String piastrine;
-	private String annotazione;
-	
-	
-	public AnalisiSangue(){
+	private static String annotazione;
+	private static String email;
+
+	public AnalisiSangue() {
 
 	}
-	public AnalisiSangue(final long id, final String name) {
-        this.id = id;
-        this.name = name;
+
+	public static String getemail() {
+		return email;
 	}
 
-    
+	public void setEmail(final String email) {
+		this.email = email;
+	}
 
-    public long getid() {
+	public AnalisiSangue(final long id, final String paziente) {
+		this.id = id;
+		this.paziente = paziente;
+	}
+
+	public long getid() {
 		return id;
-    }
-    
+	}
+
 	public void setid(final Long id) {
 		this.id = id;
 	}
-	
-	public String getannotazione() {
+
+	public static String getannotazione() {
 		return annotazione;
 	}
 
@@ -50,12 +56,12 @@ public class AnalisiSangue
         this.annotazione = annotazione;
 	}
 
-    public String getname() {
-		return name;
+    public String getpaziente() {
+		return paziente;
 	}
 
-	public void setname(final String name) {
-        this.name = name;
+	public void setpaziente(final String paziente) {
+        this.paziente = paziente;
 	}
 
 	public String getemoglobina() {
@@ -79,7 +85,7 @@ public class AnalisiSangue
 	}
 
 	public void setmcv(final String mcv) {
-        this.mcv = mcv;
+        this.mcv = mcv; 
 	}
 
 	public String getmch() {
@@ -124,6 +130,6 @@ public class AnalisiSangue
 
     @Override
 	public String toString(){
-		return "" + id + "" + name + "" + globuliRossi + "" + globuliBianchi + "" + emoglobina + "" + ematocrito + "" + mcv + "" + mch + "" + mchc + "" + piastrine + "" + annotazione;
+		return "" + id + "" + paziente + "" + email + "" + globuliRossi + "" + globuliBianchi + "" + emoglobina + "" + ematocrito + "" + mcv + "" + mch + "" + mchc + "" + piastrine + "" + annotazione;
 	}
 }
