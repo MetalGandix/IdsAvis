@@ -20,14 +20,14 @@ public class AnalisiSangue {
 	private String mch;
 	private String mchc;
 	private String piastrine;
-	private static String annotazione;
-	private static String email;
+	private String annotazione;
+	private String email;
 
 	public AnalisiSangue() {
 
 	}
 
-	public static String getemail() {
+	public  String getemail() {
 		return email;
 	}
 
@@ -48,7 +48,7 @@ public class AnalisiSangue {
 		this.id = id;
 	}
 
-	public static String getannotazione() {
+	public String getannotazione() {
 		return annotazione;
 	}
 

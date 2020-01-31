@@ -40,13 +40,14 @@ public class AnalisiSangueController {
     }
 
 
+
     @Autowired
 	private SmtpMailSender smtpMailSender;
 
     @PutMapping("/analisiSangues/{analisiid}")
     public AnalisiSangue saveOrUpdateAnalisi(@RequestBody AnalisiSangue analisi) throws MessagingException
     {
-        smtpMailSender.send(AnalisiSangue.getemail(), "Test mail from Spring", AnalisiSangue.getannotazione());
+        smtpMailSender.send(analisi.getemail(), "Test mail from Spring", analisi.getannotazione());
         analisisangueRepository.save(analisi);
         return analisi;
     }
