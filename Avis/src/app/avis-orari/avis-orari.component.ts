@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-avis-orari',
   templateUrl: './avis-orari.component.html',
   styleUrls: ['./avis-orari.component.css'],
-  //template: '<button (click)="cancellaOrario()">Click</button>'
+
 })
 export class AvisOrariComponent implements OnInit {
 
@@ -42,12 +42,7 @@ export class AvisOrariComponent implements OnInit {
     }
 
 
-  vedereId(){
-    console.log(this.orari)
-  }
 
-      /*data => {
-        this.orari = this.orari.filter(data => data !== orari*/
   
 
   ngOnInit() {

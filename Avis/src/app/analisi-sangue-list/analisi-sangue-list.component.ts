@@ -20,10 +20,7 @@ export class AnalisiSangueListComponent implements OnInit {
                 this.analisiSangue = new AnalisiSangue();
                }
 
-vediId(id: AnalisiSangue)
-{
-  console.log(id);
-}
+
 
   aggiornaAnalisi(analisiSangue: AnalisiSangue){
     console.log(analisiSangue);

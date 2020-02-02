@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.mail.MessagingException;
 
-import com.database.idsdatabase.SmtpMailSender;
+import com.database.idsdatabase.controller.SmtpMailSender;
 import com.database.idsdatabase.entity.AnalisiSangue;
 import com.database.idsdatabase.repository.AnalisiSangueRepository;
 
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -33,13 +32,6 @@ public class AnalisiSangueController {
         return (List<AnalisiSangue>) analisisangueRepository.findAll();
       
     }
-
-    @PostMapping("/analisi")
-    void addAnalisiSangue(@RequestBody AnalisiSangue analisisangue){
-        analisisangueRepository.save(analisisangue);
-    }
-
-
 
     @Autowired
 	private SmtpMailSender smtpMailSender;
