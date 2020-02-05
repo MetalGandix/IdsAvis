@@ -3,10 +3,12 @@ package com.database.idsdatabase.jwt;
 
 import java.util.*;
 
+import javax.management.relation.Role;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,8 +21,8 @@ import com.database.idsdatabase.entity.DAOUser;
 import com.database.idsdatabase.entity.UserRole;
 import com.database.idsdatabase.dto.UserDTO;
 
-
-@Service(value = "userService") 
+//@Service 
+@Service(value = "userService") //role based
 public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
@@ -38,7 +40,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
-
+		//return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),	new ArrayList<>());
+		//role based
 		org.springframework.security.core.userdetails.User u = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority(user));
 		return u;
 	}
@@ -46,8 +49,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 	public DAOUser findUserByUsername(String username){
 		return userDao.findByUsername(username);
 	}
-	
-	private Set<GrantedAuthority> getAuthority(DAOUser user) { 
+	//role based
+	private Set<GrantedAuthority> getAuthority(DAOUser user) { //Prende i ruoli
         Set<GrantedAuthority> authorities = new HashSet<>();
 		user.getRoles().forEach(role -> {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
@@ -79,5 +82,14 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return saved;
 	}
 
+	/*public String getRoleByUsername(String username){
+		DAOUser user = userDao.findByUsername(username);
+	}*/
 
+	/*
+	public void delete(String username) {
+		DAOUser user = userDao.findByUsername(username);
+		userDao.delete(user);
+	}
+	*/
 }

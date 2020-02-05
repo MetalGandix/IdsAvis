@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Feb 02, 2020 alle 11:18
+-- Creato il: Gen 31, 2020 alle 18:16
 -- Versione del server: 10.4.8-MariaDB
 -- Versione PHP: 7.3.11
 
@@ -92,7 +92,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(142);
+(140);
 
 -- --------------------------------------------------------
 
@@ -116,8 +116,7 @@ CREATE TABLE `prenotazione_form` (
 INSERT INTO `prenotazione_form` (`id`, `centro`, `compleanno`, `note`, `statosalute`, `telefono`) VALUES
 (137, 'Avis Macerata', '06/02/2020', NULL, 'no', '3409815506'),
 (138, 'Avis Macerata', '07/02/2020', NULL, 'si', '3663568122'),
-(139, 'Avis Comunale di Fermo', '07/02/2020', 'mi piace ingegneria del software', 'no', '3409815423'),
-(140, 'Avis Comunale di Fermo', '07/02/2020', NULL, 'no', '3409815566');
+(139, 'Avis Comunale di Fermo', '07/02/2020', 'mi piace ingegneria del software', 'no', '3409815423');
 
 -- --------------------------------------------------------
 
@@ -167,9 +166,7 @@ INSERT INTO `user` (`id`, `email`, `emergenza`, `lastname`, `name`, `password`, 
 (3, 'leonardo.mogianesi@studenti.unicam.it', 'SI', 'mogianesi', 'leonardo', '$2a$10$l6MIdiQFVgkB0MYAVsuDluQAjc.coptqteVzKDr8i8EEjmYVLRRTW', 'Macerata', 'leonardo'),
 (4, 'lorenzo.brancaleoni@studenti.unicam.it', 'SI', 'brancaleoni', 'lorenzo', '$2a$10$A9QhnIDEaWeuK7QRgDRMAOXlY7e1CQYrHzDc..j3WFnmfzWiruOT.', 'Macerata', 'lorenzo'),
 (5, 'brian.bernardini@studenti.unicam.it', 'SI', 'bernardini', 'brian', '$2a$10$4pMyTFe0ZHQERBiwLqc8eemEgzh2YC8CvzOkt43ViuzkdBdghIiYe', 'Fermo', 'brian'),
-(7, 'andrea.polini@unicam.it', 'SI', 'Polini', 'Andrea', '$2a$10$2PUpa6us9osiRIJeqJhZc.EFiIkXBeOCy0UDJ5M7nXxVkj0wiwjyK', 'Macerata', 'professore'),
-(9, 'dottore@dottore.it', 'NO', 'dottore2', 'dottore2', '$2a$10$NKFQ0V82PnO1mfuU37EgpuRRZYm6Zs4doBP8amz/io9fiDOFFfn.C', 'Fermo', 'secondodottore'),
-(10, 'leonardo.mogianesi@studenti.unicam.it', 'NO', 'Lattanzi', 'Nicola', '$2a$10$2nukxQklxKb9x8H.mKZc0.olJRgYmS3eu98hmA4HRAsvrCro53WCC', 'Macerata', 'nicola');
+(7, 'andrea.polini@unicam.it', 'SI', 'Polini', 'Andrea', '$2a$10$2PUpa6us9osiRIJeqJhZc.EFiIkXBeOCy0UDJ5M7nXxVkj0wiwjyK', 'Macerata', 'professore');
 
 -- --------------------------------------------------------
 
@@ -192,9 +189,7 @@ INSERT INTO `user_roles` (`role_id`, `user_id`) VALUES
 (1, 3),
 (1, 4),
 (1, 5),
-(1, 7),
-(2, 9),
-(1, 10);
+(1, 7);
 
 --
 -- Indici per le tabelle scaricate
@@ -245,7 +240,7 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT per la tabella `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Limiti per le tabelle scaricate

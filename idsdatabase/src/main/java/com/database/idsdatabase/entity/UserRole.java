@@ -1,5 +1,6 @@
 package com.database.idsdatabase.entity;
 
+import java.io.Serializable;
 
 import javax.persistence.*;
 

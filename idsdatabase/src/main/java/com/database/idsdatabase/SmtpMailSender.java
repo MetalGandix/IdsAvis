@@ -1,4 +1,4 @@
-package com.database.idsdatabase.controller;
+package com.database.idsdatabase;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -19,10 +19,12 @@ public class SmtpMailSender {
 		MimeMessage message = javaMailSender.createMimeMessage();
 		MimeMessageHelper helper;
 		
-		helper = new MimeMessageHelper(message, true); 
+		helper = new MimeMessageHelper(message, true); // true indicates
+													   // multipart message
 		helper.setSubject(subject);
 		helper.setTo(to);
-		helper.setText(body, true); 
+		helper.setText(body, true); // true indicates html
+		// continue using helper object for more functionalities like adding attachments, etc.  
 		helper.setFrom("ingegneriadelsoftwareavis@gmail.com");
 		
 		javaMailSender.send(message);

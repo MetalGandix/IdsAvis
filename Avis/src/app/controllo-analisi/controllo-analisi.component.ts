@@ -28,6 +28,9 @@ export class ControlloAnalisiComponent implements OnInit {
     this.AnalisiSangueService.findAll().subscribe(data =>{
       this.analisi = data;
     });
+   // this.AnalisiSangueService.findID(this.analisiSangue.id).filter(x =>{
+  //   x.id ==  this.analisiSangue)[1]
+   // };
   }
 
 
